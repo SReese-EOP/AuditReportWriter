@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\srree\\source\\repos\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {}
+    "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\srree\\source\\repos\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {
+    "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\srree\\source\\repos\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+        "projectUniqueName": "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
         "projectName": "AuditReportWriter",
-        "projectPath": "C:\\Users\\srree\\source\\repos\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+        "projectPath": "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
         "packagesPath": "C:\\Users\\srree\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\srree\\source\\repos\\AuditReportWriter\\AuditReportWriter\\obj\\",
+        "outputPath": "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\srree\\AppData\\Roaming\\NuGet\\NuGet.Config",
