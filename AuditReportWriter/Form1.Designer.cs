@@ -65,10 +65,18 @@
             label6 = new Label();
             label7 = new Label();
             cboToAuditResult = new ComboBox();
+            grpCCresults = new GroupBox();
+            txtCCobsresult = new TextBox();
+            txtCCExchResult = new TextBox();
+            cboCCAuditResult = new ComboBox();
+            label13 = new Label();
+            label12 = new Label();
+            lblCCAuditResult = new Label();
             grpSenderResults.SuspendLayout();
             grpMessageReceivedTIme.SuspendLayout();
             grpOverallAudit.SuspendLayout();
             grpTOResults.SuspendLayout();
+            grpCCresults.SuspendLayout();
             SuspendLayout();
             // 
             // lblMessageID
@@ -89,8 +97,7 @@
             // 
             // btnSubmit
             // 
-            btnSubmit.Enabled = false;
-            btnSubmit.Location = new Point(1335, 809);
+            btnSubmit.Location = new Point(1517, 882);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(172, 23);
             btnSubmit.TabIndex = 2;
@@ -379,7 +386,7 @@
             grpTOResults.Controls.Add(label7);
             grpTOResults.Controls.Add(cboToAuditResult);
             grpTOResults.Enabled = false;
-            grpTOResults.Location = new Point(24, 557);
+            grpTOResults.Location = new Point(24, 558);
             grpTOResults.Name = "grpTOResults";
             grpTOResults.Size = new Size(692, 171);
             grpTOResults.TabIndex = 11;
@@ -439,11 +446,81 @@
             cboToAuditResult.TabIndex = 10;
             cboToAuditResult.SelectedIndexChanged += cboToAuditResult_SelectedIndexChanged;
             // 
+            // grpCCresults
+            // 
+            grpCCresults.Controls.Add(txtCCobsresult);
+            grpCCresults.Controls.Add(txtCCExchResult);
+            grpCCresults.Controls.Add(cboCCAuditResult);
+            grpCCresults.Controls.Add(label13);
+            grpCCresults.Controls.Add(label12);
+            grpCCresults.Controls.Add(lblCCAuditResult);
+            grpCCresults.Enabled = false;
+            grpCCresults.Location = new Point(30, 746);
+            grpCCresults.Name = "grpCCresults";
+            grpCCresults.Size = new Size(686, 159);
+            grpCCresults.TabIndex = 13;
+            grpCCresults.TabStop = false;
+            grpCCresults.Text = "CC Results";
+            // 
+            // txtCCobsresult
+            // 
+            txtCCobsresult.Enabled = false;
+            txtCCobsresult.Location = new Point(26, 129);
+            txtCCobsresult.Name = "txtCCobsresult";
+            txtCCobsresult.Size = new Size(620, 23);
+            txtCCobsresult.TabIndex = 5;
+            // 
+            // txtCCExchResult
+            // 
+            txtCCExchResult.Enabled = false;
+            txtCCExchResult.Location = new Point(22, 84);
+            txtCCExchResult.Name = "txtCCExchResult";
+            txtCCExchResult.Size = new Size(624, 23);
+            txtCCExchResult.TabIndex = 4;
+            // 
+            // cboCCAuditResult
+            // 
+            cboCCAuditResult.FormattingEnabled = true;
+            cboCCAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
+            cboCCAuditResult.Location = new Point(100, 24);
+            cboCCAuditResult.Name = "cboCCAuditResult";
+            cboCCAuditResult.Size = new Size(151, 23);
+            cboCCAuditResult.TabIndex = 3;
+            cboCCAuditResult.SelectedIndexChanged += cboCCAuditResult_SelectedIndexChanged;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(19, 110);
+            label13.Name = "label13";
+            label13.Size = new Size(67, 15);
+            label13.TabIndex = 2;
+            label13.Text = "OBS Result:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(22, 60);
+            label12.Name = "label12";
+            label12.Size = new Size(96, 15);
+            label12.TabIndex = 1;
+            label12.Text = "Exchange Result:";
+            // 
+            // lblCCAuditResult
+            // 
+            lblCCAuditResult.AutoSize = true;
+            lblCCAuditResult.Location = new Point(19, 27);
+            lblCCAuditResult.Name = "lblCCAuditResult";
+            lblCCAuditResult.Size = new Size(74, 15);
+            lblCCAuditResult.TabIndex = 0;
+            lblCCAuditResult.Text = "Audit Result:";
+            // 
             // frmEmailAuditReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1549, 844);
+            ClientSize = new Size(1732, 933);
+            Controls.Add(grpCCresults);
             Controls.Add(grpTOResults);
             Controls.Add(grpOverallAudit);
             Controls.Add(grpMessageReceivedTIme);
@@ -459,6 +536,8 @@
             grpOverallAudit.PerformLayout();
             grpTOResults.ResumeLayout(false);
             grpTOResults.PerformLayout();
+            grpCCresults.ResumeLayout(false);
+            grpCCresults.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -501,5 +580,12 @@
         private TextBox txtJounalEmailId;
         private Label label11;
         private TextBox txtOriginMailbox;
+        private GroupBox grpCCresults;
+        private Label lblCCAuditResult;
+        private TextBox txtCCExchResult;
+        private ComboBox cboCCAuditResult;
+        private Label label13;
+        private Label label12;
+        private TextBox txtCCobsresult;
     }
 }

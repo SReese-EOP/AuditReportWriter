@@ -59,10 +59,12 @@ namespace AuditReportWriter
                 grpSenderResults.Enabled = true;
                 grpMessageReceivedTIme.Enabled = true;
                 grpTOResults.Enabled = true;
+                grpCCresults.Enabled = true;
                 //set the groups to blank for data entry
                 cboReceivedTimeResult.SelectedItem = null;
                 cboSenderResult.SelectedItem = null;
                 cboToAuditResult.SelectedItem = null;
+                cboCCAuditResult.SelectedItem = null;
             }
             else
             {
@@ -70,11 +72,13 @@ namespace AuditReportWriter
                 grpSenderResults.Enabled = false;
                 grpMessageReceivedTIme.Enabled = false;
                 grpTOResults.Enabled = false;
+                grpCCresults.Enabled = false;
 
                 //mark all of the audit results as passing
                 cboReceivedTimeResult.SelectedItem = "PASS";
                 cboSenderResult.SelectedItem = "PASS";
                 cboToAuditResult.SelectedItem = "PASS";
+                cboCCAuditResult.SelectedItem = "PASS";
             }
         }
 
@@ -94,12 +98,28 @@ namespace AuditReportWriter
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            lblCCAuditResult.Text = "Hello World!";
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboCCAuditResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCCAuditResult.SelectedItem != null && cboCCAuditResult.SelectedItem.ToString() == "FAIL")
+            {
+                txtCCExchResult.Enabled = true;
+                txtCCobsresult.Enabled = true;
+            }
+            else
+            {
+                txtCCExchResult.Text = null;
+                txtCCobsresult.Text = null;
+                txtCCExchResult.Enabled = false;
+                txtCCobsresult.Enabled = false;
+            }
         }
     }
 }

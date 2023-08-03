@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kg9Km8Wk5m52t9DBhmZVGSOBj3hRJvG7knwxjBLTALRQfe+Bj5F/E/3cpPRRHJnYoRpXlOBP7mWYNR0v2dEcBw==",
+  "dgSpecHash": "JSZSefHRucisal69gOe42ehySxoT92yxyPTeU9WZB3YL4xu9upqdl7Z31wyrXVH8xxEq8aJ33TgJcIkVH5qEcw==",
   "success": true,
-  "projectFilePath": "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+  "projectFilePath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\srree\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\srree\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "projectUniqueName": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
       "projectName": "AuditReportWriter",
-      "projectPath": "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "projectPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
       "packagesPath": "C:\\Users\\srree\\.nuget\\packages\\",
-      "outputPath": "D:\\WORK\\AuditReportWriter\\AuditReportWriter\\obj\\",
+      "outputPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\srree\\AppData\\Roaming\\NuGet\\NuGet.Config",
