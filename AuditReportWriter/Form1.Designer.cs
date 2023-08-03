@@ -48,6 +48,14 @@
             label3 = new Label();
             cboReceivedTimeResult = new ComboBox();
             grpOverallAudit = new GroupBox();
+            label11 = new Label();
+            txtOriginMailbox = new TextBox();
+            label10 = new Label();
+            txtJounalEmailId = new TextBox();
+            label9 = new Label();
+            txtJournaledMailbox = new TextBox();
+            txtOBSObject = new TextBox();
+            label8 = new Label();
             cboOverallAuditResult = new ComboBox();
             label4 = new Label();
             grpTOResults = new GroupBox();
@@ -57,14 +65,6 @@
             label6 = new Label();
             label7 = new Label();
             cboToAuditResult = new ComboBox();
-            label8 = new Label();
-            txtOBSObject = new TextBox();
-            label9 = new Label();
-            txtJournaledMailbox = new TextBox();
-            label10 = new Label();
-            txtJounalEmailId = new TextBox();
-            label11 = new Label();
-            txtOriginMailbox = new TextBox();
             grpSenderResults.SuspendLayout();
             grpMessageReceivedTIme.SuspendLayout();
             grpOverallAudit.SuspendLayout();
@@ -116,6 +116,7 @@
             dtAuditDateTime.Size = new Size(303, 23);
             dtAuditDateTime.TabIndex = 4;
             dtAuditDateTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
+            dtAuditDateTime.ValueChanged += dtAuditDateTime_ValueChanged;
             // 
             // lblMessageSenderResult
             // 
@@ -286,6 +287,70 @@
             grpOverallAudit.TabStop = false;
             grpOverallAudit.Text = "Audit Information";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(936, 60);
+            label11.Name = "label11";
+            label11.Size = new Size(89, 15);
+            label11.TabIndex = 19;
+            label11.Text = "Origin Mailbox:";
+            // 
+            // txtOriginMailbox
+            // 
+            txtOriginMailbox.Location = new Point(1036, 52);
+            txtOriginMailbox.Name = "txtOriginMailbox";
+            txtOriginMailbox.Size = new Size(323, 23);
+            txtOriginMailbox.TabIndex = 20;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(469, 60);
+            label10.Name = "label10";
+            label10.Size = new Size(94, 15);
+            label10.TabIndex = 17;
+            label10.Text = "Journal Email ID:";
+            // 
+            // txtJounalEmailId
+            // 
+            txtJounalEmailId.Location = new Point(569, 52);
+            txtJounalEmailId.Name = "txtJounalEmailId";
+            txtJounalEmailId.Size = new Size(323, 23);
+            txtJounalEmailId.TabIndex = 18;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(17, 65);
+            label9.Name = "label9";
+            label9.Size = new Size(103, 15);
+            label9.TabIndex = 15;
+            label9.Text = "Jounaled Mailbox:";
+            // 
+            // txtJournaledMailbox
+            // 
+            txtJournaledMailbox.Location = new Point(120, 57);
+            txtJournaledMailbox.Name = "txtJournaledMailbox";
+            txtJournaledMailbox.Size = new Size(323, 23);
+            txtJournaledMailbox.TabIndex = 16;
+            // 
+            // txtOBSObject
+            // 
+            txtOBSObject.Location = new Point(620, 16);
+            txtOBSObject.Name = "txtOBSObject";
+            txtOBSObject.Size = new Size(756, 23);
+            txtOBSObject.TabIndex = 14;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(520, 24);
+            label8.Name = "label8";
+            label8.Size = new Size(94, 15);
+            label8.TabIndex = 13;
+            label8.Text = "OBS Object URL:";
+            // 
             // cboOverallAuditResult
             // 
             cboOverallAuditResult.FormattingEnabled = true;
@@ -373,71 +438,6 @@
             cboToAuditResult.Size = new Size(142, 23);
             cboToAuditResult.TabIndex = 10;
             cboToAuditResult.SelectedIndexChanged += cboToAuditResult_SelectedIndexChanged;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(520, 24);
-            label8.Name = "label8";
-            label8.Size = new Size(94, 15);
-            label8.TabIndex = 13;
-            label8.Text = "OBS Object URL:";
-            // 
-            // txtOBSObject
-            // 
-            txtOBSObject.Location = new Point(620, 16);
-            txtOBSObject.Name = "txtOBSObject";
-            txtOBSObject.Size = new Size(756, 23);
-            txtOBSObject.TabIndex = 14;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(17, 65);
-            label9.Name = "label9";
-            label9.Size = new Size(103, 15);
-            label9.TabIndex = 15;
-            label9.Text = "Jounaled Mailbox:";
-            // 
-            // txtJournaledMailbox
-            // 
-            txtJournaledMailbox.Location = new Point(120, 57);
-            txtJournaledMailbox.Name = "txtJournaledMailbox";
-            txtJournaledMailbox.Size = new Size(323, 23);
-            txtJournaledMailbox.TabIndex = 16;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(469, 60);
-            label10.Name = "label10";
-            label10.Size = new Size(94, 15);
-            label10.TabIndex = 17;
-            label10.Text = "Journal Email ID:";
-            // 
-            // txtJounalEmailId
-            // 
-            txtJounalEmailId.Location = new Point(569, 52);
-            txtJounalEmailId.Name = "txtJounalEmailId";
-            txtJounalEmailId.Size = new Size(323, 23);
-            txtJounalEmailId.TabIndex = 18;
-            txtJounalEmailId.TextChanged += textBox2_TextChanged;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(936, 60);
-            label11.Name = "label11";
-            label11.Size = new Size(89, 15);
-            label11.TabIndex = 19;
-            label11.Text = "Origin Mailbox:";
-            // 
-            // txtOriginMailbox
-            // 
-            txtOriginMailbox.Location = new Point(1036, 52);
-            txtOriginMailbox.Name = "txtOriginMailbox";
-            txtOriginMailbox.Size = new Size(323, 23);
-            txtOriginMailbox.TabIndex = 20;
             // 
             // frmEmailAuditReport
             // 

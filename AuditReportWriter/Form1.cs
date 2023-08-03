@@ -96,5 +96,10 @@ namespace AuditReportWriter
         {
 
         }
+
+        private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
