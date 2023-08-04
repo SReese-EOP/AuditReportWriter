@@ -72,3 +72,5 @@ C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\bin\D
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.csproj.CopyComplete
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.genruntimeconfig.cache
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\ref\AuditReportWriter.dll
+D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.Properties.Resources.resources
+D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmLogin.resources

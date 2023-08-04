@@ -470,19 +470,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kmhar\\.nuget\\packages\\": {}
+    "C:\\Users\\srree\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "projectUniqueName": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
       "projectName": "AuditReportWriter",
-      "projectPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
-      "packagesPath": "C:\\Users\\kmhar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\obj\\",
+      "projectPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
+      "packagesPath": "C:\\Users\\srree\\.nuget\\packages\\",
+      "outputPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kmhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\srree\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
