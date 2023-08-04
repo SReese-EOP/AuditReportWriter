@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj": {}
+    "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {}
   },
   "projects": {
-    "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj": {
+    "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
+        "projectUniqueName": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
         "projectName": "AuditReportWriter",
-        "projectPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
-        "packagesPath": "C:\\Users\\srree\\.nuget\\packages\\",
-        "outputPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\obj\\",
+        "projectPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+        "packagesPath": "C:\\Users\\kmhar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\srree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kmhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

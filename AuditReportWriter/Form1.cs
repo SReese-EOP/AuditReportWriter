@@ -121,5 +121,10 @@ namespace AuditReportWriter
                 txtCCobsresult.Enabled = false;
             }
         }
+
+        private void txtExchSenderResult_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

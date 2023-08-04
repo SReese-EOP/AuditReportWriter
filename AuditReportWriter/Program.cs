@@ -10,7 +10,7 @@ namespace AuditReportWriter
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmEmailAuditReport());
+            Application.Run(new Login());
         }
     }
 
