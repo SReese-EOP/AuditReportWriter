@@ -41,15 +41,13 @@ namespace AuditReportWriter
             lblExchangeSender = new Label();
             cboSenderResult = new ComboBox();
             dtExchMessageRecievedTime = new DateTimePicker();
-            grpMessageReceivedTIme = new GroupBox();
+            grpReceivedTImeResults = new GroupBox();
             dtOBSMessageReceivedTime = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             cboReceivedTimeResult = new ComboBox();
             grpOverallAudit = new GroupBox();
-            label11 = new Label();
-            txtOriginMailbox = new TextBox();
             label10 = new Label();
             txtJounalEmailId = new TextBox();
             label9 = new Label();
@@ -79,63 +77,61 @@ namespace AuditReportWriter
             lblExchangeResult = new Label();
             cbobccAuditResult = new ComboBox();
             lblAuditResult = new Label();
-            label14 = new Label();
-            grpSubjectValue = new GroupBox();
-            textBox1 = new TextBox();
+            grpSubjectResults = new GroupBox();
+            txtSubjectOBSResult = new TextBox();
             lblSubjectOBSResult = new Label();
-            textBox2 = new TextBox();
+            txtSubjectExchangeResult = new TextBox();
             lblSubjectExchangeResult = new Label();
             cboSubjectValueResult = new ComboBox();
             label17 = new Label();
             grpAttachementResult = new GroupBox();
-            textBox3 = new TextBox();
+            txtAttachmentOBSResult = new TextBox();
             lblAttachementOBSResult = new Label();
-            textBox4 = new TextBox();
+            txtAttachmentExchangeResult = new TextBox();
             lblAttachementExchangeResult = new Label();
             cboAttachementAuditResult = new ComboBox();
             lblAttachementAuditResult = new Label();
-            grpBodyValue = new GroupBox();
-            textBox5 = new TextBox();
+            grpBodyResults = new GroupBox();
+            txtBodyOBSResult = new TextBox();
             lblBodyValueOBSResult = new Label();
-            textBox6 = new TextBox();
+            txtBodyExchangeResult = new TextBox();
             lblBodyExchangeResult = new Label();
             cboBodyValueResult = new ComboBox();
             lblBodyValueAuditResult = new Label();
+            btnReset = new Button();
             grpSenderResults.SuspendLayout();
-            grpMessageReceivedTIme.SuspendLayout();
+            grpReceivedTImeResults.SuspendLayout();
             grpOverallAudit.SuspendLayout();
             grpTOResults.SuspendLayout();
             grpCCresults.SuspendLayout();
             grpBCCResults.SuspendLayout();
-            grpSubjectValue.SuspendLayout();
+            grpSubjectResults.SuspendLayout();
             grpAttachementResult.SuspendLayout();
-            grpBodyValue.SuspendLayout();
+            grpBodyResults.SuspendLayout();
             SuspendLayout();
             // 
             // lblMessageID
             // 
             lblMessageID.AutoSize = true;
-            lblMessageID.Location = new Point(24, 50);
-            lblMessageID.Margin = new Padding(4, 0, 4, 0);
+            lblMessageID.Location = new Point(17, 30);
             lblMessageID.Name = "lblMessageID";
-            lblMessageID.Size = new Size(109, 25);
+            lblMessageID.Size = new Size(70, 15);
             lblMessageID.TabIndex = 0;
             lblMessageID.Text = "Message ID:";
             // 
             // txtMessageID
             // 
-            txtMessageID.Location = new Point(143, 37);
-            txtMessageID.Margin = new Padding(4, 5, 4, 5);
+            txtMessageID.Location = new Point(100, 22);
             txtMessageID.Name = "txtMessageID";
-            txtMessageID.Size = new Size(460, 31);
+            txtMessageID.Size = new Size(323, 23);
             txtMessageID.TabIndex = 1;
+            txtMessageID.TextChanged += txtMessageID_TextChanged;
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(2227, 1538);
-            btnSubmit.Margin = new Padding(4, 5, 4, 5);
+            btnSubmit.Location = new Point(1365, 918);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(246, 38);
+            btnSubmit.Size = new Size(172, 23);
             btnSubmit.TabIndex = 2;
             btnSubmit.Text = "&Submit";
             btnSubmit.UseVisualStyleBackColor = true;
@@ -144,10 +140,9 @@ namespace AuditReportWriter
             // dtAuditDate
             // 
             dtAuditDate.AutoSize = true;
-            dtAuditDate.Location = new Point(23, 187);
-            dtAuditDate.Margin = new Padding(4, 0, 4, 0);
+            dtAuditDate.Location = new Point(16, 112);
             dtAuditDate.Name = "dtAuditDate";
-            dtAuditDate.Size = new Size(147, 25);
+            dtAuditDate.Size = new Size(97, 15);
             dtAuditDate.TabIndex = 3;
             dtAuditDate.Text = "Audit Date/TIme:";
             // 
@@ -155,10 +150,9 @@ namespace AuditReportWriter
             // 
             dtAuditDateTime.CustomFormat = "MM-dd-yyyy HH:mm";
             dtAuditDateTime.Format = DateTimePickerFormat.Custom;
-            dtAuditDateTime.Location = new Point(171, 168);
-            dtAuditDateTime.Margin = new Padding(4, 5, 4, 5);
+            dtAuditDateTime.Location = new Point(120, 101);
             dtAuditDateTime.Name = "dtAuditDateTime";
-            dtAuditDateTime.Size = new Size(431, 31);
+            dtAuditDateTime.Size = new Size(303, 23);
             dtAuditDateTime.TabIndex = 4;
             dtAuditDateTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             dtAuditDateTime.ValueChanged += dtAuditDateTime_ValueChanged;
@@ -166,10 +160,9 @@ namespace AuditReportWriter
             // lblMessageSenderResult
             // 
             lblMessageSenderResult.AutoSize = true;
-            lblMessageSenderResult.Location = new Point(24, 48);
-            lblMessageSenderResult.Margin = new Padding(4, 0, 4, 0);
+            lblMessageSenderResult.Location = new Point(17, 29);
             lblMessageSenderResult.Name = "lblMessageSenderResult";
-            lblMessageSenderResult.Size = new Size(116, 25);
+            lblMessageSenderResult.Size = new Size(77, 15);
             lblMessageSenderResult.TabIndex = 6;
             lblMessageSenderResult.Text = "Audit Result: ";
             // 
@@ -182,11 +175,9 @@ namespace AuditReportWriter
             grpSenderResults.Controls.Add(lblMessageSenderResult);
             grpSenderResults.Controls.Add(cboSenderResult);
             grpSenderResults.Enabled = false;
-            grpSenderResults.Location = new Point(34, 618);
-            grpSenderResults.Margin = new Padding(4, 5, 4, 5);
+            grpSenderResults.Location = new Point(24, 371);
             grpSenderResults.Name = "grpSenderResults";
-            grpSenderResults.Padding = new Padding(4, 5, 4, 5);
-            grpSenderResults.Size = new Size(989, 285);
+            grpSenderResults.Size = new Size(692, 171);
             grpSenderResults.TabIndex = 9;
             grpSenderResults.TabStop = false;
             grpSenderResults.Text = "Sender Results";
@@ -195,38 +186,34 @@ namespace AuditReportWriter
             // txtOBSSenderResult
             // 
             txtOBSSenderResult.Enabled = false;
-            txtOBSSenderResult.Location = new Point(24, 207);
-            txtOBSSenderResult.Margin = new Padding(4, 5, 4, 5);
+            txtOBSSenderResult.Location = new Point(17, 124);
             txtOBSSenderResult.Name = "txtOBSSenderResult";
-            txtOBSSenderResult.Size = new Size(941, 31);
+            txtOBSSenderResult.Size = new Size(660, 23);
             txtOBSSenderResult.TabIndex = 3;
             // 
             // txtExchSenderResult
             // 
             txtExchSenderResult.Enabled = false;
-            txtExchSenderResult.Location = new Point(24, 135);
-            txtExchSenderResult.Margin = new Padding(4, 5, 4, 5);
+            txtExchSenderResult.Location = new Point(17, 81);
             txtExchSenderResult.Name = "txtExchSenderResult";
-            txtExchSenderResult.Size = new Size(941, 31);
+            txtExchSenderResult.Size = new Size(660, 23);
             txtExchSenderResult.TabIndex = 2;
             // 
             // lblOBSresult
             // 
             lblOBSresult.AutoSize = true;
-            lblOBSresult.Location = new Point(24, 177);
-            lblOBSresult.Margin = new Padding(4, 0, 4, 0);
+            lblOBSresult.Location = new Point(17, 106);
             lblOBSresult.Name = "lblOBSresult";
-            lblOBSresult.Size = new Size(102, 25);
+            lblOBSresult.Size = new Size(67, 15);
             lblOBSresult.TabIndex = 1;
             lblOBSresult.Text = "OBS Result:";
             // 
             // lblExchangeSender
             // 
             lblExchangeSender.AutoSize = true;
-            lblExchangeSender.Location = new Point(24, 103);
-            lblExchangeSender.Margin = new Padding(4, 0, 4, 0);
+            lblExchangeSender.Location = new Point(17, 62);
             lblExchangeSender.Name = "lblExchangeSender";
-            lblExchangeSender.Size = new Size(142, 25);
+            lblExchangeSender.Size = new Size(96, 15);
             lblExchangeSender.TabIndex = 0;
             lblExchangeSender.Text = "Exchange Result:";
             // 
@@ -234,10 +221,9 @@ namespace AuditReportWriter
             // 
             cboSenderResult.FormattingEnabled = true;
             cboSenderResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboSenderResult.Location = new Point(143, 37);
-            cboSenderResult.Margin = new Padding(4, 5, 4, 5);
+            cboSenderResult.Location = new Point(100, 22);
             cboSenderResult.Name = "cboSenderResult";
-            cboSenderResult.Size = new Size(201, 33);
+            cboSenderResult.Size = new Size(142, 23);
             cboSenderResult.TabIndex = 10;
             cboSenderResult.SelectedIndexChanged += cboSenderResult_SelectedIndexChanged;
             // 
@@ -246,70 +232,63 @@ namespace AuditReportWriter
             dtExchMessageRecievedTime.CustomFormat = "MM-dd-yyyy HH:mm";
             dtExchMessageRecievedTime.Enabled = false;
             dtExchMessageRecievedTime.Format = DateTimePickerFormat.Custom;
-            dtExchMessageRecievedTime.Location = new Point(24, 133);
-            dtExchMessageRecievedTime.Margin = new Padding(4, 5, 4, 5);
+            dtExchMessageRecievedTime.Location = new Point(17, 80);
             dtExchMessageRecievedTime.Name = "dtExchMessageRecievedTime";
-            dtExchMessageRecievedTime.Size = new Size(353, 31);
+            dtExchMessageRecievedTime.Size = new Size(248, 23);
             dtExchMessageRecievedTime.TabIndex = 13;
             dtExchMessageRecievedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
-            // grpMessageReceivedTIme
+            // grpReceivedTImeResults
             // 
-            grpMessageReceivedTIme.Controls.Add(dtOBSMessageReceivedTime);
-            grpMessageReceivedTIme.Controls.Add(label1);
-            grpMessageReceivedTIme.Controls.Add(dtExchMessageRecievedTime);
-            grpMessageReceivedTIme.Controls.Add(label2);
-            grpMessageReceivedTIme.Controls.Add(label3);
-            grpMessageReceivedTIme.Controls.Add(cboReceivedTimeResult);
-            grpMessageReceivedTIme.Enabled = false;
-            grpMessageReceivedTIme.Location = new Point(34, 323);
-            grpMessageReceivedTIme.Margin = new Padding(4, 5, 4, 5);
-            grpMessageReceivedTIme.Name = "grpMessageReceivedTIme";
-            grpMessageReceivedTIme.Padding = new Padding(4, 5, 4, 5);
-            grpMessageReceivedTIme.Size = new Size(989, 285);
-            grpMessageReceivedTIme.TabIndex = 11;
-            grpMessageReceivedTIme.TabStop = false;
-            grpMessageReceivedTIme.Text = "Received Time Results";
+            grpReceivedTImeResults.Controls.Add(dtOBSMessageReceivedTime);
+            grpReceivedTImeResults.Controls.Add(label1);
+            grpReceivedTImeResults.Controls.Add(dtExchMessageRecievedTime);
+            grpReceivedTImeResults.Controls.Add(label2);
+            grpReceivedTImeResults.Controls.Add(label3);
+            grpReceivedTImeResults.Controls.Add(cboReceivedTimeResult);
+            grpReceivedTImeResults.Enabled = false;
+            grpReceivedTImeResults.Location = new Point(24, 194);
+            grpReceivedTImeResults.Name = "grpReceivedTImeResults";
+            grpReceivedTImeResults.Size = new Size(692, 171);
+            grpReceivedTImeResults.TabIndex = 11;
+            grpReceivedTImeResults.TabStop = false;
+            grpReceivedTImeResults.Text = "Received Time Results";
             // 
             // dtOBSMessageReceivedTime
             // 
             dtOBSMessageReceivedTime.CustomFormat = "MM-dd-yyyy HH:mm";
             dtOBSMessageReceivedTime.Enabled = false;
             dtOBSMessageReceivedTime.Format = DateTimePickerFormat.Custom;
-            dtOBSMessageReceivedTime.Location = new Point(24, 207);
-            dtOBSMessageReceivedTime.Margin = new Padding(4, 5, 4, 5);
+            dtOBSMessageReceivedTime.Location = new Point(17, 124);
             dtOBSMessageReceivedTime.Name = "dtOBSMessageReceivedTime";
-            dtOBSMessageReceivedTime.Size = new Size(353, 31);
+            dtOBSMessageReceivedTime.Size = new Size(248, 23);
             dtOBSMessageReceivedTime.TabIndex = 14;
             dtOBSMessageReceivedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 177);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(17, 106);
             label1.Name = "label1";
-            label1.Size = new Size(102, 25);
+            label1.Size = new Size(67, 15);
             label1.TabIndex = 1;
             label1.Text = "OBS Result:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 103);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(17, 62);
             label2.Name = "label2";
-            label2.Size = new Size(142, 25);
+            label2.Size = new Size(96, 15);
             label2.TabIndex = 0;
             label2.Text = "Exchange Result:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 48);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(17, 29);
             label3.Name = "label3";
-            label3.Size = new Size(116, 25);
+            label3.Size = new Size(77, 15);
             label3.TabIndex = 6;
             label3.Text = "Audit Result: ";
             label3.Click += label3_Click;
@@ -318,17 +297,14 @@ namespace AuditReportWriter
             // 
             cboReceivedTimeResult.FormattingEnabled = true;
             cboReceivedTimeResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboReceivedTimeResult.Location = new Point(143, 37);
-            cboReceivedTimeResult.Margin = new Padding(4, 5, 4, 5);
+            cboReceivedTimeResult.Location = new Point(100, 22);
             cboReceivedTimeResult.Name = "cboReceivedTimeResult";
-            cboReceivedTimeResult.Size = new Size(201, 33);
+            cboReceivedTimeResult.Size = new Size(142, 23);
             cboReceivedTimeResult.TabIndex = 10;
             cboReceivedTimeResult.SelectedIndexChanged += cboReceivedTimeResult_SelectedIndexChanged;
             // 
             // grpOverallAudit
             // 
-            grpOverallAudit.Controls.Add(label11);
-            grpOverallAudit.Controls.Add(txtOriginMailbox);
             grpOverallAudit.Controls.Add(label10);
             grpOverallAudit.Controls.Add(txtJounalEmailId);
             grpOverallAudit.Controls.Add(label9);
@@ -341,84 +317,58 @@ namespace AuditReportWriter
             grpOverallAudit.Controls.Add(txtMessageID);
             grpOverallAudit.Controls.Add(dtAuditDate);
             grpOverallAudit.Controls.Add(dtAuditDateTime);
-            grpOverallAudit.Location = new Point(34, 70);
-            grpOverallAudit.Margin = new Padding(4, 5, 4, 5);
+            grpOverallAudit.Location = new Point(24, 42);
             grpOverallAudit.Name = "grpOverallAudit";
-            grpOverallAudit.Padding = new Padding(4, 5, 4, 5);
-            grpOverallAudit.Size = new Size(2161, 243);
+            grpOverallAudit.Size = new Size(1513, 146);
             grpOverallAudit.TabIndex = 12;
             grpOverallAudit.TabStop = false;
             grpOverallAudit.Text = "Audit Information";
             // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(1337, 100);
-            label11.Margin = new Padding(4, 0, 4, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(133, 25);
-            label11.TabIndex = 19;
-            label11.Text = "Origin Mailbox:";
-            // 
-            // txtOriginMailbox
-            // 
-            txtOriginMailbox.Location = new Point(1480, 87);
-            txtOriginMailbox.Margin = new Padding(4, 5, 4, 5);
-            txtOriginMailbox.Name = "txtOriginMailbox";
-            txtOriginMailbox.Size = new Size(460, 31);
-            txtOriginMailbox.TabIndex = 20;
-            // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(670, 100);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(469, 60);
             label10.Name = "label10";
-            label10.Size = new Size(142, 25);
+            label10.Size = new Size(94, 15);
             label10.TabIndex = 17;
             label10.Text = "Journal Email ID:";
             // 
             // txtJounalEmailId
             // 
-            txtJounalEmailId.Location = new Point(813, 87);
-            txtJounalEmailId.Margin = new Padding(4, 5, 4, 5);
+            txtJounalEmailId.Location = new Point(569, 52);
             txtJounalEmailId.Name = "txtJounalEmailId";
-            txtJounalEmailId.Size = new Size(460, 31);
+            txtJounalEmailId.Size = new Size(323, 23);
             txtJounalEmailId.TabIndex = 18;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(24, 108);
-            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Location = new Point(17, 65);
             label9.Name = "label9";
-            label9.Size = new Size(154, 25);
+            label9.Size = new Size(103, 15);
             label9.TabIndex = 15;
             label9.Text = "Jounaled Mailbox:";
             // 
             // txtJournaledMailbox
             // 
-            txtJournaledMailbox.Location = new Point(171, 95);
-            txtJournaledMailbox.Margin = new Padding(4, 5, 4, 5);
+            txtJournaledMailbox.Location = new Point(120, 57);
             txtJournaledMailbox.Name = "txtJournaledMailbox";
-            txtJournaledMailbox.Size = new Size(460, 31);
+            txtJournaledMailbox.Size = new Size(323, 23);
             txtJournaledMailbox.TabIndex = 16;
             // 
             // txtOBSObject
             // 
-            txtOBSObject.Location = new Point(886, 27);
-            txtOBSObject.Margin = new Padding(4, 5, 4, 5);
+            txtOBSObject.Location = new Point(620, 16);
             txtOBSObject.Name = "txtOBSObject";
-            txtOBSObject.Size = new Size(1078, 31);
+            txtOBSObject.Size = new Size(756, 23);
             txtOBSObject.TabIndex = 14;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(743, 40);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(520, 24);
             label8.Name = "label8";
-            label8.Size = new Size(143, 25);
+            label8.Size = new Size(94, 15);
             label8.TabIndex = 13;
             label8.Text = "OBS Object URL:";
             // 
@@ -426,20 +376,18 @@ namespace AuditReportWriter
             // 
             cboOverallAuditResult.FormattingEnabled = true;
             cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboOverallAuditResult.Location = new Point(1337, 178);
-            cboOverallAuditResult.Margin = new Padding(4, 5, 4, 5);
+            cboOverallAuditResult.Location = new Point(936, 107);
             cboOverallAuditResult.Name = "cboOverallAuditResult";
-            cboOverallAuditResult.Size = new Size(201, 33);
+            cboOverallAuditResult.Size = new Size(142, 23);
             cboOverallAuditResult.TabIndex = 12;
             cboOverallAuditResult.SelectedIndexChanged += cboOverallAuditResult_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(1219, 187);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(853, 112);
             label4.Name = "label4";
-            label4.Size = new Size(116, 25);
+            label4.Size = new Size(77, 15);
             label4.TabIndex = 11;
             label4.Text = "Audit Result: ";
             // 
@@ -452,11 +400,9 @@ namespace AuditReportWriter
             grpTOResults.Controls.Add(lblTOAuditResult);
             grpTOResults.Controls.Add(cboToAuditResult);
             grpTOResults.Enabled = false;
-            grpTOResults.Location = new Point(34, 930);
-            grpTOResults.Margin = new Padding(4, 5, 4, 5);
+            grpTOResults.Location = new Point(24, 558);
             grpTOResults.Name = "grpTOResults";
-            grpTOResults.Padding = new Padding(4, 5, 4, 5);
-            grpTOResults.Size = new Size(989, 285);
+            grpTOResults.Size = new Size(692, 171);
             grpTOResults.TabIndex = 11;
             grpTOResults.TabStop = false;
             grpTOResults.Text = "To Results";
@@ -464,48 +410,43 @@ namespace AuditReportWriter
             // txtOBSToResult
             // 
             txtOBSToResult.Enabled = false;
-            txtOBSToResult.Location = new Point(24, 207);
-            txtOBSToResult.Margin = new Padding(4, 5, 4, 5);
+            txtOBSToResult.Location = new Point(17, 124);
             txtOBSToResult.Name = "txtOBSToResult";
-            txtOBSToResult.Size = new Size(941, 31);
+            txtOBSToResult.Size = new Size(660, 23);
             txtOBSToResult.TabIndex = 3;
             // 
             // txtExchToResult
             // 
             txtExchToResult.Enabled = false;
-            txtExchToResult.Location = new Point(24, 135);
-            txtExchToResult.Margin = new Padding(4, 5, 4, 5);
+            txtExchToResult.Location = new Point(17, 81);
             txtExchToResult.Name = "txtExchToResult";
-            txtExchToResult.Size = new Size(941, 31);
+            txtExchToResult.Size = new Size(660, 23);
             txtExchToResult.TabIndex = 2;
             // 
             // lblTOOBSResult
             // 
             lblTOOBSResult.AutoSize = true;
-            lblTOOBSResult.Location = new Point(24, 177);
-            lblTOOBSResult.Margin = new Padding(4, 0, 4, 0);
+            lblTOOBSResult.Location = new Point(17, 106);
             lblTOOBSResult.Name = "lblTOOBSResult";
-            lblTOOBSResult.Size = new Size(102, 25);
+            lblTOOBSResult.Size = new Size(67, 15);
             lblTOOBSResult.TabIndex = 1;
             lblTOOBSResult.Text = "OBS Result:";
             // 
             // lblTOExchangeResult
             // 
             lblTOExchangeResult.AutoSize = true;
-            lblTOExchangeResult.Location = new Point(24, 103);
-            lblTOExchangeResult.Margin = new Padding(4, 0, 4, 0);
+            lblTOExchangeResult.Location = new Point(17, 62);
             lblTOExchangeResult.Name = "lblTOExchangeResult";
-            lblTOExchangeResult.Size = new Size(142, 25);
+            lblTOExchangeResult.Size = new Size(96, 15);
             lblTOExchangeResult.TabIndex = 0;
             lblTOExchangeResult.Text = "Exchange Result:";
             // 
             // lblTOAuditResult
             // 
             lblTOAuditResult.AutoSize = true;
-            lblTOAuditResult.Location = new Point(24, 48);
-            lblTOAuditResult.Margin = new Padding(4, 0, 4, 0);
+            lblTOAuditResult.Location = new Point(17, 29);
             lblTOAuditResult.Name = "lblTOAuditResult";
-            lblTOAuditResult.Size = new Size(116, 25);
+            lblTOAuditResult.Size = new Size(77, 15);
             lblTOAuditResult.TabIndex = 6;
             lblTOAuditResult.Text = "Audit Result: ";
             // 
@@ -513,10 +454,9 @@ namespace AuditReportWriter
             // 
             cboToAuditResult.FormattingEnabled = true;
             cboToAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboToAuditResult.Location = new Point(143, 37);
-            cboToAuditResult.Margin = new Padding(4, 5, 4, 5);
+            cboToAuditResult.Location = new Point(100, 22);
             cboToAuditResult.Name = "cboToAuditResult";
-            cboToAuditResult.Size = new Size(201, 33);
+            cboToAuditResult.Size = new Size(142, 23);
             cboToAuditResult.TabIndex = 10;
             cboToAuditResult.SelectedIndexChanged += cboToAuditResult_SelectedIndexChanged;
             // 
@@ -529,11 +469,9 @@ namespace AuditReportWriter
             grpCCresults.Controls.Add(lblCCExchangeResult);
             grpCCresults.Controls.Add(lblCCAuditResult);
             grpCCresults.Enabled = false;
-            grpCCresults.Location = new Point(43, 1243);
-            grpCCresults.Margin = new Padding(4, 5, 4, 5);
+            grpCCresults.Location = new Point(30, 746);
             grpCCresults.Name = "grpCCresults";
-            grpCCresults.Padding = new Padding(4, 5, 4, 5);
-            grpCCresults.Size = new Size(980, 265);
+            grpCCresults.Size = new Size(686, 159);
             grpCCresults.TabIndex = 13;
             grpCCresults.TabStop = false;
             grpCCresults.Text = "CC Results";
@@ -542,59 +480,53 @@ namespace AuditReportWriter
             // txtCCobsresult
             // 
             txtCCobsresult.Enabled = false;
-            txtCCobsresult.Location = new Point(37, 215);
-            txtCCobsresult.Margin = new Padding(4, 5, 4, 5);
+            txtCCobsresult.Location = new Point(26, 129);
             txtCCobsresult.Name = "txtCCobsresult";
-            txtCCobsresult.Size = new Size(884, 31);
+            txtCCobsresult.Size = new Size(620, 23);
             txtCCobsresult.TabIndex = 5;
             // 
             // txtCCExchResult
             // 
             txtCCExchResult.Enabled = false;
-            txtCCExchResult.Location = new Point(31, 140);
-            txtCCExchResult.Margin = new Padding(4, 5, 4, 5);
+            txtCCExchResult.Location = new Point(22, 84);
             txtCCExchResult.Name = "txtCCExchResult";
-            txtCCExchResult.Size = new Size(890, 31);
+            txtCCExchResult.Size = new Size(624, 23);
             txtCCExchResult.TabIndex = 4;
             // 
             // cboCCAuditResult
             // 
             cboCCAuditResult.FormattingEnabled = true;
             cboCCAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboCCAuditResult.Location = new Point(143, 40);
-            cboCCAuditResult.Margin = new Padding(4, 5, 4, 5);
+            cboCCAuditResult.Location = new Point(100, 24);
             cboCCAuditResult.Name = "cboCCAuditResult";
-            cboCCAuditResult.Size = new Size(214, 33);
+            cboCCAuditResult.Size = new Size(151, 23);
             cboCCAuditResult.TabIndex = 3;
             cboCCAuditResult.SelectedIndexChanged += cboCCAuditResult_SelectedIndexChanged;
             // 
             // lblCCOBSResult
             // 
             lblCCOBSResult.AutoSize = true;
-            lblCCOBSResult.Location = new Point(27, 183);
-            lblCCOBSResult.Margin = new Padding(4, 0, 4, 0);
+            lblCCOBSResult.Location = new Point(19, 110);
             lblCCOBSResult.Name = "lblCCOBSResult";
-            lblCCOBSResult.Size = new Size(102, 25);
+            lblCCOBSResult.Size = new Size(67, 15);
             lblCCOBSResult.TabIndex = 2;
             lblCCOBSResult.Text = "OBS Result:";
             // 
             // lblCCExchangeResult
             // 
             lblCCExchangeResult.AutoSize = true;
-            lblCCExchangeResult.Location = new Point(31, 100);
-            lblCCExchangeResult.Margin = new Padding(4, 0, 4, 0);
+            lblCCExchangeResult.Location = new Point(22, 60);
             lblCCExchangeResult.Name = "lblCCExchangeResult";
-            lblCCExchangeResult.Size = new Size(142, 25);
+            lblCCExchangeResult.Size = new Size(96, 15);
             lblCCExchangeResult.TabIndex = 1;
             lblCCExchangeResult.Text = "Exchange Result:";
             // 
             // lblCCAuditResult
             // 
             lblCCAuditResult.AutoSize = true;
-            lblCCAuditResult.Location = new Point(27, 45);
-            lblCCAuditResult.Margin = new Padding(4, 0, 4, 0);
+            lblCCAuditResult.Location = new Point(19, 27);
             lblCCAuditResult.Name = "lblCCAuditResult";
-            lblCCAuditResult.Size = new Size(111, 25);
+            lblCCAuditResult.Size = new Size(74, 15);
             lblCCAuditResult.TabIndex = 0;
             lblCCAuditResult.Text = "Audit Result:";
             // 
@@ -607,9 +539,11 @@ namespace AuditReportWriter
             grpBCCResults.Controls.Add(cbobccAuditResult);
             grpBCCResults.Controls.Add(lblAuditResult);
             grpBCCResults.Enabled = false;
-            grpBCCResults.Location = new Point(1074, 323);
+            grpBCCResults.Location = new Point(752, 194);
+            grpBCCResults.Margin = new Padding(2);
             grpBCCResults.Name = "grpBCCResults";
-            grpBCCResults.Size = new Size(1121, 285);
+            grpBCCResults.Padding = new Padding(2);
+            grpBCCResults.Size = new Size(785, 171);
             grpBCCResults.TabIndex = 14;
             grpBCCResults.TabStop = false;
             grpBCCResults.Text = "BCC Results";
@@ -618,34 +552,40 @@ namespace AuditReportWriter
             // 
             // txtbccOBSResult
             // 
-            txtbccOBSResult.Location = new Point(83, 207);
+            txtbccOBSResult.Enabled = false;
+            txtbccOBSResult.Location = new Point(58, 124);
+            txtbccOBSResult.Margin = new Padding(2);
             txtbccOBSResult.Name = "txtbccOBSResult";
-            txtbccOBSResult.Size = new Size(841, 31);
+            txtbccOBSResult.Size = new Size(590, 23);
             txtbccOBSResult.TabIndex = 5;
             // 
             // lblbccOBSResult
             // 
             lblbccOBSResult.AutoSize = true;
-            lblbccOBSResult.Location = new Point(78, 179);
+            lblbccOBSResult.Location = new Point(55, 107);
+            lblbccOBSResult.Margin = new Padding(2, 0, 2, 0);
             lblbccOBSResult.Name = "lblbccOBSResult";
-            lblbccOBSResult.Size = new Size(102, 25);
+            lblbccOBSResult.Size = new Size(67, 15);
             lblbccOBSResult.TabIndex = 4;
             lblbccOBSResult.Text = "OBS Result:";
             lblbccOBSResult.Click += lblbccOBSResult_Click;
             // 
             // txtbccExchangeResult
             // 
-            txtbccExchangeResult.Location = new Point(78, 136);
+            txtbccExchangeResult.Enabled = false;
+            txtbccExchangeResult.Location = new Point(55, 82);
+            txtbccExchangeResult.Margin = new Padding(2);
             txtbccExchangeResult.Name = "txtbccExchangeResult";
-            txtbccExchangeResult.Size = new Size(846, 31);
+            txtbccExchangeResult.Size = new Size(593, 23);
             txtbccExchangeResult.TabIndex = 3;
             // 
             // lblExchangeResult
             // 
             lblExchangeResult.AutoSize = true;
-            lblExchangeResult.Location = new Point(78, 98);
+            lblExchangeResult.Location = new Point(55, 59);
+            lblExchangeResult.Margin = new Padding(2, 0, 2, 0);
             lblExchangeResult.Name = "lblExchangeResult";
-            lblExchangeResult.Size = new Size(142, 25);
+            lblExchangeResult.Size = new Size(96, 15);
             lblExchangeResult.TabIndex = 2;
             lblExchangeResult.Text = "Exchange Result:";
             // 
@@ -653,75 +593,77 @@ namespace AuditReportWriter
             // 
             cbobccAuditResult.FormattingEnabled = true;
             cbobccAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cbobccAuditResult.Location = new Point(195, 38);
+            cbobccAuditResult.Location = new Point(136, 23);
+            cbobccAuditResult.Margin = new Padding(2);
             cbobccAuditResult.Name = "cbobccAuditResult";
-            cbobccAuditResult.Size = new Size(182, 33);
+            cbobccAuditResult.Size = new Size(129, 23);
             cbobccAuditResult.TabIndex = 1;
+            cbobccAuditResult.SelectedIndexChanged += cbobccAuditResult_SelectedIndexChanged_1;
             // 
             // lblAuditResult
             // 
             lblAuditResult.AutoSize = true;
-            lblAuditResult.Location = new Point(78, 41);
+            lblAuditResult.Location = new Point(55, 25);
+            lblAuditResult.Margin = new Padding(2, 0, 2, 0);
             lblAuditResult.Name = "lblAuditResult";
-            lblAuditResult.Size = new Size(111, 25);
+            lblAuditResult.Size = new Size(74, 15);
             lblAuditResult.TabIndex = 0;
             lblAuditResult.Text = "Audit Result:";
             // 
-            // label14
+            // grpSubjectResults
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(0, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(69, 25);
-            label14.TabIndex = 15;
-            label14.Text = "label14";
+            grpSubjectResults.Controls.Add(txtSubjectOBSResult);
+            grpSubjectResults.Controls.Add(lblSubjectOBSResult);
+            grpSubjectResults.Controls.Add(txtSubjectExchangeResult);
+            grpSubjectResults.Controls.Add(lblSubjectExchangeResult);
+            grpSubjectResults.Controls.Add(cboSubjectValueResult);
+            grpSubjectResults.Controls.Add(label17);
+            grpSubjectResults.Enabled = false;
+            grpSubjectResults.Location = new Point(752, 377);
+            grpSubjectResults.Margin = new Padding(2);
+            grpSubjectResults.Name = "grpSubjectResults";
+            grpSubjectResults.Padding = new Padding(2);
+            grpSubjectResults.Size = new Size(785, 164);
+            grpSubjectResults.TabIndex = 16;
+            grpSubjectResults.TabStop = false;
+            grpSubjectResults.Text = "Subject Value Result";
+            grpSubjectResults.UseCompatibleTextRendering = true;
             // 
-            // grpSubjectValue
+            // txtSubjectOBSResult
             // 
-            grpSubjectValue.Controls.Add(textBox1);
-            grpSubjectValue.Controls.Add(lblSubjectOBSResult);
-            grpSubjectValue.Controls.Add(textBox2);
-            grpSubjectValue.Controls.Add(lblSubjectExchangeResult);
-            grpSubjectValue.Controls.Add(cboSubjectValueResult);
-            grpSubjectValue.Controls.Add(label17);
-            grpSubjectValue.Enabled = false;
-            grpSubjectValue.Location = new Point(1074, 629);
-            grpSubjectValue.Name = "grpSubjectValue";
-            grpSubjectValue.Size = new Size(1121, 274);
-            grpSubjectValue.TabIndex = 16;
-            grpSubjectValue.TabStop = false;
-            grpSubjectValue.Text = "Subject Value Result";
-            grpSubjectValue.UseCompatibleTextRendering = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(83, 207);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(841, 31);
-            textBox1.TabIndex = 5;
+            txtSubjectOBSResult.Enabled = false;
+            txtSubjectOBSResult.Location = new Point(58, 124);
+            txtSubjectOBSResult.Margin = new Padding(2);
+            txtSubjectOBSResult.Name = "txtSubjectOBSResult";
+            txtSubjectOBSResult.Size = new Size(590, 23);
+            txtSubjectOBSResult.TabIndex = 5;
             // 
             // lblSubjectOBSResult
             // 
             lblSubjectOBSResult.AutoSize = true;
-            lblSubjectOBSResult.Location = new Point(78, 179);
+            lblSubjectOBSResult.Location = new Point(55, 107);
+            lblSubjectOBSResult.Margin = new Padding(2, 0, 2, 0);
             lblSubjectOBSResult.Name = "lblSubjectOBSResult";
-            lblSubjectOBSResult.Size = new Size(102, 25);
+            lblSubjectOBSResult.Size = new Size(67, 15);
             lblSubjectOBSResult.TabIndex = 4;
             lblSubjectOBSResult.Text = "OBS Result:";
             // 
-            // textBox2
+            // txtSubjectExchangeResult
             // 
-            textBox2.Location = new Point(78, 136);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(846, 31);
-            textBox2.TabIndex = 3;
+            txtSubjectExchangeResult.Enabled = false;
+            txtSubjectExchangeResult.Location = new Point(55, 82);
+            txtSubjectExchangeResult.Margin = new Padding(2);
+            txtSubjectExchangeResult.Name = "txtSubjectExchangeResult";
+            txtSubjectExchangeResult.Size = new Size(593, 23);
+            txtSubjectExchangeResult.TabIndex = 3;
             // 
             // lblSubjectExchangeResult
             // 
             lblSubjectExchangeResult.AutoSize = true;
-            lblSubjectExchangeResult.Location = new Point(78, 98);
+            lblSubjectExchangeResult.Location = new Point(55, 59);
+            lblSubjectExchangeResult.Margin = new Padding(2, 0, 2, 0);
             lblSubjectExchangeResult.Name = "lblSubjectExchangeResult";
-            lblSubjectExchangeResult.Size = new Size(142, 25);
+            lblSubjectExchangeResult.Size = new Size(96, 15);
             lblSubjectExchangeResult.TabIndex = 2;
             lblSubjectExchangeResult.Text = "Exchange Result:";
             // 
@@ -729,66 +671,77 @@ namespace AuditReportWriter
             // 
             cboSubjectValueResult.FormattingEnabled = true;
             cboSubjectValueResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboSubjectValueResult.Location = new Point(195, 38);
+            cboSubjectValueResult.Location = new Point(136, 23);
+            cboSubjectValueResult.Margin = new Padding(2);
             cboSubjectValueResult.Name = "cboSubjectValueResult";
-            cboSubjectValueResult.Size = new Size(182, 33);
+            cboSubjectValueResult.Size = new Size(129, 23);
             cboSubjectValueResult.TabIndex = 1;
+            cboSubjectValueResult.SelectedIndexChanged += cboSubjectValueResult_SelectedIndexChanged;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(78, 41);
+            label17.Location = new Point(55, 25);
+            label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(111, 25);
+            label17.Size = new Size(74, 15);
             label17.TabIndex = 0;
             label17.Text = "Audit Result:";
             // 
             // grpAttachementResult
             // 
-            grpAttachementResult.Controls.Add(textBox3);
+            grpAttachementResult.Controls.Add(txtAttachmentOBSResult);
             grpAttachementResult.Controls.Add(lblAttachementOBSResult);
-            grpAttachementResult.Controls.Add(textBox4);
+            grpAttachementResult.Controls.Add(txtAttachmentExchangeResult);
             grpAttachementResult.Controls.Add(lblAttachementExchangeResult);
             grpAttachementResult.Controls.Add(cboAttachementAuditResult);
             grpAttachementResult.Controls.Add(lblAttachementAuditResult);
             grpAttachementResult.Enabled = false;
-            grpAttachementResult.Location = new Point(1074, 1243);
+            grpAttachementResult.Location = new Point(752, 746);
+            grpAttachementResult.Margin = new Padding(2);
             grpAttachementResult.Name = "grpAttachementResult";
-            grpAttachementResult.Size = new Size(1121, 274);
+            grpAttachementResult.Padding = new Padding(2);
+            grpAttachementResult.Size = new Size(785, 164);
             grpAttachementResult.TabIndex = 18;
             grpAttachementResult.TabStop = false;
             grpAttachementResult.Text = "Attachement Result";
             grpAttachementResult.UseCompatibleTextRendering = true;
             // 
-            // textBox3
+            // txtAttachmentOBSResult
             // 
-            textBox3.Location = new Point(83, 207);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(841, 31);
-            textBox3.TabIndex = 5;
+            txtAttachmentOBSResult.Enabled = false;
+            txtAttachmentOBSResult.Location = new Point(58, 124);
+            txtAttachmentOBSResult.Margin = new Padding(2);
+            txtAttachmentOBSResult.Name = "txtAttachmentOBSResult";
+            txtAttachmentOBSResult.Size = new Size(590, 23);
+            txtAttachmentOBSResult.TabIndex = 5;
             // 
             // lblAttachementOBSResult
             // 
             lblAttachementOBSResult.AutoSize = true;
-            lblAttachementOBSResult.Location = new Point(78, 179);
+            lblAttachementOBSResult.Location = new Point(55, 107);
+            lblAttachementOBSResult.Margin = new Padding(2, 0, 2, 0);
             lblAttachementOBSResult.Name = "lblAttachementOBSResult";
-            lblAttachementOBSResult.Size = new Size(102, 25);
+            lblAttachementOBSResult.Size = new Size(67, 15);
             lblAttachementOBSResult.TabIndex = 4;
             lblAttachementOBSResult.Text = "OBS Result:";
             // 
-            // textBox4
+            // txtAttachmentExchangeResult
             // 
-            textBox4.Location = new Point(78, 136);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(846, 31);
-            textBox4.TabIndex = 3;
+            txtAttachmentExchangeResult.Enabled = false;
+            txtAttachmentExchangeResult.Location = new Point(55, 82);
+            txtAttachmentExchangeResult.Margin = new Padding(2);
+            txtAttachmentExchangeResult.Name = "txtAttachmentExchangeResult";
+            txtAttachmentExchangeResult.Size = new Size(593, 23);
+            txtAttachmentExchangeResult.TabIndex = 3;
             // 
             // lblAttachementExchangeResult
             // 
             lblAttachementExchangeResult.AutoSize = true;
-            lblAttachementExchangeResult.Location = new Point(78, 98);
+            lblAttachementExchangeResult.Location = new Point(55, 59);
+            lblAttachementExchangeResult.Margin = new Padding(2, 0, 2, 0);
             lblAttachementExchangeResult.Name = "lblAttachementExchangeResult";
-            lblAttachementExchangeResult.Size = new Size(142, 25);
+            lblAttachementExchangeResult.Size = new Size(96, 15);
             lblAttachementExchangeResult.TabIndex = 2;
             lblAttachementExchangeResult.Text = "Exchange Result:";
             // 
@@ -796,66 +749,77 @@ namespace AuditReportWriter
             // 
             cboAttachementAuditResult.FormattingEnabled = true;
             cboAttachementAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboAttachementAuditResult.Location = new Point(195, 38);
+            cboAttachementAuditResult.Location = new Point(136, 23);
+            cboAttachementAuditResult.Margin = new Padding(2);
             cboAttachementAuditResult.Name = "cboAttachementAuditResult";
-            cboAttachementAuditResult.Size = new Size(182, 33);
+            cboAttachementAuditResult.Size = new Size(129, 23);
             cboAttachementAuditResult.TabIndex = 1;
+            cboAttachementAuditResult.SelectedIndexChanged += cboAttachementAuditResult_SelectedIndexChanged;
             // 
             // lblAttachementAuditResult
             // 
             lblAttachementAuditResult.AutoSize = true;
-            lblAttachementAuditResult.Location = new Point(78, 41);
+            lblAttachementAuditResult.Location = new Point(55, 25);
+            lblAttachementAuditResult.Margin = new Padding(2, 0, 2, 0);
             lblAttachementAuditResult.Name = "lblAttachementAuditResult";
-            lblAttachementAuditResult.Size = new Size(111, 25);
+            lblAttachementAuditResult.Size = new Size(74, 15);
             lblAttachementAuditResult.TabIndex = 0;
             lblAttachementAuditResult.Text = "Audit Result:";
             // 
-            // grpBodyValue
+            // grpBodyResults
             // 
-            grpBodyValue.Controls.Add(textBox5);
-            grpBodyValue.Controls.Add(lblBodyValueOBSResult);
-            grpBodyValue.Controls.Add(textBox6);
-            grpBodyValue.Controls.Add(lblBodyExchangeResult);
-            grpBodyValue.Controls.Add(cboBodyValueResult);
-            grpBodyValue.Controls.Add(lblBodyValueAuditResult);
-            grpBodyValue.Enabled = false;
-            grpBodyValue.Location = new Point(1074, 930);
-            grpBodyValue.Name = "grpBodyValue";
-            grpBodyValue.Size = new Size(1121, 285);
-            grpBodyValue.TabIndex = 17;
-            grpBodyValue.TabStop = false;
-            grpBodyValue.Text = "Body Value Result";
-            grpBodyValue.UseCompatibleTextRendering = true;
+            grpBodyResults.Controls.Add(txtBodyOBSResult);
+            grpBodyResults.Controls.Add(lblBodyValueOBSResult);
+            grpBodyResults.Controls.Add(txtBodyExchangeResult);
+            grpBodyResults.Controls.Add(lblBodyExchangeResult);
+            grpBodyResults.Controls.Add(cboBodyValueResult);
+            grpBodyResults.Controls.Add(lblBodyValueAuditResult);
+            grpBodyResults.Enabled = false;
+            grpBodyResults.Location = new Point(752, 558);
+            grpBodyResults.Margin = new Padding(2);
+            grpBodyResults.Name = "grpBodyResults";
+            grpBodyResults.Padding = new Padding(2);
+            grpBodyResults.Size = new Size(785, 171);
+            grpBodyResults.TabIndex = 17;
+            grpBodyResults.TabStop = false;
+            grpBodyResults.Text = "Body Value Result";
+            grpBodyResults.UseCompatibleTextRendering = true;
             // 
-            // textBox5
+            // txtBodyOBSResult
             // 
-            textBox5.Location = new Point(83, 207);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(841, 31);
-            textBox5.TabIndex = 5;
+            txtBodyOBSResult.Enabled = false;
+            txtBodyOBSResult.Location = new Point(58, 124);
+            txtBodyOBSResult.Margin = new Padding(2);
+            txtBodyOBSResult.Name = "txtBodyOBSResult";
+            txtBodyOBSResult.Size = new Size(590, 23);
+            txtBodyOBSResult.TabIndex = 5;
             // 
             // lblBodyValueOBSResult
             // 
             lblBodyValueOBSResult.AutoSize = true;
-            lblBodyValueOBSResult.Location = new Point(78, 179);
+            lblBodyValueOBSResult.Location = new Point(55, 107);
+            lblBodyValueOBSResult.Margin = new Padding(2, 0, 2, 0);
             lblBodyValueOBSResult.Name = "lblBodyValueOBSResult";
-            lblBodyValueOBSResult.Size = new Size(102, 25);
+            lblBodyValueOBSResult.Size = new Size(67, 15);
             lblBodyValueOBSResult.TabIndex = 4;
             lblBodyValueOBSResult.Text = "OBS Result:";
             // 
-            // textBox6
+            // txtBodyExchangeResult
             // 
-            textBox6.Location = new Point(78, 136);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(846, 31);
-            textBox6.TabIndex = 3;
+            txtBodyExchangeResult.Enabled = false;
+            txtBodyExchangeResult.Location = new Point(55, 82);
+            txtBodyExchangeResult.Margin = new Padding(2);
+            txtBodyExchangeResult.Name = "txtBodyExchangeResult";
+            txtBodyExchangeResult.Size = new Size(593, 23);
+            txtBodyExchangeResult.TabIndex = 3;
             // 
             // lblBodyExchangeResult
             // 
             lblBodyExchangeResult.AutoSize = true;
-            lblBodyExchangeResult.Location = new Point(78, 98);
+            lblBodyExchangeResult.Location = new Point(55, 59);
+            lblBodyExchangeResult.Margin = new Padding(2, 0, 2, 0);
             lblBodyExchangeResult.Name = "lblBodyExchangeResult";
-            lblBodyExchangeResult.Size = new Size(142, 25);
+            lblBodyExchangeResult.Size = new Size(96, 15);
             lblBodyExchangeResult.TabIndex = 2;
             lblBodyExchangeResult.Text = "Exchange Result:";
             // 
@@ -863,45 +827,57 @@ namespace AuditReportWriter
             // 
             cboBodyValueResult.FormattingEnabled = true;
             cboBodyValueResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboBodyValueResult.Location = new Point(195, 38);
+            cboBodyValueResult.Location = new Point(136, 23);
+            cboBodyValueResult.Margin = new Padding(2);
             cboBodyValueResult.Name = "cboBodyValueResult";
-            cboBodyValueResult.Size = new Size(182, 33);
+            cboBodyValueResult.Size = new Size(129, 23);
             cboBodyValueResult.TabIndex = 1;
+            cboBodyValueResult.SelectedIndexChanged += cboBodyValueResult_SelectedIndexChanged;
             // 
             // lblBodyValueAuditResult
             // 
             lblBodyValueAuditResult.AutoSize = true;
-            lblBodyValueAuditResult.Location = new Point(78, 41);
+            lblBodyValueAuditResult.Location = new Point(55, 25);
+            lblBodyValueAuditResult.Margin = new Padding(2, 0, 2, 0);
             lblBodyValueAuditResult.Name = "lblBodyValueAuditResult";
-            lblBodyValueAuditResult.Size = new Size(111, 25);
+            lblBodyValueAuditResult.Size = new Size(74, 15);
             lblBodyValueAuditResult.TabIndex = 0;
             lblBodyValueAuditResult.Text = "Audit Result:";
             lblBodyValueAuditResult.Click += label18_Click;
             // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(1189, 918);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(154, 23);
+            btnReset.TabIndex = 19;
+            btnReset.Text = "&Reset Form";
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += button1_Click;
+            // 
             // frmEmailAuditReport
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2564, 1570);
+            ClientSize = new Size(1552, 953);
+            Controls.Add(btnReset);
             Controls.Add(grpAttachementResult);
-            Controls.Add(grpBodyValue);
-            Controls.Add(grpSubjectValue);
-            Controls.Add(label14);
+            Controls.Add(grpBodyResults);
+            Controls.Add(grpSubjectResults);
             Controls.Add(grpBCCResults);
             Controls.Add(grpCCresults);
             Controls.Add(grpTOResults);
             Controls.Add(grpOverallAudit);
-            Controls.Add(grpMessageReceivedTIme);
+            Controls.Add(grpReceivedTImeResults);
             Controls.Add(grpSenderResults);
             Controls.Add(btnSubmit);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "frmEmailAuditReport";
             Text = "Email Audit Report";
             Load += frmEmailAuditReport_Load;
             grpSenderResults.ResumeLayout(false);
             grpSenderResults.PerformLayout();
-            grpMessageReceivedTIme.ResumeLayout(false);
-            grpMessageReceivedTIme.PerformLayout();
+            grpReceivedTImeResults.ResumeLayout(false);
+            grpReceivedTImeResults.PerformLayout();
             grpOverallAudit.ResumeLayout(false);
             grpOverallAudit.PerformLayout();
             grpTOResults.ResumeLayout(false);
@@ -910,14 +886,13 @@ namespace AuditReportWriter
             grpCCresults.PerformLayout();
             grpBCCResults.ResumeLayout(false);
             grpBCCResults.PerformLayout();
-            grpSubjectValue.ResumeLayout(false);
-            grpSubjectValue.PerformLayout();
+            grpSubjectResults.ResumeLayout(false);
+            grpSubjectResults.PerformLayout();
             grpAttachementResult.ResumeLayout(false);
             grpAttachementResult.PerformLayout();
-            grpBodyValue.ResumeLayout(false);
-            grpBodyValue.PerformLayout();
+            grpBodyResults.ResumeLayout(false);
+            grpBodyResults.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -935,7 +910,7 @@ namespace AuditReportWriter
         private TextBox txtOBSSenderResult;
         private ComboBox cboSenderResult;
         private DateTimePicker dtExchMessageRecievedTime;
-        private GroupBox grpMessageReceivedTIme;
+        private GroupBox grpReceivedTImeResults;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -957,8 +932,6 @@ namespace AuditReportWriter
         private Label label8;
         private Label label10;
         private TextBox txtJounalEmailId;
-        private Label label11;
-        private TextBox txtOriginMailbox;
         private GroupBox grpCCresults;
         private Label lblCCAuditResult;
         private TextBox txtCCExchResult;
@@ -972,28 +945,28 @@ namespace AuditReportWriter
         private Label lblbccOBSResult;
         private TextBox txtbccExchangeResult;
         private Label lblExchangeResult;
-        private Label label14;
         private TextBox txtbccOBSResult;
-        private GroupBox grpSubjectValue;
-        private TextBox textBox1;
+        private GroupBox grpSubjectResults;
+        private TextBox txtSubjectOBSResult;
         private Label lblSubjectOBSResult;
-        private TextBox textBox2;
+        private TextBox txtSubjectExchangeResult;
         private Label lblSubjectExchangeResult;
         private ComboBox cboSubjectValueResult;
         private Label label17;
         private GroupBox grpAttachementResult;
-        private TextBox textBox3;
+        private TextBox txtAttachmentOBSResult;
         private Label lblAttachementOBSResult;
-        private TextBox textBox4;
+        private TextBox txtAttachmentExchangeResult;
         private Label lblAttachementExchangeResult;
         private ComboBox cboAttachementAuditResult;
         private Label lblAttachementAuditResult;
-        private GroupBox grpBodyValue;
-        private TextBox textBox5;
+        private GroupBox grpBodyResults;
+        private TextBox txtBodyOBSResult;
         private Label lblBodyValueOBSResult;
-        private TextBox textBox6;
+        private TextBox txtBodyExchangeResult;
         private Label lblBodyExchangeResult;
         private ComboBox cboBodyValueResult;
         private Label lblBodyValueAuditResult;
+        private Button btnReset;
     }
 }

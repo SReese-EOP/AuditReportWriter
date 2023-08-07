@@ -57,25 +57,35 @@ namespace AuditReportWriter
             {
                 //enable the groups for the audit reults
                 grpSenderResults.Enabled = true;
-                grpMessageReceivedTIme.Enabled = true;
+                grpReceivedTImeResults.Enabled = true;
                 grpTOResults.Enabled = true;
                 grpCCresults.Enabled = true;
                 grpBCCResults.Enabled = true;
+                grpSubjectResults.Enabled = true;
+                grpBodyResults.Enabled = true;
+                grpAttachementResult.Enabled = true;
                 //set the groups to blank for data entry
                 cboReceivedTimeResult.SelectedItem = null;
                 cboSenderResult.SelectedItem = null;
                 cboToAuditResult.SelectedItem = null;
                 cboCCAuditResult.SelectedItem = null;
                 cbobccAuditResult.SelectedItem = null;
+                cboSubjectValueResult.SelectedItem = null;
+                cboBodyValueResult.SelectedItem = null;
+                cboAttachementAuditResult.SelectedItem = null;
+
             }
             else
             {
                 //disable all the groups since the audit results are passing
                 grpSenderResults.Enabled = false;
-                grpMessageReceivedTIme.Enabled = false;
+                grpReceivedTImeResults.Enabled = false;
                 grpTOResults.Enabled = false;
                 grpCCresults.Enabled = false;
                 grpBCCResults.Enabled = false;
+                grpSubjectResults.Enabled = false;
+                grpBodyResults.Enabled = false;
+                grpAttachementResult.Enabled = false;
 
                 //mark all of the audit results as passing
                 cboReceivedTimeResult.SelectedItem = "PASS";
@@ -83,6 +93,9 @@ namespace AuditReportWriter
                 cboToAuditResult.SelectedItem = "PASS";
                 cboCCAuditResult.SelectedItem = "PASS";
                 cbobccAuditResult.SelectedItem = "PASS";
+                cboSubjectValueResult.SelectedItem = "PASS";
+                cboBodyValueResult.SelectedItem = "PASS";
+                cboAttachementAuditResult.SelectedItem = "PASS";
             }
         }
 
@@ -175,5 +188,71 @@ namespace AuditReportWriter
             this.Hide();
         }
 
+        private void cboSubjectValueResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboSubjectValueResult.SelectedItem != null && cboSubjectValueResult.SelectedItem == "FAIL")
+            {
+                txtSubjectExchangeResult.Enabled = true;
+                txtSubjectOBSResult.Enabled = true;
+            }
+            else
+            {
+                txtSubjectExchangeResult.Enabled = false;
+                txtSubjectOBSResult.Enabled = false;
+
+            }
+        }
+
+        private void cbobccAuditResult_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cbobccAuditResult.SelectedItem != null && cbobccAuditResult.SelectedItem == "FAIL")
+            {
+                txtbccExchangeResult.Enabled = true;
+                txtbccOBSResult.Enabled = true;
+            }
+            else
+            {
+                txtbccExchangeResult.Enabled = false;
+                txtbccOBSResult.Enabled = false;
+            }
+        }
+
+        private void cboBodyValueResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboBodyValueResult.SelectedItem != null && cboBodyValueResult.SelectedItem == "FAIL")
+            {
+                txtBodyExchangeResult.Enabled = true;
+                txtBodyOBSResult.Enabled = true;
+            }
+            else
+            {
+                txtBodyExchangeResult.Enabled = false;
+                txtBodyOBSResult.Enabled = false;
+            }
+        }
+
+        private void cboAttachementAuditResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboAttachementAuditResult.SelectedItem != null && cboAttachementAuditResult.SelectedItem == "FAIL")
+            {
+                txtAttachmentExchangeResult.Enabled = true;
+                txtAttachmentOBSResult.Enabled = true;
+            }
+            else
+            {
+                txtAttachmentExchangeResult.Enabled = false;
+                txtAttachmentOBSResult.Enabled = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtMessageID.Text = null;
+        }
+
+        private void txtMessageID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
