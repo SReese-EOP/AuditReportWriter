@@ -606,6 +606,7 @@
             grpBCCResults.Controls.Add(lblExchangeResult);
             grpBCCResults.Controls.Add(cbobccAuditResult);
             grpBCCResults.Controls.Add(lblAuditResult);
+            grpBCCResults.Enabled = false;
             grpBCCResults.Location = new Point(1074, 323);
             grpBCCResults.Name = "grpBCCResults";
             grpBCCResults.Size = new Size(1121, 285);
@@ -683,6 +684,7 @@
             grpSubjectValue.Controls.Add(lblSubjectExchangeResult);
             grpSubjectValue.Controls.Add(cboSubjectValueResult);
             grpSubjectValue.Controls.Add(label17);
+            grpSubjectValue.Enabled = false;
             grpSubjectValue.Location = new Point(1074, 629);
             grpSubjectValue.Name = "grpSubjectValue";
             grpSubjectValue.Size = new Size(1121, 274);
@@ -749,6 +751,7 @@
             grpAttachementResult.Controls.Add(lblAttachementExchangeResult);
             grpAttachementResult.Controls.Add(cboAttachementAuditResult);
             grpAttachementResult.Controls.Add(lblAttachementAuditResult);
+            grpAttachementResult.Enabled = false;
             grpAttachementResult.Location = new Point(1074, 1243);
             grpAttachementResult.Name = "grpAttachementResult";
             grpAttachementResult.Size = new Size(1121, 274);
@@ -815,6 +818,7 @@
             grpBodyValue.Controls.Add(lblBodyExchangeResult);
             grpBodyValue.Controls.Add(cboBodyValueResult);
             grpBodyValue.Controls.Add(lblBodyValueAuditResult);
+            grpBodyValue.Enabled = false;
             grpBodyValue.Location = new Point(1074, 930);
             grpBodyValue.Name = "grpBodyValue";
             grpBodyValue.Size = new Size(1121, 285);
@@ -878,7 +882,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2847, 1590);
+            ClientSize = new Size(2564, 1570);
             Controls.Add(grpAttachementResult);
             Controls.Add(grpBodyValue);
             Controls.Add(grpSubjectValue);
