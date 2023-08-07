@@ -37,9 +37,10 @@
             lblMattermostHome.AutoSize = true;
             lblMattermostHome.Location = new Point(12, 22);
             lblMattermostHome.Name = "lblMattermostHome";
-            lblMattermostHome.Size = new Size(205, 20);
+            lblMattermostHome.Size = new Size(160, 20);
             lblMattermostHome.TabIndex = 0;
-            lblMattermostHome.Text = "Mattermost Audit Homepage";
+            lblMattermostHome.Text = "Mattermost Chat Audit";
+            lblMattermostHome.Click += lblMattermostHome_Click;
             // 
             // bttnReturnNav
             // 
@@ -51,15 +52,15 @@
             bttnReturnNav.UseVisualStyleBackColor = true;
             bttnReturnNav.Click += bttnReturnNav_Click;
             // 
-            // frmMattermostAudit
+            // frmMattermostChatAudit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(bttnReturnNav);
             Controls.Add(lblMattermostHome);
-            Name = "frmMattermostAudit";
-            Text = "frmMattermostAudit";
+            Name = "frmMattermostChatAudit";
+            Text = "Mattermost Chat Audit";
             ResumeLayout(false);
             PerformLayout();
         }
