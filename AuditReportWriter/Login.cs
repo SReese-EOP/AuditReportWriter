@@ -56,9 +56,9 @@ namespace AuditReportWriter
                     connection.Close();
 
                     //After Successfully connecting pass the user over to the next form
-                    
-                    frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport();
-                    frmEmailAuditReport.Show();
+
+                    frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
+                    frmAuditNavigator.Show();
                     this.Hide();
                 }
             }
@@ -90,6 +90,16 @@ namespace AuditReportWriter
         private void DataBaseName_TextChanged(object sender, EventArgs e)
         {
             DataBaseName.Text = "auditdemo";
+        }
+
+        private void LoginLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

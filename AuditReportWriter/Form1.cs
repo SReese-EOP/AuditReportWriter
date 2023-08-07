@@ -151,5 +151,12 @@ namespace AuditReportWriter
         {
 
         }
+
+        private void bttnReturnNav_Click(object sender, EventArgs e)
+        {
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
+            frmAuditNavigator.Show();
+            this.Hide();
+        }
     }
 }
