@@ -122,6 +122,31 @@ namespace AuditReportWriter
             }
         }
 
+        private void frmEmailAuditReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblbccOBSResult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpCCresults_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtExchSenderResult_TextChanged(object sender, EventArgs e)
         {
 
