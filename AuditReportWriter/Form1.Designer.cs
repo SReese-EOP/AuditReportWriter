@@ -375,7 +375,7 @@ namespace AuditReportWriter
             // cboOverallAuditResult
             // 
             cboOverallAuditResult.FormattingEnabled = true;
-            cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
+            cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL", "menu option", "\tTabbed items", "\ttabbed item 2" });
             cboOverallAuditResult.Location = new Point(936, 107);
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(142, 23);
