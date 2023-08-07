@@ -470,11 +470,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\srree\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\kmhar\\.nuget\\packages\\": {}
+>>>>>>> Kayla
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
       "projectName": "AuditReportWriter",
       "projectPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
@@ -483,6 +488,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\srree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "projectName": "AuditReportWriter",
+      "projectPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "packagesPath": "C:\\Users\\kmhar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\kmhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Kayla
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

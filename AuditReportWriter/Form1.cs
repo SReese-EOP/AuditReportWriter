@@ -156,6 +156,13 @@ namespace AuditReportWriter
 
         }
 
+        private void bttnReturnNav_Click(object sender, EventArgs e)
+        {
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
+            frmAuditNavigator.Show();
+            this.Hide();
+        }
+
         private void cbobccAuditResult_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbobccAuditResult != null && cbobccAuditResult.SelectedItem == "FAIL")

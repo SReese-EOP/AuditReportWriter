@@ -46,6 +46,8 @@
             panel4 = new Panel();
             ServerName = new TextBox();
             DataBaseName = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -56,10 +58,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(92, 9);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(107, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(105, 91);
+            pictureBox1.Size = new Size(109, 80);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -67,49 +68,46 @@
             // LoginLabel
             // 
             LoginLabel.AutoSize = true;
-            LoginLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginLabel.Location = new Point(92, 113);
+            LoginLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            LoginLabel.Location = new Point(24, 85);
             LoginLabel.Name = "LoginLabel";
-            LoginLabel.Size = new Size(94, 32);
+            LoginLabel.Size = new Size(300, 31);
             LoginLabel.TabIndex = 1;
-            LoginLabel.Text = "LOG IN";
+            LoginLabel.Text = "Verification and Validation\r\n";
+            LoginLabel.Click += LoginLabel_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(10, 170);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Location = new Point(11, 227);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(41, 28);
+            pictureBox2.Size = new Size(47, 37);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
             // panel1
             // 
-            panel1.Location = new Point(10, 202);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(11, 269);
             panel1.Name = "panel1";
-            panel1.Size = new Size(295, 2);
+            panel1.Size = new Size(337, 3);
             panel1.TabIndex = 3;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(10, 252);
-            pictureBox3.Margin = new Padding(3, 2, 3, 2);
+            pictureBox3.Location = new Point(11, 336);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(41, 28);
+            pictureBox3.Size = new Size(47, 37);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
             // panel2
             // 
-            panel2.Location = new Point(10, 284);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(11, 379);
             panel2.Name = "panel2";
-            panel2.Size = new Size(295, 2);
+            panel2.Size = new Size(337, 3);
             panel2.TabIndex = 3;
             // 
             // LOGINBUTTON
@@ -118,11 +116,10 @@
             LOGINBUTTON.FlatStyle = FlatStyle.Flat;
             LOGINBUTTON.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             LOGINBUTTON.ForeColor = Color.White;
-            LOGINBUTTON.Location = new Point(8, 468);
-            LOGINBUTTON.Margin = new Padding(3, 2, 3, 2);
+            LOGINBUTTON.Location = new Point(9, 624);
             LOGINBUTTON.Name = "LOGINBUTTON";
-            LOGINBUTTON.Size = new Size(295, 28);
-            LOGINBUTTON.TabIndex = 4;
+            LOGINBUTTON.Size = new Size(337, 37);
+            LOGINBUTTON.TabIndex = 3;
             LOGINBUTTON.Text = "LOG IN";
             LOGINBUTTON.UseVisualStyleBackColor = false;
             LOGINBUTTON.Click += LOGINBUTTON_Click;
@@ -130,48 +127,48 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(226, 451);
+            label1.Location = new Point(258, 601);
             label1.Name = "label1";
-            label1.Size = new Size(67, 15);
-            label1.TabIndex = 5;
+            label1.Size = new Size(85, 20);
+            label1.TabIndex = 6;
             label1.Text = "Clear Fields";
             label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(131, 509);
+            label2.Location = new Point(150, 679);
             label2.Name = "label2";
-            label2.Size = new Size(29, 15);
-            label2.TabIndex = 6;
+            label2.Size = new Size(38, 20);
+            label2.TabIndex = 7;
             label2.Text = "EXIT";
             label2.Click += label2_Click;
             // 
             // USerName
             // 
-            USerName.Location = new Point(57, 172);
-            USerName.Margin = new Padding(3, 2, 3, 2);
-            USerName.Multiline = true;
+            USerName.AcceptsTab = true;
+            USerName.AllowDrop = true;
+            USerName.Location = new Point(65, 229);
             USerName.Name = "USerName";
-            USerName.Size = new Size(246, 26);
-            USerName.TabIndex = 7;
+            USerName.Size = new Size(281, 27);
+            USerName.TabIndex = 1;
             // 
             // Password
             // 
-            Password.Location = new Point(57, 254);
-            Password.Margin = new Padding(3, 2, 3, 2);
-            Password.Multiline = true;
+            Password.AcceptsTab = true;
+            Password.Location = new Point(65, 339);
             Password.Name = "Password";
-            Password.Size = new Size(246, 26);
-            Password.TabIndex = 7;
+            Password.PasswordChar = '*';
+            Password.Size = new Size(281, 27);
+            Password.TabIndex = 2;
+            Password.UseSystemPasswordChar = true;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(10, 318);
-            pictureBox4.Margin = new Padding(3, 2, 3, 2);
+            pictureBox4.Location = new Point(11, 424);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(41, 28);
+            pictureBox4.Size = new Size(47, 37);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -179,60 +176,80 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(10, 382);
-            pictureBox5.Margin = new Padding(3, 2, 3, 2);
+            pictureBox5.Location = new Point(11, 509);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(41, 28);
+            pictureBox5.Size = new Size(47, 37);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
             // 
             // panel3
             // 
-            panel3.Location = new Point(10, 350);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(11, 467);
             panel3.Name = "panel3";
-            panel3.Size = new Size(295, 2);
+            panel3.Size = new Size(337, 3);
             panel3.TabIndex = 3;
             // 
             // panel4
             // 
-            panel4.Location = new Point(10, 414);
-            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Location = new Point(11, 552);
             panel4.Name = "panel4";
-            panel4.Size = new Size(295, 2);
+            panel4.Size = new Size(337, 3);
             panel4.TabIndex = 3;
             // 
             // ServerName
             // 
+            ServerName.AcceptsTab = true;
             ServerName.BackColor = SystemColors.InactiveCaption;
-            ServerName.Location = new Point(57, 320);
-            ServerName.Margin = new Padding(3, 2, 3, 2);
+            ServerName.Location = new Point(65, 427);
             ServerName.Multiline = true;
             ServerName.Name = "ServerName";
-            ServerName.Size = new Size(246, 26);
-            ServerName.TabIndex = 7;
+            ServerName.Size = new Size(281, 33);
+            ServerName.TabIndex = 4;
             ServerName.Text = "74.235.100.158";
             ServerName.TextChanged += ServerName_TextChanged;
             // 
             // DataBaseName
             // 
+            DataBaseName.AcceptsTab = true;
             DataBaseName.BackColor = SystemColors.InactiveCaption;
-            DataBaseName.Location = new Point(57, 384);
-            DataBaseName.Margin = new Padding(3, 2, 3, 2);
+            DataBaseName.Location = new Point(65, 512);
             DataBaseName.Multiline = true;
             DataBaseName.Name = "DataBaseName";
-            DataBaseName.Size = new Size(246, 26);
-            DataBaseName.TabIndex = 7;
+            DataBaseName.Size = new Size(281, 33);
+            DataBaseName.TabIndex = 5;
             DataBaseName.Text = "auditdemo";
             DataBaseName.TextChanged += DataBaseName_TextChanged;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(119, 156);
+            label3.Name = "label3";
+            label3.Size = new Size(81, 31);
+            label3.TabIndex = 8;
+            label3.Text = "Log In";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(50, 116);
+            label4.Name = "label4";
+            label4.Size = new Size(247, 31);
+            label4.TabIndex = 8;
+            label4.Text = "Manual Audit Process";
+            label4.Click += label4_Click;
+            // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(320, 562);
+            ClientSize = new Size(366, 749);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(DataBaseName);
             Controls.Add(ServerName);
             Controls.Add(Password);
@@ -250,8 +267,6 @@
             Controls.Add(pictureBox2);
             Controls.Add(LoginLabel);
             Controls.Add(pictureBox1);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "frmLogin";
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -282,5 +297,7 @@
         private Panel panel4;
         private TextBox ServerName;
         private TextBox DataBaseName;
+        private Label label3;
+        private Label label4;
     }
 }
