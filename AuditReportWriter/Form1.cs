@@ -161,15 +161,7 @@ namespace AuditReportWriter
 
         }
 
-        private void grpMessageReceivedTIme_Enter(object sender, EventArgs e)
-        {
 
-        }
-
-        private void cbobccAuditResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtExchSenderResult_TextChanged(object sender, EventArgs e)
         {
@@ -183,18 +175,5 @@ namespace AuditReportWriter
             this.Hide();
         }
 
-        private void cbobccAuditResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(cbobccAuditResult != null && cbobccAuditResult.SelectedItem == "FAIL")
-            {
-                txtbccExchangeResult.Enabled = true;
-                txtbccOBSResult.Enabled = true;
-            }
-            else
-            {
-                txtbccExchangeResult.Enabled = false;
-                txtbccOBSResult.Enabled = false;
-            }
-        }
     }
 }
