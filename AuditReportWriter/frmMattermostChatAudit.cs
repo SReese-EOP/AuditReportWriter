@@ -24,5 +24,10 @@ namespace AuditReportWriter
             frmAuditNavigator.Show();
             this.Hide();
         }
+
+        private void lblMattermostHome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

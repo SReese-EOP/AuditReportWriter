@@ -51,6 +51,7 @@
             bttnMattermost.TabIndex = 1;
             bttnMattermost.Text = "Mattermost Audit";
             bttnMattermost.UseVisualStyleBackColor = true;
+            bttnMattermost.Click += bttnMattermost_Click_1;
             // 
             // lblSelectAudit
             // 
@@ -62,7 +63,7 @@
             lblSelectAudit.Text = "Select which type of audit you would like to perform. ";
             lblSelectAudit.Click += label1_Click;
             // 
-            // frmAuditNavirgator
+            // frmAuditNavigator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -70,7 +71,7 @@
             Controls.Add(lblSelectAudit);
             Controls.Add(bttnMattermost);
             Controls.Add(bttnEmailAudit);
-            Name = "frmAuditNavirgator";
+            Name = "frmAuditNavigator";
             Text = "frmAuditNavirgator";
             ResumeLayout(false);
             PerformLayout();

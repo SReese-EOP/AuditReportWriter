@@ -73,7 +73,6 @@ C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\D
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\ref\AuditReportWriter.dll
 D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.Properties.Resources.resources
 D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmLogin.resources
-C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostAudit.resources
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmLogin.resources
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmAuditNavigator.resources
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmExchangeAudits.resources

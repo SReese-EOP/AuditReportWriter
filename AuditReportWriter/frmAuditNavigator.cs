@@ -30,19 +30,19 @@ namespace AuditReportWriter
             this.Hide();
         }
 
-        private void bttnMattermost_Click(object sender, EventArgs e)
-        {
 
-            frmMattermostAudits frmMattermostAudits = new frmMattermostAudits();
-            frmMattermostAudits.Show();
-            this.Hide();
-        }
 
         private void bttnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void bttnMattermost_Click_1(object sender, EventArgs e)
+        {
 
+            frmMattermostAudits frmMattermostAudits = new frmMattermostAudits();
+            frmMattermostAudits.Show();
+            this.Hide();
+        }
     }
 }
