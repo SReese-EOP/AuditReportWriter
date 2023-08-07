@@ -60,11 +60,13 @@ namespace AuditReportWriter
                 grpMessageReceivedTIme.Enabled = true;
                 grpTOResults.Enabled = true;
                 grpCCresults.Enabled = true;
+                grpBCCResults.Enabled = true;
                 //set the groups to blank for data entry
                 cboReceivedTimeResult.SelectedItem = null;
                 cboSenderResult.SelectedItem = null;
                 cboToAuditResult.SelectedItem = null;
                 cboCCAuditResult.SelectedItem = null;
+                cbobccAuditResult.SelectedItem = null;
             }
             else
             {
@@ -73,12 +75,14 @@ namespace AuditReportWriter
                 grpMessageReceivedTIme.Enabled = false;
                 grpTOResults.Enabled = false;
                 grpCCresults.Enabled = false;
+                grpBCCResults.Enabled = false;
 
                 //mark all of the audit results as passing
                 cboReceivedTimeResult.SelectedItem = "PASS";
                 cboSenderResult.SelectedItem = "PASS";
                 cboToAuditResult.SelectedItem = "PASS";
                 cboCCAuditResult.SelectedItem = "PASS";
+                cbobccAuditResult.SelectedItem = "PASS";
             }
         }
 
@@ -150,6 +154,20 @@ namespace AuditReportWriter
         private void txtExchSenderResult_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbobccAuditResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbobccAuditResult != null && cbobccAuditResult.SelectedItem == "FAIL")
+            {
+                txtbccExchangeResult.Enabled = true;
+                txtbccOBSResult.Enabled = true;
+            }
+            else
+            {
+                txtbccExchangeResult.Enabled = false;
+                txtbccOBSResult.Enabled = false;
+            }
         }
     }
 }

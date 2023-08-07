@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Temitope\\Desktop\\Temi\\GithubTest\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {}
+    "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Temitope\\Desktop\\Temi\\GithubTest\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj": {
+    "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Temitope\\Desktop\\Temi\\GithubTest\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+        "projectUniqueName": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
         "projectName": "AuditReportWriter",
-        "projectPath": "C:\\Users\\Temitope\\Desktop\\Temi\\GithubTest\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
-        "packagesPath": "C:\\Users\\Temitope\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Temitope\\Desktop\\Temi\\GithubTest\\AuditReportWriter\\AuditReportWriter\\obj\\",
+        "projectPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
+        "packagesPath": "C:\\Users\\srree\\.nuget\\packages\\",
+        "outputPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Temitope\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\srree\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
