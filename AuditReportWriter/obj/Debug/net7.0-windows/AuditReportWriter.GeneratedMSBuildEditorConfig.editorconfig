@@ -14,8 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AuditReportWriter
-<<<<<<< HEAD
 build_property.ProjectDir = D:\WORK\AuditReportWriter2\AuditReportWriter\
-=======
-build_property.ProjectDir = C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\
->>>>>>> Kayla
