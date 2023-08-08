@@ -25,46 +25,27 @@ namespace AuditReportWriter
 
         }
 
-        private void bttnEmailAudit_Click(object sender, EventArgs e)
-        {
-
-            frmExchangeAudits frmExchangeAudits = new frmExchangeAudits(navUser);
-            frmExchangeAudits.Show();
-            this.Hide();
-
-        }
-
-
-
         private void bttnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void bttnMattermost_Click_1(object sender, EventArgs e)
-        {
-
-            frmMattermostAudits frmMattermostAudits = new frmMattermostAudits();
-            frmMattermostAudits.Show();
-            this.Hide();
-        }
-
-        private void frmAuditNavigator_Load(object sender, EventArgs e)
+         private void frmAuditNavigator_Load(object sender, EventArgs e)
         {
 
         }
 
         private void bttnEmailAudit_Click_1(object sender, EventArgs e)
         {
-            frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport();
+            frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
             frmEmailAuditReport.Show();
             this.Hide();
         }
 
         private void bttnChatAudit_Click(object sender, EventArgs e)
         {
-            frmMattermostChatAudit frmMattermostChatAudit = new frmMattermostChatAudit();
-            frmMattermostChatAudit.Show();
+            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
+            frmMattermostChatsAudits.Show();
             this.Hide();
         }
     }
