@@ -470,19 +470,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\srree\\.nuget\\packages\\": {}
+    "C:\\Users\\kmhar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
+      "projectUniqueName": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
       "projectName": "AuditReportWriter",
-      "projectPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\AuditReportWriter.csproj",
-      "packagesPath": "C:\\Users\\srree\\.nuget\\packages\\",
-      "outputPath": "D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\obj\\",
+      "projectPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "packagesPath": "C:\\Users\\kmhar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\srree\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kmhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -535,13 +535,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\WORK\\AuditReportWriter2\\AuditReportWriter\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
