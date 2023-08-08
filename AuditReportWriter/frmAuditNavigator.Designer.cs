@@ -35,9 +35,10 @@
             // 
             // bttnEmailAudit
             // 
-            bttnEmailAudit.Location = new Point(51, 104);
+            bttnEmailAudit.Location = new Point(45, 78);
+            bttnEmailAudit.Margin = new Padding(3, 2, 3, 2);
             bttnEmailAudit.Name = "bttnEmailAudit";
-            bttnEmailAudit.Size = new Size(139, 69);
+            bttnEmailAudit.Size = new Size(122, 52);
             bttnEmailAudit.TabIndex = 0;
             bttnEmailAudit.Text = "Email Audit";
             bttnEmailAudit.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // bttnMattermost
             // 
-            bttnMattermost.Location = new Point(315, 104);
+            bttnMattermost.Location = new Point(276, 78);
+            bttnMattermost.Margin = new Padding(3, 2, 3, 2);
             bttnMattermost.Name = "bttnMattermost";
-            bttnMattermost.Size = new Size(134, 69);
+            bttnMattermost.Size = new Size(117, 52);
             bttnMattermost.TabIndex = 1;
             bttnMattermost.Text = "Mattermost Audit";
             bttnMattermost.UseVisualStyleBackColor = true;
@@ -56,23 +58,25 @@
             // lblSelectAudit
             // 
             lblSelectAudit.AutoSize = true;
-            lblSelectAudit.Location = new Point(12, 27);
+            lblSelectAudit.Location = new Point(10, 20);
             lblSelectAudit.Name = "lblSelectAudit";
-            lblSelectAudit.Size = new Size(363, 20);
+            lblSelectAudit.Size = new Size(289, 15);
             lblSelectAudit.TabIndex = 2;
             lblSelectAudit.Text = "Select which type of audit you would like to perform. ";
             lblSelectAudit.Click += label1_Click;
             // 
             // frmAuditNavigator
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(lblSelectAudit);
             Controls.Add(bttnMattermost);
             Controls.Add(bttnEmailAudit);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmAuditNavigator";
             Text = "frmAuditNavirgator";
+            Load += frmAuditNavigator_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,10 +1,17 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Diagnostics;
+using System.Windows.Forms;
+
 namespace AuditReportWriter
 {
     public partial class frmEmailAuditReport : Form
     {
-        public frmEmailAuditReport()
+        private userInfo emailUser;
+
+        public frmEmailAuditReport(userInfo navuser)
         {
             InitializeComponent();
+            emailUser = navuser;
         }
 
         private void lblMessageToResult_Click(object sender, EventArgs e)
@@ -115,7 +122,33 @@ namespace AuditReportWriter
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            lblCCAuditResult.Text = "Hello World!";
+            //init a new email audit report object
+            EmailAuditReport emailAuditReport = new EmailAuditReport();
+
+            //init a new controller to write the audit report
+            AuditReportController auditReportController = new AuditReportController();
+
+            //add the audit report data
+            emailAuditReport.AuditDateTime = dtAuditDateTime.Value;
+            emailAuditReport.Mailbox = txtJournaledMailbox.Text;
+            emailAuditReport.MessageBody = cboBodyValueResult.SelectedItem.ToString();
+            emailAuditReport.MessageSubject = cboSubjectValueResult.SelectedItem.ToString();
+            emailAuditReport.MessageTo = cboToAuditResult.SelectedItem.ToString();
+            emailAuditReport.MessageSender = cboSenderResult.SelectedItem.ToString();
+            emailAuditReport.MessageReceivedTime = cboReceivedTimeResult.SelectedItem.ToString();
+            emailAuditReport.MessageReceivedTimeValueExchange = dtExchMessageRecievedTime.Value;
+            emailAuditReport.MessageReceivedTimeValueOBS = dtOBSMessageReceivedTime.Value;
+            emailAuditReport.MessageCC = cboCCAuditResult.SelectedItem.ToString();
+            emailAuditReport.MessageBCC = cbobccAuditResult.SelectedItem.ToString();
+            emailAuditReport.MessageAttachments = cboAttachementAuditResult.SelectedItem.ToString();
+            emailAuditReport.MessageId = txtMessageID.Text;
+            emailAuditReport.JournalEmailId = txtJounalEmailId.Text;
+            emailAuditReport.MessageAuditResult = cboOverallAuditResult.SelectedItem.ToString();
+            emailAuditReport.ObsObject = txtOBSObject.Text;
+
+            //execute the audit report write
+            auditReportController.WriteEmailAuditReport(emailAuditReport, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
+            MessageBox.Show("Email audit was successfully submitted under Audit ID: " + emailAuditReport.AuditId);
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
@@ -183,7 +216,7 @@ namespace AuditReportWriter
 
         private void bttnReturnNav_Click(object sender, EventArgs e)
         {
-            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(emailUser);
             frmAuditNavigator.Show();
             this.Hide();
         }

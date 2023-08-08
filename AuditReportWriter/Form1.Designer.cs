@@ -99,6 +99,9 @@ namespace AuditReportWriter
             cboBodyValueResult = new ComboBox();
             lblBodyValueAuditResult = new Label();
             btnReset = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
             grpSenderResults.SuspendLayout();
             grpReceivedTImeResults.SuspendLayout();
             grpOverallAudit.SuspendLayout();
@@ -108,6 +111,7 @@ namespace AuditReportWriter
             grpSubjectResults.SuspendLayout();
             grpAttachementResult.SuspendLayout();
             grpBodyResults.SuspendLayout();
+            tabControl1.SuspendLayout();
             SuspendLayout();
             // 
             // lblMessageID
@@ -375,7 +379,7 @@ namespace AuditReportWriter
             // cboOverallAuditResult
             // 
             cboOverallAuditResult.FormattingEnabled = true;
-            cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL", "menu option", "\tTabbed items", "\ttabbed item 2" });
+            cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
             cboOverallAuditResult.Location = new Point(936, 107);
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(142, 23);
@@ -612,6 +616,7 @@ namespace AuditReportWriter
             // 
             // grpSubjectResults
             // 
+            grpSubjectResults.Controls.Add(tabControl1);
             grpSubjectResults.Controls.Add(txtSubjectOBSResult);
             grpSubjectResults.Controls.Add(lblSubjectOBSResult);
             grpSubjectResults.Controls.Add(txtSubjectExchangeResult);
@@ -855,6 +860,36 @@ namespace AuditReportWriter
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += button1_Click;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(516, 68);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(8, 8);
+            tabControl1.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(0, 0);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(0, 0);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // frmEmailAuditReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -892,6 +927,7 @@ namespace AuditReportWriter
             grpAttachementResult.PerformLayout();
             grpBodyResults.ResumeLayout(false);
             grpBodyResults.PerformLayout();
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -968,5 +1004,8 @@ namespace AuditReportWriter
         private ComboBox cboBodyValueResult;
         private Label lblBodyValueAuditResult;
         private Button btnReset;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }

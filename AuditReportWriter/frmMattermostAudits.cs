@@ -24,9 +24,9 @@ namespace AuditReportWriter
 
         private void bttnChat_Click(object sender, EventArgs e)
         {
-            frmMattermostChatAudit frmMattermostChatAudit = new frmMattermostChatAudit();
-            frmMattermostChatAudit.Show();
-            this.Hide();
+            //frmMattermostChatAudit frmMattermostChatAudit = new frmMattermostChatAudit();
+            //frmMattermostChatAudit.Show();
+            //this.Hide();
         }
     }
 }

@@ -12,9 +12,12 @@ namespace AuditReportWriter
 {
     public partial class frmAuditNavigator : Form
     {
-        public frmAuditNavigator()
+        private userInfo navUser;
+      
+        public frmAuditNavigator(userInfo user)
         {
             InitializeComponent();
+            navUser = user;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,9 +28,10 @@ namespace AuditReportWriter
         private void bttnEmailAudit_Click(object sender, EventArgs e)
         {
 
-            frmExchangeAudits frmExchangeAudits = new frmExchangeAudits();
+            frmExchangeAudits frmExchangeAudits = new frmExchangeAudits(navUser);
             frmExchangeAudits.Show();
             this.Hide();
+            
         }
 
 
@@ -43,6 +47,11 @@ namespace AuditReportWriter
             frmMattermostAudits frmMattermostAudits = new frmMattermostAudits();
             frmMattermostAudits.Show();
             this.Hide();
+        }
+
+        private void frmAuditNavigator_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

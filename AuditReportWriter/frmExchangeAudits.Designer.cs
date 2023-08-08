@@ -33,9 +33,10 @@
             // 
             // bttnEmail
             // 
-            bttnEmail.Location = new Point(12, 70);
+            bttnEmail.Location = new Point(10, 52);
+            bttnEmail.Margin = new Padding(3, 2, 3, 2);
             bttnEmail.Name = "bttnEmail";
-            bttnEmail.Size = new Size(165, 37);
+            bttnEmail.Size = new Size(144, 28);
             bttnEmail.TabIndex = 0;
             bttnEmail.Text = "Email Audit";
             bttnEmail.UseVisualStyleBackColor = true;
@@ -43,12 +44,14 @@
             // 
             // frmExchangeAudits
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(bttnEmail);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmExchangeAudits";
             Text = "frmExchangeAudits";
+            Load += frmExchangeAudits_Load;
             ResumeLayout(false);
         }
 
