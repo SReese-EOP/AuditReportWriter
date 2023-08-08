@@ -30,6 +30,8 @@
         {
             lblMattermostHome = new Label();
             bttnReturnNav = new Button();
+            bttnReset = new Button();
+            bttnSubmit = new Button();
             SuspendLayout();
             // 
             // lblMattermostHome
@@ -44,7 +46,7 @@
             // 
             // bttnReturnNav
             // 
-            bttnReturnNav.Location = new Point(592, 409);
+            bttnReturnNav.Location = new Point(397, 486);
             bttnReturnNav.Name = "bttnReturnNav";
             bttnReturnNav.Size = new Size(185, 29);
             bttnReturnNav.TabIndex = 1;
@@ -52,11 +54,33 @@
             bttnReturnNav.UseVisualStyleBackColor = true;
             bttnReturnNav.Click += bttnReturnNav_Click;
             // 
+            // bttnReset
+            // 
+            bttnReset.Location = new Point(604, 486);
+            bttnReset.Name = "bttnReset";
+            bttnReset.Size = new Size(141, 29);
+            bttnReset.TabIndex = 1;
+            bttnReset.Text = "&Reset";
+            bttnReset.UseVisualStyleBackColor = true;
+            bttnReset.Click += bttnReturnNav_Click;
+            // 
+            // bttnSubmit
+            // 
+            bttnSubmit.Location = new Point(765, 486);
+            bttnSubmit.Name = "bttnSubmit";
+            bttnSubmit.Size = new Size(141, 29);
+            bttnSubmit.TabIndex = 1;
+            bttnSubmit.Text = "&Submit";
+            bttnSubmit.UseVisualStyleBackColor = true;
+            bttnSubmit.Click += bttnReturnNav_Click;
+            // 
             // frmMattermostChatAudit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(918, 527);
+            Controls.Add(bttnSubmit);
+            Controls.Add(bttnReset);
             Controls.Add(bttnReturnNav);
             Controls.Add(lblMattermostHome);
             Name = "frmMattermostChatAudit";
@@ -69,5 +93,7 @@
 
         private Label lblMattermostHome;
         private Button bttnReturnNav;
+        private Button bttnReset;
+        private Button bttnSubmit;
     }
 }

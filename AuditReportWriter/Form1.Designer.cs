@@ -99,6 +99,8 @@ namespace AuditReportWriter
             cboBodyValueResult = new ComboBox();
             lblBodyValueAuditResult = new Label();
             btnReset = new Button();
+            button1 = new Button();
+            bttnReturnNav = new Button();
             grpSenderResults.SuspendLayout();
             grpReceivedTImeResults.SuspendLayout();
             grpOverallAudit.SuspendLayout();
@@ -876,7 +878,7 @@ namespace AuditReportWriter
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(1359, 1224);
+            btnReset.Location = new Point(1351, 1224);
             btnReset.Margin = new Padding(3, 4, 3, 4);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(176, 31);
@@ -885,11 +887,35 @@ namespace AuditReportWriter
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += button1_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(799, 620);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(176, 31);
+            button1.TabIndex = 20;
+            button1.Text = "&Reset Form";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // bttnReturnNav
+            // 
+            bttnReturnNav.Location = new Point(1143, 1224);
+            bttnReturnNav.Margin = new Padding(3, 4, 3, 4);
+            bttnReturnNav.Name = "bttnReturnNav";
+            bttnReturnNav.Size = new Size(176, 31);
+            bttnReturnNav.TabIndex = 19;
+            bttnReturnNav.Text = "Return to Navigation";
+            bttnReturnNav.UseVisualStyleBackColor = true;
+            bttnReturnNav.Click += button1_Click;
+            // 
             // frmEmailAuditReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1774, 1271);
+            Controls.Add(button1);
+            Controls.Add(bttnReturnNav);
             Controls.Add(btnReset);
             Controls.Add(grpAttachementResult);
             Controls.Add(grpBodyResults);
@@ -999,5 +1025,7 @@ namespace AuditReportWriter
         private ComboBox cboBodyValueResult;
         private Label lblBodyValueAuditResult;
         private Button btnReset;
+        private Button button1;
+        private Button bttnReturnNav;
     }
 }
