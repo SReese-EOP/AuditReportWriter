@@ -1,5 +1,6 @@
 using System;
 using System.Data.SqlClient;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace AuditReportWriter
@@ -87,14 +88,63 @@ namespace AuditReportWriter
 
                     using (SqlCommand command = connection.CreateCommand())
                     {
-                        command.CommandText = "INSERT INTO [dbo].[emailauditdata] (/* ... */) VALUES (/* ... */)";
-                        // Add parameters and execute the query
+                        command.CommandText = @"INSERT INTO [dbo].[emailauditdata] (
+                        [AuditID], [AuditDateTime], [MessageID], [MessageReceivedTime], [MessageSender], [MessageTO], [MessageCC], [MessageBCC],
+                        [MessageSubject], [MessageBody], [MessageAttachments], [MessageAuditResult], [Mailbox], 
+                        [JournalEmailID], [OBSobject], [MessageReceivedTimeValueExchange], [MessageReceivedTimeValueOBS],
+                        [MessageSenderValueExchange], [MessageSenderValueOBS], [MessageTOValueExchange], [MessageTOValueOBS],
+                        [MessageCCValueExchange], [MessageCCValueOBS], [MessageBCCValueExchange], [MessageBCCValueOBS],
+                        [MessageSubjectValueExchange], [MessageSubjectValueOBS], [MessageBodyValueExchange], [MessageBodyValueOBS],
+                        [MessageAttachmentsValueExchange], [MessageAttachmentsValueOBS])
+                    VALUES (
+                        @AuditID, @AuditDateTime, @MessageID, @MessageReceivedTime, @MessageSender, @MessageTO, @MessageCC, @MessageBCC,
+                        @MessageSubject, @MessageBody, @MessageAttachments, @MessageAuditResult, @Mailbox, 
+                        @JournalEmailID, @OBSobject, @MessageReceivedTimeValueExchange, @MessageReceivedTimeValueOBS,
+                        @MessageSenderValueExchange, @MessageSenderValueOBS, @MessageTOValueExchange, @MessageTOValueOBS,
+                        @MessageCCValueExchange, @MessageCCValueOBS, @MessageBCCValueExchange, @MessageBCCValueOBS,
+                        @MessageSubjectValueExchange, @MessageSubjectValueOBS, @MessageBodyValueExchange, @MessageBodyValueOBS,
+                        @MessageAttachmentsValueExchange, @MessageAttachmentsValueOBS)";
+
+                        command.Parameters.AddWithValue("@AuditID", auditReport.AuditId);
+                        command.Parameters.AddWithValue("@AuditDateTime", auditReport.AuditDateTime);
+                        command.Parameters.AddWithValue("@MessageID", auditReport.MessageId);
+                        command.Parameters.AddWithValue("@MessageReceivedTime", auditReport.MessageReceivedTime);
+                        command.Parameters.AddWithValue("@MessageSender", auditReport.MessageSender);
+                        command.Parameters.AddWithValue("@MessageTO", auditReport.MessageTo);
+                        command.Parameters.AddWithValue("@MessageCC", auditReport.MessageCC);
+                        command.Parameters.AddWithValue("@MessageBCC", auditReport.MessageBCC);
+                        command.Parameters.AddWithValue("@MessageSubject", auditReport.MessageSubject);
+                        command.Parameters.AddWithValue("@MessageBody", auditReport.MessageBody);
+                        command.Parameters.AddWithValue("@MessageAttachments", auditReport.MessageAttachments);
+                        command.Parameters.AddWithValue("@MessageAuditResult", auditReport.MessageAuditResult);
+                        command.Parameters.AddWithValue("@Mailbox", auditReport.Mailbox);
+                        command.Parameters.AddWithValue("@JournalEmailID", auditReport.JournalEmailId);
+                        command.Parameters.AddWithValue("@OBSobject", auditReport.ObsObject);
+                        command.Parameters.AddWithValue("@MessageReceivedTimeValueExchange", auditReport.MessageReceivedTimeValueExchange);
+                        command.Parameters.AddWithValue("@MessageReceivedTimeValueOBS", (object)auditReport.MessageReceivedTimeValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageSenderValueExchange", (object)auditReport.MessageSenderValueExchange ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageSenderValueOBS", (object)auditReport.MessageSenderValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageTOValueExchange", (object)auditReport.MessageTOValueExchange ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageTOValueOBS", (object)auditReport.MessageTOValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageCCValueExchange", (object)auditReport.MessageCCValueExchange ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageCCValueOBS", (object)auditReport.MessageCCValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageBCCValueExchange", (object)auditReport.MessageBCCValueExchange ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageBCCValueOBS", (object)auditReport.MessageBCCValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageSubjectValueExchange", (object)auditReport.MessageSubjectValueExchange ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageSubjectValueOBS", (object)auditReport.MessageSubjectValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageBodyValueExchange", (object)auditReport.MessageBodyValueExchange ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageBodyValueOBS", (object)auditReport.MessageBodyValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageAttachmentsValueExchange", (object)auditReport.MessageAttachmentsValueExchange ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MessageAttachmentsValueOBS", (object)auditReport.MessageAttachmentsValueOBS ?? DBNull.Value);
+
+
+                        command.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
             {
-                //do something here to address any exceptions
+                //write admin logs to show what happened.
             }
         }
 

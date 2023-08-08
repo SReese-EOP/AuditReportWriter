@@ -12,14 +12,22 @@ namespace AuditReportWriter
 {
     public partial class frmMattermostChatAudit : Form
     {
-        public frmMattermostChatAudit()
+        private userInfo mattermostuser;
+
+        public frmMattermostChatAudit(userInfo navUser)
         {
             InitializeComponent();
+            mattermostuser = navUser;
         }
 
         private void bttnReturnNav_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
+=======
+
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(mattermostuser);
+>>>>>>> main
             frmAuditNavigator.Show();
             this.Hide();
         }

@@ -14,6 +14,8 @@ namespace AuditReportWriter
 {
     public partial class frmLogin : Form
     {
+       
+
         public frmLogin()
         {
             InitializeComponent();
@@ -24,20 +26,8 @@ namespace AuditReportWriter
 
         }
 
-        private void LOGINBUTTON_Click(object sender, EventArgs e)
+        public void LOGINBUTTON_Click(object sender, EventArgs e)
         {
-            //if (USerName.Text == "sa" && Password.Text == "PENT@gon500!!!")
-            //{
-            //    new frmEmailAuditReport().Show();
-            //    this.Hide();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("The User name or password is not correct. \n Try User name sa and Password PENT@gon500!!!");
-            //    USerName.Clear();
-            //    Password.Clear();
-            //    USerName.Focus();
-            //}
 
             //create the user object and assign the inputs from the logon page to the object
             userInfo user = new userInfo();
@@ -57,7 +47,7 @@ namespace AuditReportWriter
 
                     //After Successfully connecting pass the user over to the next form
 
-                    frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
+                    frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
                     frmAuditNavigator.Show();
                     this.Hide();
                 }

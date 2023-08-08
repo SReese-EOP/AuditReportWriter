@@ -99,8 +99,14 @@ namespace AuditReportWriter
             cboBodyValueResult = new ComboBox();
             lblBodyValueAuditResult = new Label();
             btnReset = new Button();
+<<<<<<< HEAD
             button1 = new Button();
             bttnReturnNav = new Button();
+=======
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+>>>>>>> main
             grpSenderResults.SuspendLayout();
             grpReceivedTImeResults.SuspendLayout();
             grpOverallAudit.SuspendLayout();
@@ -110,6 +116,7 @@ namespace AuditReportWriter
             grpSubjectResults.SuspendLayout();
             grpAttachementResult.SuspendLayout();
             grpBodyResults.SuspendLayout();
+            tabControl1.SuspendLayout();
             SuspendLayout();
             // 
             // lblMessageID
@@ -395,9 +402,14 @@ namespace AuditReportWriter
             // cboOverallAuditResult
             // 
             cboOverallAuditResult.FormattingEnabled = true;
+<<<<<<< HEAD
             cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL", "menu option", "\tTabbed items", "\ttabbed item 2" });
             cboOverallAuditResult.Location = new Point(1070, 143);
             cboOverallAuditResult.Margin = new Padding(3, 4, 3, 4);
+=======
+            cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
+            cboOverallAuditResult.Location = new Point(936, 107);
+>>>>>>> main
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(162, 28);
             cboOverallAuditResult.TabIndex = 12;
@@ -643,6 +655,7 @@ namespace AuditReportWriter
             // 
             // grpSubjectResults
             // 
+            grpSubjectResults.Controls.Add(tabControl1);
             grpSubjectResults.Controls.Add(txtSubjectOBSResult);
             grpSubjectResults.Controls.Add(lblSubjectOBSResult);
             grpSubjectResults.Controls.Add(txtSubjectExchangeResult);
@@ -887,6 +900,7 @@ namespace AuditReportWriter
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += button1_Click;
             // 
+<<<<<<< HEAD
             // button1
             // 
             button1.Location = new Point(799, 620);
@@ -907,6 +921,37 @@ namespace AuditReportWriter
             bttnReturnNav.Text = "Return to Navigation";
             bttnReturnNav.UseVisualStyleBackColor = true;
             bttnReturnNav.Click += button1_Click;
+=======
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(516, 68);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(8, 8);
+            tabControl1.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(0, 0);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(0, 0);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+>>>>>>> main
             // 
             // frmEmailAuditReport
             // 
@@ -949,6 +994,7 @@ namespace AuditReportWriter
             grpAttachementResult.PerformLayout();
             grpBodyResults.ResumeLayout(false);
             grpBodyResults.PerformLayout();
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1025,7 +1071,13 @@ namespace AuditReportWriter
         private ComboBox cboBodyValueResult;
         private Label lblBodyValueAuditResult;
         private Button btnReset;
+<<<<<<< HEAD
         private Button button1;
         private Button bttnReturnNav;
+=======
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+>>>>>>> main
     }
 }
