@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace AuditReportWriter
 {
     public partial class frmLogin : Form
     {
-
+        private readonly string text;
 
         public frmLogin()
         {
@@ -92,10 +93,6 @@ namespace AuditReportWriter
 
         }
 
-        private void USerName_TextChanged(object sender, EventArgs e)
-        {
-            string text = USerName.Text;
-            System.Security.Principal.WindowsIdentity.GetCurrent().Name = text;
-        }
+        private void USerName_TextChanged(object sender, EventArgs e) => USerName.Text = WindowsIdentity.GetCurrent().Name;
     }
 }
