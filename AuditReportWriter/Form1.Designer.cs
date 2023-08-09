@@ -99,14 +99,12 @@ namespace AuditReportWriter
             cboBodyValueResult = new ComboBox();
             lblBodyValueAuditResult = new Label();
             btnReset = new Button();
-<<<<<<< HEAD
             button1 = new Button();
             bttnReturnNav = new Button();
-=======
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
->>>>>>> main
+
             grpSenderResults.SuspendLayout();
             grpReceivedTImeResults.SuspendLayout();
             grpOverallAudit.SuspendLayout();
@@ -402,14 +400,9 @@ namespace AuditReportWriter
             // cboOverallAuditResult
             // 
             cboOverallAuditResult.FormattingEnabled = true;
-<<<<<<< HEAD
-            cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL", "menu option", "\tTabbed items", "\ttabbed item 2" });
-            cboOverallAuditResult.Location = new Point(1070, 143);
-            cboOverallAuditResult.Margin = new Padding(3, 4, 3, 4);
-=======
+
             cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
             cboOverallAuditResult.Location = new Point(936, 107);
->>>>>>> main
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(162, 28);
             cboOverallAuditResult.TabIndex = 12;
@@ -900,9 +893,7 @@ namespace AuditReportWriter
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += button1_Click;
             // 
-<<<<<<< HEAD
-            // button1
-            // 
+
             button1.Location = new Point(799, 620);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
@@ -910,7 +901,7 @@ namespace AuditReportWriter
             button1.TabIndex = 20;
             button1.Text = "&Reset Form";
             button1.UseVisualStyleBackColor = true;
-            // 
+
             // bttnReturnNav
             // 
             bttnReturnNav.Location = new Point(1143, 1224);
@@ -921,7 +912,7 @@ namespace AuditReportWriter
             bttnReturnNav.Text = "Return to Navigation";
             bttnReturnNav.UseVisualStyleBackColor = true;
             bttnReturnNav.Click += button1_Click;
-=======
+
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
@@ -951,7 +942,7 @@ namespace AuditReportWriter
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
->>>>>>> main
+
             // 
             // frmEmailAuditReport
             // 
@@ -1071,13 +1062,13 @@ namespace AuditReportWriter
         private ComboBox cboBodyValueResult;
         private Label lblBodyValueAuditResult;
         private Button btnReset;
-<<<<<<< HEAD
+
         private Button button1;
         private Button bttnReturnNav;
-=======
+
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
->>>>>>> main
+
     }
 }
