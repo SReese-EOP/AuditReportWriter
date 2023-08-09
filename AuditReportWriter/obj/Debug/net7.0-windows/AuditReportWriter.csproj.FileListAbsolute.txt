@@ -79,7 +79,6 @@ C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\D
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostAudits.resources
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatAudit.resources
 D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmAuditNavigator.resources
-D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmExchangeAudits.resources
-D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostAudits.resources
 D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatAudit.resources
 C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatsAudits.resources
+D:\WORK\AuditReportWriter2\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatsAudits.resources
