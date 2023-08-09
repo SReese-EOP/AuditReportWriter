@@ -1,6 +1,6 @@
 ﻿namespace AuditReportWriter
 {
-    partial class frmMattermostChatAudit
+    partial class frmMattermostAudits
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblMattermostHome = new Label();
-            bttnReturnNav = new Button();
+            lblMattermosthome = new Label();
+            bttnChat = new Button();
             SuspendLayout();
             // 
-            // lblMattermostHome
+            // lblMattermosthome
             // 
-            lblMattermostHome.AutoSize = true;
-            lblMattermostHome.Location = new Point(12, 22);
-            lblMattermostHome.Name = "lblMattermostHome";
-            lblMattermostHome.Size = new Size(160, 20);
-            lblMattermostHome.TabIndex = 0;
-            lblMattermostHome.Text = "Mattermost Chat Audit";
-            lblMattermostHome.Click += lblMattermostHome_Click;
+            lblMattermosthome.AutoSize = true;
+            lblMattermosthome.Location = new Point(0, 0);
+            lblMattermosthome.Name = "lblMattermosthome";
+            lblMattermosthome.Size = new Size(283, 20);
+            lblMattermosthome.TabIndex = 0;
+            lblMattermosthome.Text = "Select the section of Mattermost to audit.";
+            lblMattermosthome.Click += label1_Click;
             // 
-            // bttnReturnNav
+            // bttnChat
             // 
-            bttnReturnNav.Location = new Point(592, 409);
-            bttnReturnNav.Name = "bttnReturnNav";
-            bttnReturnNav.Size = new Size(185, 29);
-            bttnReturnNav.TabIndex = 1;
-            bttnReturnNav.Text = "Return to Navigation";
-            bttnReturnNav.UseVisualStyleBackColor = true;
-            bttnReturnNav.Click += bttnReturnNav_Click;
+            bttnChat.Location = new Point(12, 76);
+            bttnChat.Name = "bttnChat";
+            bttnChat.Size = new Size(126, 44);
+            bttnChat.TabIndex = 1;
+            bttnChat.Text = "Chat Audit";
+            bttnChat.UseVisualStyleBackColor = true;
+            bttnChat.Click += bttnChat_Click;
             // 
-            // frmMattermostChatAudit
+            // frmMattermostAudits
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(bttnReturnNav);
-            Controls.Add(lblMattermostHome);
-            Name = "frmMattermostChatAudit";
-            Text = "Mattermost Chat Audit";
+            Controls.Add(bttnChat);
+            Controls.Add(lblMattermosthome);
+            Name = "frmMattermostAudits";
+            Text = "Mattermost Audit Overview";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label lblMattermostHome;
-        private Button bttnReturnNav;
+        private Label lblMattermosthome;
+        private Button bttnChat;
     }
 }

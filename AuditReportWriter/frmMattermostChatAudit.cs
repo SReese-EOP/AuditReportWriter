@@ -22,12 +22,8 @@ namespace AuditReportWriter
 
         private void bttnReturnNav_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
-=======
 
             frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(mattermostuser);
->>>>>>> main
             frmAuditNavigator.Show();
             this.Hide();
         }
