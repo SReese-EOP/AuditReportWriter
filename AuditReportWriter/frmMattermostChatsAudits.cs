@@ -16,5 +16,10 @@ namespace AuditReportWriter
         {
             InitializeComponent();
         }
+
+        private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

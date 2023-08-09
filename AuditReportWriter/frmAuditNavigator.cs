@@ -31,7 +31,7 @@ namespace AuditReportWriter
         }
 
          private void frmAuditNavigator_Load(object sender, EventArgs e)
-        {
+        { 
 
         }
 
