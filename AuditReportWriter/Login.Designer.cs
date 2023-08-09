@@ -118,7 +118,7 @@
             LOGINBUTTON.ForeColor = Color.White;
             LOGINBUTTON.Location = new Point(9, 624);
             LOGINBUTTON.Name = "LOGINBUTTON";
-            LOGINBUTTON.Size = new Size(337, 37);
+            LOGINBUTTON.Size = new Size(337, 52);
             LOGINBUTTON.TabIndex = 3;
             LOGINBUTTON.Text = "LOG IN";
             LOGINBUTTON.UseVisualStyleBackColor = false;
