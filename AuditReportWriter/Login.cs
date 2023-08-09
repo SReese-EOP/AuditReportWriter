@@ -91,5 +91,11 @@ namespace AuditReportWriter
         {
 
         }
+
+        private void USerName_TextChanged(object sender, EventArgs e)
+        {
+            string text = USerName.Text;
+            System.Security.Principal.WindowsIdentity.GetCurrent().Name = text;
+        }
     }
 }

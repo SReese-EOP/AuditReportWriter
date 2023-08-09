@@ -47,7 +47,7 @@
             // 
             // bttnReturntoNav
             // 
-            bttnReturntoNav.Location = new Point(595, 409);
+            bttnReturntoNav.Location = new Point(1302, 657);
             bttnReturntoNav.Name = "bttnReturntoNav";
             bttnReturntoNav.Size = new Size(193, 29);
             bttnReturntoNav.TabIndex = 0;
@@ -189,10 +189,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
             ClientSize = new Size(1772, 698);
             Controls.Add(grpOverallAudit);
             Controls.Add(bttnReturntoNav);
             Name = "frmMattermostChatsAudits";
+            RightToLeft = RightToLeft.No;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Mattermost Chat Audits";
             grpOverallAudit.ResumeLayout(false);
             grpOverallAudit.PerformLayout();
