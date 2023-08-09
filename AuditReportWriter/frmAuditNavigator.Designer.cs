@@ -42,7 +42,7 @@
             // 
             // tabcAuditNav
             // 
-
+<<<<<<< HEAD
             tabcAuditNav.Controls.Add(tbcExchange);
             tabcAuditNav.Controls.Add(tbcMattermost);
             tabcAuditNav.Location = new Point(12, 82);
@@ -50,11 +50,20 @@
             tabcAuditNav.SelectedIndex = 0;
             tabcAuditNav.Size = new Size(523, 288);
             tabcAuditNav.TabIndex = 3;
-
+=======
+            bttnEmailAudit.Location = new Point(45, 78);
+            bttnEmailAudit.Margin = new Padding(3, 2, 3, 2);
+            bttnEmailAudit.Name = "bttnEmailAudit";
+            bttnEmailAudit.Size = new Size(122, 52);
+            bttnEmailAudit.TabIndex = 0;
+            bttnEmailAudit.Text = "Email Audit";
+            bttnEmailAudit.UseVisualStyleBackColor = true;
+            bttnEmailAudit.Click += bttnEmailAudit_Click;
+>>>>>>> main
             // 
             // tbcExchange
             // 
-
+<<<<<<< HEAD
             tbcExchange.BackColor = Color.Transparent;
             tbcExchange.Controls.Add(bttnEmail);
             tbcExchange.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -66,11 +75,20 @@
             tbcExchange.Text = "Exchange";
             tbcExchange.UseVisualStyleBackColor = true;
             tbcExchange.Click += tabPage1_Click;
-
+=======
+            bttnMattermost.Location = new Point(276, 78);
+            bttnMattermost.Margin = new Padding(3, 2, 3, 2);
+            bttnMattermost.Name = "bttnMattermost";
+            bttnMattermost.Size = new Size(117, 52);
+            bttnMattermost.TabIndex = 1;
+            bttnMattermost.Text = "Mattermost Audit";
+            bttnMattermost.UseVisualStyleBackColor = true;
+            bttnMattermost.Click += bttnMattermost_Click_1;
+>>>>>>> main
             // 
             // bttnEmail
             // 
-
+<<<<<<< HEAD
             bttnEmail.Location = new Point(26, 29);
             bttnEmail.Name = "bttnEmail";
             bttnEmail.Size = new Size(94, 29);
@@ -118,13 +136,21 @@
             lblAuditText.Size = new Size(287, 20);
             lblAuditText.TabIndex = 5;
             lblAuditText.Text = "Select the audit process to be performed. ";
-
+=======
+            lblSelectAudit.AutoSize = true;
+            lblSelectAudit.Location = new Point(10, 20);
+            lblSelectAudit.Name = "lblSelectAudit";
+            lblSelectAudit.Size = new Size(289, 15);
+            lblSelectAudit.TabIndex = 2;
+            lblSelectAudit.Text = "Select which type of audit you would like to perform. ";
+            lblSelectAudit.Click += label1_Click;
+>>>>>>> main
             // 
             // frmAuditNavigator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-
+<<<<<<< HEAD
             ClientSize = new Size(570, 421);
             Controls.Add(lblAuditText);
             Controls.Add(button1);
@@ -134,7 +160,16 @@
             tabcAuditNav.ResumeLayout(false);
             tbcExchange.ResumeLayout(false);
             tbcMattermost.ResumeLayout(false);
-
+=======
+            ClientSize = new Size(700, 338);
+            Controls.Add(lblSelectAudit);
+            Controls.Add(bttnMattermost);
+            Controls.Add(bttnEmailAudit);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "frmAuditNavigator";
+            Text = "frmAuditNavirgator";
+            Load += frmAuditNavigator_Load;
+>>>>>>> main
             ResumeLayout(false);
             PerformLayout();
         }

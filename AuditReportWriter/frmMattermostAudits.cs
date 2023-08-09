@@ -14,7 +14,7 @@ namespace AuditReportWriter
     {
         public frmMattermostAudits()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)

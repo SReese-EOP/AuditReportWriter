@@ -25,7 +25,8 @@ namespace AuditReportWriter
 
         }
 
-
+<<<<<<< HEAD
+=======
         private void bttnEmailAudit_Click(object sender, EventArgs e)
         {
 
@@ -35,6 +36,9 @@ namespace AuditReportWriter
             
         }
 
+
+
+>>>>>>> main
         private void bttnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -47,14 +51,14 @@ namespace AuditReportWriter
 
         private void bttnEmail_Click(object sender, EventArgs e)
         {
-            frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
+            frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport();
             frmEmailAuditReport.Show();
             this.Hide();
         }
 
         private void bttnChat_Click(object sender, EventArgs e)
         {
-            frmMattermostChatAudit frmMattermostChatAudit = new frmMattermostChatAudit(navUser);
+            frmMattermostChatAudit frmMattermostChatAudit = new frmMattermostChatAudit();
             frmMattermostChatAudit.Show();
             this.Hide();
         }
