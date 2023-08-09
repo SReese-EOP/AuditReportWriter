@@ -167,7 +167,7 @@
             // dtAuditDate
             // 
             dtAuditDate.AutoSize = true;
-            dtAuditDate.Location = new Point(18, 150);
+            dtAuditDate.Location = new Point(8, 150);
             dtAuditDate.Name = "dtAuditDate";
             dtAuditDate.Size = new Size(123, 20);
             dtAuditDate.TabIndex = 3;
@@ -177,10 +177,10 @@
             // 
             dtAuditDateTime.CustomFormat = "MM-dd-yyyy HH:mm";
             dtAuditDateTime.Format = DateTimePickerFormat.Custom;
-            dtAuditDateTime.Location = new Point(137, 135);
+            dtAuditDateTime.Location = new Point(147, 145);
             dtAuditDateTime.Margin = new Padding(3, 4, 3, 4);
             dtAuditDateTime.Name = "dtAuditDateTime";
-            dtAuditDateTime.Size = new Size(346, 27);
+            dtAuditDateTime.Size = new Size(199, 27);
             dtAuditDateTime.TabIndex = 4;
             dtAuditDateTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             dtAuditDateTime.ValueChanged += dtAuditDateTime_ValueChanged;

@@ -94,5 +94,10 @@ namespace AuditReportWriter
         }
 
         private void USerName_TextChanged(object sender, EventArgs e) => USerName.Text = WindowsIdentity.GetCurrent().Name;
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
