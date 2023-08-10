@@ -13,6 +13,8 @@
     ],
     "additionalProbingPaths": [
       "C:\\Users\\srree\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\kmhar\\.nuget\\packages"
+      "C:\\Users\\srree\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Temitope\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
