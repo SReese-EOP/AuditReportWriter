@@ -34,6 +34,10 @@
             bttnEmailAudit = new Button();
             tbcMattermost = new TabPage();
             bttnChatAudit = new Button();
+            cboSourceApplication = new ComboBox();
+            cboTypeofAudit = new ComboBox();
+            lblSourceApp = new Label();
+            lblTypeAudit = new Label();
             tabControl1.SuspendLayout();
             tbcExchange.SuspendLayout();
             tbcMattermost.SuspendLayout();
@@ -103,11 +107,52 @@
             bttnChatAudit.UseVisualStyleBackColor = true;
             bttnChatAudit.Click += bttnChatAudit_Click;
             // 
+            // cboSourceApplication
+            // 
+            cboSourceApplication.FormattingEnabled = true;
+            cboSourceApplication.Items.AddRange(new object[] { "Exchange", "Mattermost" });
+            cboSourceApplication.Location = new Point(795, 100);
+            cboSourceApplication.Name = "cboSourceApplication";
+            cboSourceApplication.Size = new Size(151, 28);
+            cboSourceApplication.TabIndex = 4;
+            // 
+            // cboTypeofAudit
+            // 
+            cboTypeofAudit.FormattingEnabled = true;
+            cboTypeofAudit.Items.AddRange(new object[] { "Email", "Cakendar", "", "Other", "Chat" });
+            cboTypeofAudit.Location = new Point(1131, 100);
+            cboTypeofAudit.Name = "cboTypeofAudit";
+            cboTypeofAudit.Size = new Size(151, 28);
+            cboTypeofAudit.TabIndex = 4;
+            // 
+            // lblSourceApp
+            // 
+            lblSourceApp.AutoSize = true;
+            lblSourceApp.Location = new Point(641, 108);
+            lblSourceApp.Name = "lblSourceApp";
+            lblSourceApp.Size = new Size(138, 20);
+            lblSourceApp.TabIndex = 5;
+            lblSourceApp.Text = "Source Application:";
+            lblSourceApp.Click += label1_Click_1;
+            // 
+            // lblTypeAudit
+            // 
+            lblTypeAudit.AutoSize = true;
+            lblTypeAudit.Location = new Point(1009, 108);
+            lblTypeAudit.Name = "lblTypeAudit";
+            lblTypeAudit.Size = new Size(101, 20);
+            lblTypeAudit.TabIndex = 5;
+            lblTypeAudit.Text = "Type of Audit:";
+            // 
             // frmAuditNavigator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(548, 394);
+            ClientSize = new Size(1488, 417);
+            Controls.Add(lblTypeAudit);
+            Controls.Add(lblSourceApp);
+            Controls.Add(cboTypeofAudit);
+            Controls.Add(cboSourceApplication);
             Controls.Add(tabControl1);
             Controls.Add(lblSelectAudit);
             Name = "frmAuditNavigator";
@@ -128,5 +173,9 @@
         private Button bttnEmailAudit;
         private TabPage tbcMattermost;
         private Button bttnChatAudit;
+        private ComboBox cboSourceApplication;
+        private ComboBox cboTypeofAudit;
+        private Label lblSourceApp;
+        private Label lblTypeAudit;
     }
 }

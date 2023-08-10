@@ -51,6 +51,7 @@
             pictureBox6 = new PictureBox();
             panel5 = new Panel();
             USerName = new TextBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -152,7 +153,7 @@
             // 
             txtDesktopName.AcceptsTab = true;
             txtDesktopName.AllowDrop = true;
-            txtDesktopName.Location = new Point(65, 727);
+            txtDesktopName.Location = new Point(46, 679);
             txtDesktopName.Name = "txtDesktopName";
             txtDesktopName.Size = new Size(278, 27);
             txtDesktopName.TabIndex = 1;
@@ -275,12 +276,23 @@
             USerName.TabIndex = 1;
             USerName.TextChanged += USerName_TextChanged;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(67, 727);
+            label5.Name = "label5";
+            label5.Size = new Size(50, 20);
+            label5.TabIndex = 9;
+            label5.Text = "label5";
+            label5.Click += label5_Click;
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(366, 810);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(DataBaseName);
@@ -345,5 +357,6 @@
         private PictureBox pictureBox6;
         private Panel panel5;
         private TextBox USerName;
+        private Label label5;
     }
 }

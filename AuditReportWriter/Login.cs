@@ -101,6 +101,7 @@ namespace AuditReportWriter
 
         }
 
- 
+        private void label5_Click(object sender, EventArgs e) => txtDesktopName.Text = WindowsIdentity.GetCurrent().Name;
+   
     }
 }
