@@ -30,6 +30,7 @@
         {
             bttnReturntoNav = new Button();
             grpOverallAudit = new GroupBox();
+            rbManualAudit = new RadioButton();
             lblChannelID = new Label();
             txtChannelID = new TextBox();
             txtOBSObject = new TextBox();
@@ -40,7 +41,6 @@
             txtMessageID = new TextBox();
             dtAuditDate = new Label();
             dtAuditDateTime = new DateTimePicker();
-            radioButton1 = new RadioButton();
             grpCreatedTime = new GroupBox();
             dtOBSCreatedTime = new DateTimePicker();
             lblCreatedTimeOBS = new Label();
@@ -56,33 +56,33 @@
             lblUpdatedTime = new Label();
             cboUpdatedTimeResult = new ComboBox();
             grpMessageText = new GroupBox();
+            txtOBSMessageTextResult = new TextBox();
+            txtMMMessageTextResult = new TextBox();
             lblMessageTextOBS = new Label();
             lblMessageTextMM = new Label();
             lblMessageTextAuditResult = new Label();
             cboMessageTextAuditResult = new ComboBox();
             grpAttachments = new GroupBox();
+            txtOBSAttachmentsResult = new TextBox();
+            txtMMAttachmentsResult = new TextBox();
             lblAttachmentsOBSResult = new Label();
             lblAttachmentsMMResult = new Label();
             lblAttachmentsAuditResult = new Label();
             cboAttachmentsResult = new ComboBox();
             grpEmail = new GroupBox();
+            txtOBSEmailResult = new TextBox();
+            txtMMEmailResult = new TextBox();
             label15 = new Label();
             lblMMEmailResult = new Label();
             lblEmailAuditResult = new Label();
             cboEmailAuditResult = new ComboBox();
             grpUserName = new GroupBox();
+            txtOBSUsernameResult = new TextBox();
+            txtMMUsernameResult = new TextBox();
             lblOBSUsernameResult = new Label();
             lblMMUsernameResult = new Label();
             lblUsernameAuditResult = new Label();
             cboUsernameResult = new ComboBox();
-            txtMMMessageTextResult = new TextBox();
-            txtOBSMessageTextResult = new TextBox();
-            txtMMAttachmentsResult = new TextBox();
-            txtOBSAttachmentsResult = new TextBox();
-            txtMMEmailResult = new TextBox();
-            txtOBSEmailResult = new TextBox();
-            txtMMUsernameResult = new TextBox();
-            txtOBSUsernameResult = new TextBox();
             grpOverallAudit.SuspendLayout();
             grpCreatedTime.SuspendLayout();
             grpUpdateTime.SuspendLayout();
@@ -103,7 +103,7 @@
             // 
             // grpOverallAudit
             // 
-            grpOverallAudit.Controls.Add(radioButton1);
+            grpOverallAudit.Controls.Add(rbManualAudit);
             grpOverallAudit.Controls.Add(lblChannelID);
             grpOverallAudit.Controls.Add(txtChannelID);
             grpOverallAudit.Controls.Add(txtOBSObject);
@@ -122,6 +122,17 @@
             grpOverallAudit.TabIndex = 13;
             grpOverallAudit.TabStop = false;
             grpOverallAudit.Text = "Audit Information";
+            // 
+            // rbManualAudit
+            // 
+            rbManualAudit.AutoSize = true;
+            rbManualAudit.Location = new Point(423, 134);
+            rbManualAudit.Name = "rbManualAudit";
+            rbManualAudit.Size = new Size(119, 24);
+            rbManualAudit.TabIndex = 19;
+            rbManualAudit.TabStop = true;
+            rbManualAudit.Text = "Manual Audit";
+            rbManualAudit.UseVisualStyleBackColor = true;
             // 
             // lblChannelID
             // 
@@ -213,17 +224,6 @@
             dtAuditDateTime.TabIndex = 4;
             dtAuditDateTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             dtAuditDateTime.ValueChanged += dtAuditDateTime_ValueChanged;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(624, 148);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(117, 24);
-            radioButton1.TabIndex = 19;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
             // 
             // grpCreatedTime
             // 
@@ -401,6 +401,24 @@
             grpMessageText.TabStop = false;
             grpMessageText.Text = "Message Text";
             // 
+            // txtOBSMessageTextResult
+            // 
+            txtOBSMessageTextResult.Enabled = false;
+            txtOBSMessageTextResult.Location = new Point(19, 165);
+            txtOBSMessageTextResult.Margin = new Padding(3, 4, 3, 4);
+            txtOBSMessageTextResult.Name = "txtOBSMessageTextResult";
+            txtOBSMessageTextResult.Size = new Size(754, 27);
+            txtOBSMessageTextResult.TabIndex = 12;
+            // 
+            // txtMMMessageTextResult
+            // 
+            txtMMMessageTextResult.Enabled = false;
+            txtMMMessageTextResult.Location = new Point(19, 107);
+            txtMMMessageTextResult.Margin = new Padding(3, 4, 3, 4);
+            txtMMMessageTextResult.Name = "txtMMMessageTextResult";
+            txtMMMessageTextResult.Size = new Size(754, 27);
+            txtMMMessageTextResult.TabIndex = 11;
+            // 
             // lblMessageTextOBS
             // 
             lblMessageTextOBS.AutoSize = true;
@@ -455,6 +473,24 @@
             grpAttachments.TabIndex = 17;
             grpAttachments.TabStop = false;
             grpAttachments.Text = "Attachments";
+            // 
+            // txtOBSAttachmentsResult
+            // 
+            txtOBSAttachmentsResult.Enabled = false;
+            txtOBSAttachmentsResult.Location = new Point(19, 167);
+            txtOBSAttachmentsResult.Margin = new Padding(3, 4, 3, 4);
+            txtOBSAttachmentsResult.Name = "txtOBSAttachmentsResult";
+            txtOBSAttachmentsResult.Size = new Size(754, 27);
+            txtOBSAttachmentsResult.TabIndex = 16;
+            // 
+            // txtMMAttachmentsResult
+            // 
+            txtMMAttachmentsResult.Enabled = false;
+            txtMMAttachmentsResult.Location = new Point(19, 107);
+            txtMMAttachmentsResult.Margin = new Padding(3, 4, 3, 4);
+            txtMMAttachmentsResult.Name = "txtMMAttachmentsResult";
+            txtMMAttachmentsResult.Size = new Size(754, 27);
+            txtMMAttachmentsResult.TabIndex = 15;
             // 
             // lblAttachmentsOBSResult
             // 
@@ -511,6 +547,24 @@
             grpEmail.TabStop = false;
             grpEmail.Text = "Email";
             // 
+            // txtOBSEmailResult
+            // 
+            txtOBSEmailResult.Enabled = false;
+            txtOBSEmailResult.Location = new Point(18, 167);
+            txtOBSEmailResult.Margin = new Padding(3, 4, 3, 4);
+            txtOBSEmailResult.Name = "txtOBSEmailResult";
+            txtOBSEmailResult.Size = new Size(754, 27);
+            txtOBSEmailResult.TabIndex = 16;
+            // 
+            // txtMMEmailResult
+            // 
+            txtMMEmailResult.Enabled = false;
+            txtMMEmailResult.Location = new Point(18, 107);
+            txtMMEmailResult.Margin = new Padding(3, 4, 3, 4);
+            txtMMEmailResult.Name = "txtMMEmailResult";
+            txtMMEmailResult.Size = new Size(754, 27);
+            txtMMEmailResult.TabIndex = 15;
+            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -566,6 +620,24 @@
             grpUserName.TabStop = false;
             grpUserName.Text = "Username";
             // 
+            // txtOBSUsernameResult
+            // 
+            txtOBSUsernameResult.Enabled = false;
+            txtOBSUsernameResult.Location = new Point(19, 166);
+            txtOBSUsernameResult.Margin = new Padding(3, 4, 3, 4);
+            txtOBSUsernameResult.Name = "txtOBSUsernameResult";
+            txtOBSUsernameResult.Size = new Size(754, 27);
+            txtOBSUsernameResult.TabIndex = 16;
+            // 
+            // txtMMUsernameResult
+            // 
+            txtMMUsernameResult.Enabled = false;
+            txtMMUsernameResult.Location = new Point(18, 107);
+            txtMMUsernameResult.Margin = new Padding(3, 4, 3, 4);
+            txtMMUsernameResult.Name = "txtMMUsernameResult";
+            txtMMUsernameResult.Size = new Size(754, 27);
+            txtMMUsernameResult.TabIndex = 15;
+            // 
             // lblOBSUsernameResult
             // 
             lblOBSUsernameResult.AutoSize = true;
@@ -602,78 +674,6 @@
             cboUsernameResult.Name = "cboUsernameResult";
             cboUsernameResult.Size = new Size(162, 28);
             cboUsernameResult.TabIndex = 10;
-            // 
-            // txtMMMessageTextResult
-            // 
-            txtMMMessageTextResult.Enabled = false;
-            txtMMMessageTextResult.Location = new Point(19, 107);
-            txtMMMessageTextResult.Margin = new Padding(3, 4, 3, 4);
-            txtMMMessageTextResult.Name = "txtMMMessageTextResult";
-            txtMMMessageTextResult.Size = new Size(754, 27);
-            txtMMMessageTextResult.TabIndex = 11;
-            // 
-            // txtOBSMessageTextResult
-            // 
-            txtOBSMessageTextResult.Enabled = false;
-            txtOBSMessageTextResult.Location = new Point(19, 165);
-            txtOBSMessageTextResult.Margin = new Padding(3, 4, 3, 4);
-            txtOBSMessageTextResult.Name = "txtOBSMessageTextResult";
-            txtOBSMessageTextResult.Size = new Size(754, 27);
-            txtOBSMessageTextResult.TabIndex = 12;
-            // 
-            // txtMMAttachmentsResult
-            // 
-            txtMMAttachmentsResult.Enabled = false;
-            txtMMAttachmentsResult.Location = new Point(19, 107);
-            txtMMAttachmentsResult.Margin = new Padding(3, 4, 3, 4);
-            txtMMAttachmentsResult.Name = "txtMMAttachmentsResult";
-            txtMMAttachmentsResult.Size = new Size(754, 27);
-            txtMMAttachmentsResult.TabIndex = 15;
-            // 
-            // txtOBSAttachmentsResult
-            // 
-            txtOBSAttachmentsResult.Enabled = false;
-            txtOBSAttachmentsResult.Location = new Point(19, 167);
-            txtOBSAttachmentsResult.Margin = new Padding(3, 4, 3, 4);
-            txtOBSAttachmentsResult.Name = "txtOBSAttachmentsResult";
-            txtOBSAttachmentsResult.Size = new Size(754, 27);
-            txtOBSAttachmentsResult.TabIndex = 16;
-            // 
-            // txtMMEmailResult
-            // 
-            txtMMEmailResult.Enabled = false;
-            txtMMEmailResult.Location = new Point(18, 107);
-            txtMMEmailResult.Margin = new Padding(3, 4, 3, 4);
-            txtMMEmailResult.Name = "txtMMEmailResult";
-            txtMMEmailResult.Size = new Size(754, 27);
-            txtMMEmailResult.TabIndex = 15;
-            // 
-            // txtOBSEmailResult
-            // 
-            txtOBSEmailResult.Enabled = false;
-            txtOBSEmailResult.Location = new Point(18, 167);
-            txtOBSEmailResult.Margin = new Padding(3, 4, 3, 4);
-            txtOBSEmailResult.Name = "txtOBSEmailResult";
-            txtOBSEmailResult.Size = new Size(754, 27);
-            txtOBSEmailResult.TabIndex = 16;
-            // 
-            // txtMMUsernameResult
-            // 
-            txtMMUsernameResult.Enabled = false;
-            txtMMUsernameResult.Location = new Point(18, 107);
-            txtMMUsernameResult.Margin = new Padding(3, 4, 3, 4);
-            txtMMUsernameResult.Name = "txtMMUsernameResult";
-            txtMMUsernameResult.Size = new Size(754, 27);
-            txtMMUsernameResult.TabIndex = 15;
-            // 
-            // txtOBSUsernameResult
-            // 
-            txtOBSUsernameResult.Enabled = false;
-            txtOBSUsernameResult.Location = new Point(19, 166);
-            txtOBSUsernameResult.Margin = new Padding(3, 4, 3, 4);
-            txtOBSUsernameResult.Name = "txtOBSUsernameResult";
-            txtOBSUsernameResult.Size = new Size(754, 27);
-            txtOBSUsernameResult.TabIndex = 16;
             // 
             // frmMattermostChatsAudits
             // 
@@ -727,7 +727,7 @@
         private Label dtAuditDate;
         private DateTimePicker dtAuditDateTime;
         private GroupBox groupBox1;
-        private RadioButton radioButton1;
+        private RadioButton rbManualAudit;
         private GroupBox grpCreatedTime;
         private DateTimePicker dtOBSCreatedTime;
         private Label lblCreatedTimeOBS;
