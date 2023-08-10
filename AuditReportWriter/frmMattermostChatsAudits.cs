@@ -75,6 +75,7 @@ namespace AuditReportWriter
         {
             frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
             frmMattermostChatsAudits.Show();
+            this.Hide();
         }
 
         private void cboCreatedTimeResult_SelectedIndexChanged(object sender, EventArgs e)

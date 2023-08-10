@@ -7,9 +7,6 @@
     <Compile Update="frmAuditNavigator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmMattermostChatAudit.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="frmMattermostChatsAudits.cs">
       <SubType>Form</SubType>
     </Compile>
