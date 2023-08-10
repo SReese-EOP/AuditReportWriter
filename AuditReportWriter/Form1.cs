@@ -295,9 +295,38 @@ namespace AuditReportWriter
         private void button1_Click(object sender, EventArgs e)
         {
             txtMessageID.Text = null;
+            txtOBSObject.Text = null;
+            txtJournaledMailbox.Text = null;
+            cboOverallAuditResult.Text = null;
+            cboReceivedTimeResult.Text = null;
+            cbobccAuditResult.Text = null;
+            txtbccExchangeResult.Text = null;
+            txtbccOBSResult.Text = null;
+            cboSenderResult.Text = null;
+            txtExchSenderResult.Text= null;
+            txtOBSSenderResult.Text = null;
+            cboSubjectValueResult.Text = null;
+            txtSubjectExchangeResult.Text= null;
+            txtSubjectOBSResult.Text= null;
+            cboToAuditResult.Text= null;
+            txtExchToResult.Text = null;
+            txtOBSToResult.Text = null;
+            cboBodyValueResult.Text= null;
+            txtBodyExchangeResult.Text = null;
+            txtBodyOBSResult.Text = null;
+            cboCCAuditResult.Text = null;
+            txtCCExchResult.Text = null;
+            cboAttachementAuditResult.Text = null;
+            txtAttachmentExchangeResult.Text = null;
+            txtAttachmentOBSResult.Text = null;
         }
 
         private void txtMessageID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtExchMessageRecievedTime_ValueChanged(object sender, EventArgs e)
         {
 
         }
