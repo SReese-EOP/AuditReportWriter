@@ -70,5 +70,11 @@ namespace AuditReportWriter
             frmAuditNavigator.Show();
             this.Hide();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            frmMattermostChatAudit frmMattermostChatAudit = new frmMattermostChatAudit(user);
+            frmMattermostChatAudit.Show();
+        }
     }
 }

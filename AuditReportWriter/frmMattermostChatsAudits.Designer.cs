@@ -689,6 +689,7 @@
             btnReset.TabIndex = 20;
             btnReset.Text = "&Reset Form";
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // btnSubmit
             // 
