@@ -67,13 +67,13 @@
             cboAttachmentsResult = new ComboBox();
             grpEmail = new GroupBox();
             label15 = new Label();
-            this.lblMMEmailResult = new Label();
-            this.lblEmailAuditResult = new Label();
+            lblMMEmailResult = new Label();
+            lblEmailAuditResult = new Label();
             cboEmailAuditResult = new ComboBox();
             grpUserName = new GroupBox();
             lblOBSUsernameResult = new Label();
-            this.lblMMUsernameResult = new Label();
-            this.lblUsernameAuditResult = new Label();
+            lblMMUsernameResult = new Label();
+            lblUsernameAuditResult = new Label();
             cboUsernameResult = new ComboBox();
             txtMMMessageTextResult = new TextBox();
             txtOBSMessageTextResult = new TextBox();
@@ -498,8 +498,8 @@
             grpEmail.Controls.Add(txtOBSEmailResult);
             grpEmail.Controls.Add(txtMMEmailResult);
             grpEmail.Controls.Add(label15);
-            grpEmail.Controls.Add(this.lblMMEmailResult);
-            grpEmail.Controls.Add(this.lblEmailAuditResult);
+            grpEmail.Controls.Add(lblMMEmailResult);
+            grpEmail.Controls.Add(lblEmailAuditResult);
             grpEmail.Controls.Add(cboEmailAuditResult);
             grpEmail.Enabled = false;
             grpEmail.Location = new Point(841, 492);
@@ -522,21 +522,21 @@
             // 
             // lblMMEmailResult
             // 
-            this.lblMMEmailResult.AutoSize = true;
-            this.lblMMEmailResult.Location = new Point(19, 84);
-            this.lblMMEmailResult.Name = "lblMMEmailResult";
-            this.lblMMEmailResult.Size = new Size(133, 20);
-            this.lblMMEmailResult.TabIndex = 0;
-            this.lblMMEmailResult.Text = "Mattermost Result:";
+            lblMMEmailResult.AutoSize = true;
+            lblMMEmailResult.Location = new Point(19, 84);
+            lblMMEmailResult.Name = "lblMMEmailResult";
+            lblMMEmailResult.Size = new Size(133, 20);
+            lblMMEmailResult.TabIndex = 0;
+            lblMMEmailResult.Text = "Mattermost Result:";
             // 
             // lblEmailAuditResult
             // 
-            this.lblEmailAuditResult.AutoSize = true;
-            this.lblEmailAuditResult.Location = new Point(19, 40);
-            this.lblEmailAuditResult.Name = "lblEmailAuditResult";
-            this.lblEmailAuditResult.Size = new Size(96, 20);
-            this.lblEmailAuditResult.TabIndex = 6;
-            this.lblEmailAuditResult.Text = "Audit Result: ";
+            lblEmailAuditResult.AutoSize = true;
+            lblEmailAuditResult.Location = new Point(19, 40);
+            lblEmailAuditResult.Name = "lblEmailAuditResult";
+            lblEmailAuditResult.Size = new Size(96, 20);
+            lblEmailAuditResult.TabIndex = 6;
+            lblEmailAuditResult.Text = "Audit Result: ";
             // 
             // cboEmailAuditResult
             // 
@@ -553,8 +553,8 @@
             grpUserName.Controls.Add(txtOBSUsernameResult);
             grpUserName.Controls.Add(txtMMUsernameResult);
             grpUserName.Controls.Add(lblOBSUsernameResult);
-            grpUserName.Controls.Add(this.lblMMUsernameResult);
-            grpUserName.Controls.Add(this.lblUsernameAuditResult);
+            grpUserName.Controls.Add(lblMMUsernameResult);
+            grpUserName.Controls.Add(lblUsernameAuditResult);
             grpUserName.Controls.Add(cboUsernameResult);
             grpUserName.Enabled = false;
             grpUserName.Location = new Point(841, 750);
@@ -577,21 +577,21 @@
             // 
             // lblMMUsernameResult
             // 
-            this.lblMMUsernameResult.AutoSize = true;
-            this.lblMMUsernameResult.Location = new Point(19, 84);
-            this.lblMMUsernameResult.Name = "lblMMUsernameResult";
-            this.lblMMUsernameResult.Size = new Size(133, 20);
-            this.lblMMUsernameResult.TabIndex = 0;
-            this.lblMMUsernameResult.Text = "Mattermost Result:";
+            lblMMUsernameResult.AutoSize = true;
+            lblMMUsernameResult.Location = new Point(19, 84);
+            lblMMUsernameResult.Name = "lblMMUsernameResult";
+            lblMMUsernameResult.Size = new Size(133, 20);
+            lblMMUsernameResult.TabIndex = 0;
+            lblMMUsernameResult.Text = "Mattermost Result:";
             // 
             // lblUsernameAuditResult
             // 
-            this.lblUsernameAuditResult.AutoSize = true;
-            this.lblUsernameAuditResult.Location = new Point(19, 40);
-            this.lblUsernameAuditResult.Name = "lblUsernameAuditResult";
-            this.lblUsernameAuditResult.Size = new Size(96, 20);
-            this.lblUsernameAuditResult.TabIndex = 6;
-            this.lblUsernameAuditResult.Text = "Audit Result: ";
+            lblUsernameAuditResult.AutoSize = true;
+            lblUsernameAuditResult.Location = new Point(19, 40);
+            lblUsernameAuditResult.Name = "lblUsernameAuditResult";
+            lblUsernameAuditResult.Size = new Size(96, 20);
+            lblUsernameAuditResult.TabIndex = 6;
+            lblUsernameAuditResult.Text = "Audit Result: ";
             // 
             // cboUsernameResult
             // 
@@ -775,5 +775,11 @@
         private TextBox txtMMEmailResult;
         private TextBox txtMMUsernameResult;
         private TextBox txtOBSUsernameResult;
+        private Label lblMMEmailResult;
+        private Label lblEmailAuditResult;
+        private Label lblMMUsernameResult;
+        private Label lblUsernameAuditResult;
+
+
     }
 }
