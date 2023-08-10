@@ -21,5 +21,45 @@ namespace AuditReportWriter
         {
 
         }
+
+        private void cboOverallAuditResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboOverallAuditResult.SelectedItem != null && cboOverallAuditResult.SelectedItem.ToString() == "FAIL")
+            {
+                //enable the groups for the audit reults
+                grpCreatedTime.Enabled = true;
+                grpUpdateTime.Enabled = true;
+                grpMessageText.Enabled = true;
+                grpAttachments.Enabled = true;
+                grpEmail.Enabled = true;
+                grpUserName.Enabled = true;
+                //set the groups to blank for data entry
+                cboCreatedTimeResult.SelectedItem = null;
+                cboUpdatedTimeResult.SelectedItem = null;
+                cboMessageTextAuditResult.SelectedItem = null;
+                cboEmailAuditResult.SelectedItem = null;
+                cboUsernameResult.SelectedItem = null;
+                cboAttachmentsResult.SelectedItem = null;
+
+            }
+            else
+            {
+                //disable all the groups since the audit results are passing
+                grpCreatedTime.Enabled = false;
+                grpUpdateTime.Enabled = false;
+                grpMessageText.Enabled = false;
+                grpAttachments.Enabled = false;
+                grpEmail.Enabled = false;
+                grpUserName.Enabled = false;
+
+                //mark all of the audit results as passing
+                cboCreatedTimeResult.SelectedItem = "PASS";
+                cboUpdatedTimeResult.SelectedItem = "PASS";
+                cboMessageTextAuditResult.SelectedItem = "PASS";
+                cboEmailAuditResult.SelectedItem = "PASS";
+                cboUsernameResult.SelectedItem = "PASS";
+                cboAttachmentsResult.SelectedItem = "PASS";
+            }
+        }
     }
 }

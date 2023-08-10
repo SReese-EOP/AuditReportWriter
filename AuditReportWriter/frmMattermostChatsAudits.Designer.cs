@@ -177,6 +177,7 @@
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(162, 28);
             cboOverallAuditResult.TabIndex = 12;
+            cboOverallAuditResult.SelectedIndexChanged += cboOverallAuditResult_SelectedIndexChanged;
             // 
             // label4
             // 
