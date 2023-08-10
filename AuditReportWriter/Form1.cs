@@ -7,6 +7,7 @@ namespace AuditReportWriter
     public partial class frmEmailAuditReport : Form
     {
         private userInfo emailUser;
+        private userInfo user;
 
         public frmEmailAuditReport(userInfo navuser)
         {
@@ -300,6 +301,13 @@ namespace AuditReportWriter
         private void txtMessageID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bttnReturntoNav_Click(object sender, EventArgs e)
+        {
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+            frmAuditNavigator.Show();
+            this.Hide();
         }
     }
 }

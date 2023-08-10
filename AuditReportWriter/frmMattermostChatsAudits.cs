@@ -12,6 +12,8 @@ namespace AuditReportWriter
 {
     public partial class frmMattermostChatsAudits : Form
     {
+        private userInfo user;
+
         public frmMattermostChatsAudits()
         {
             InitializeComponent();
@@ -60,6 +62,13 @@ namespace AuditReportWriter
                 cboUsernameResult.SelectedItem = "PASS";
                 cboAttachmentsResult.SelectedItem = "PASS";
             }
+        }
+
+        private void bttnReturntoNav_Click(object sender, EventArgs e)
+        {
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+            frmAuditNavigator.Show();
+            this.Hide();
         }
     }
 }

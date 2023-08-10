@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -98,6 +99,11 @@ namespace AuditReportWriter
         private void Password_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtTESTUser(object sender, EventArgs e)
+        {
+            txtTESTUser = User;
         }
     }
 }
