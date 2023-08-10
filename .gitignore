@@ -1,0 +1,5 @@
+
+*.vsidx
+AuditReportWriter/obj/Debug/net7.0-windows/AuditReportWriter.designer.runtimeconfig.json
+AuditReportWriter/obj/Debug/net7.0-windows/AuditReportWriter.designer.runtimeconfig.json
+AuditReportWriter/obj/Debug/net7.0-windows/AuditReportWriter.GeneratedMSBuildEditorConfig.editorconfig
