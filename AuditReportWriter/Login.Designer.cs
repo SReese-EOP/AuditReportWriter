@@ -51,7 +51,6 @@
             pictureBox6 = new PictureBox();
             panel5 = new Panel();
             USerName = new TextBox();
-            txtTESTUser = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -276,23 +275,12 @@
             USerName.TabIndex = 1;
             USerName.TextChanged += USerName_TextChanged;
             // 
-            // txtTESTUser
-            // 
-            txtTESTUser.AcceptsTab = true;
-            txtTESTUser.AllowDrop = true;
-            txtTESTUser.Location = new Point(16, 571);
-            txtTESTUser.Name = "txtTESTUser";
-            txtTESTUser.Size = new Size(220, 27);
-            txtTESTUser.TabIndex = 9;
-            txtTESTUser.TextChanged += TxtTESTUser_TextChanged;
-            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(366, 810);
-            Controls.Add(txtTESTUser);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(DataBaseName);
@@ -357,6 +345,5 @@
         private PictureBox pictureBox6;
         private Panel panel5;
         private TextBox USerName;
-        private TextBox txtTESTUser;
     }
 }

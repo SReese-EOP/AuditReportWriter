@@ -101,9 +101,6 @@ namespace AuditReportWriter
 
         }
 
-        private void TxtTESTUser(object sender, EventArgs e)
-        {
-            txtTESTUser = User;
-        }
+ 
     }
 }
