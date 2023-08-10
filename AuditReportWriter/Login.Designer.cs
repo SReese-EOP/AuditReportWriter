@@ -158,9 +158,10 @@
             // 
             txtDesktopName.AcceptsTab = true;
             txtDesktopName.AllowDrop = true;
-            txtDesktopName.Location = new Point(65, 727);
+            txtDesktopName.Location = new Point(57, 550);
+            txtDesktopName.Margin = new Padding(3, 2, 3, 2);
             txtDesktopName.Name = "txtDesktopName";
-            txtDesktopName.Size = new Size(278, 27);
+            txtDesktopName.Size = new Size(244, 23);
             txtDesktopName.TabIndex = 1;
             txtDesktopName.TextChanged += USerName_TextChanged;
             // 
@@ -264,27 +265,30 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(11, 727);
+            pictureBox6.Location = new Point(10, 545);
+            pictureBox6.Margin = new Padding(3, 2, 3, 2);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(47, 37);
+            pictureBox6.Size = new Size(41, 28);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 2;
             pictureBox6.TabStop = false;
             // 
             // panel5
             // 
-            panel5.Location = new Point(11, 769);
+            panel5.Location = new Point(10, 577);
+            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(337, 3);
+            panel5.Size = new Size(295, 2);
             panel5.TabIndex = 3;
             // 
             // USerName
             // 
             USerName.AcceptsTab = true;
             USerName.AllowDrop = true;
-            USerName.Location = new Point(67, 227);
+            USerName.Location = new Point(59, 170);
+            USerName.Margin = new Padding(3, 2, 3, 2);
             USerName.Name = "USerName";
-            USerName.Size = new Size(281, 27);
+            USerName.Size = new Size(246, 23);
             USerName.TabIndex = 1;
             USerName.TextChanged += USerName_TextChanged;
             // 
@@ -293,7 +297,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(366, 810);
+            ClientSize = new Size(320, 608);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(DataBaseName);
@@ -330,6 +334,8 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+
 
         #endregion
 
