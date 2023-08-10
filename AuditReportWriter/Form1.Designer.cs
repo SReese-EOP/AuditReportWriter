@@ -941,6 +941,7 @@ namespace AuditReportWriter
             Controls.Add(btnSubmit);
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmEmailAuditReport";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Email Audit Report";
             Load += frmEmailAuditReport_Load;
             grpSenderResults.ResumeLayout(false);

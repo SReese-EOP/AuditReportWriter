@@ -61,11 +61,11 @@ namespace AuditReportWriter
 
         private void label1_Click(object sender, EventArgs e)
         {
-            USerName.Clear();
+            txtDesktopName.Clear();
             Password.Clear();
             DataBaseName.Clear();
             ServerName.Clear();
-            USerName.Focus();
+            txtDesktopName.Focus();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace AuditReportWriter
 
         }
 
-        private void USerName_TextChanged(object sender, EventArgs e) => USerName.Text = WindowsIdentity.GetCurrent().Name;
+        private void USerName_TextChanged(object sender, EventArgs e) => txtDesktopName.Text = WindowsIdentity.GetCurrent().Name;
 
         private void Password_TextChanged(object sender, EventArgs e)
         {

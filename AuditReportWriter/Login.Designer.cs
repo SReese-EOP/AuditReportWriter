@@ -38,7 +38,7 @@
             LOGINBUTTON = new Button();
             label1 = new Label();
             label2 = new Label();
-            USerName = new TextBox();
+            txtDesktopName = new TextBox();
             Password = new TextBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
@@ -50,7 +50,7 @@
             label4 = new Label();
             pictureBox6 = new PictureBox();
             panel5 = new Panel();
-            txtUserName = new TextBox();
+            USerName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -148,15 +148,15 @@
             label2.Text = "EXIT";
             label2.Click += label2_Click;
             // 
-            // USerName
+            // txtDesktopName
             // 
-            USerName.AcceptsTab = true;
-            USerName.AllowDrop = true;
-            USerName.Location = new Point(65, 727);
-            USerName.Name = "USerName";
-            USerName.Size = new Size(278, 27);
-            USerName.TabIndex = 1;
-            USerName.TextChanged += USerName_TextChanged;
+            txtDesktopName.AcceptsTab = true;
+            txtDesktopName.AllowDrop = true;
+            txtDesktopName.Location = new Point(65, 727);
+            txtDesktopName.Name = "txtDesktopName";
+            txtDesktopName.Size = new Size(278, 27);
+            txtDesktopName.TabIndex = 1;
+            txtDesktopName.TextChanged += USerName_TextChanged;
             // 
             // Password
             // 
@@ -265,15 +265,15 @@
             panel5.Size = new Size(337, 3);
             panel5.TabIndex = 3;
             // 
-            // txtUserName
+            // USerName
             // 
-            txtUserName.AcceptsTab = true;
-            txtUserName.AllowDrop = true;
-            txtUserName.Location = new Point(67, 227);
-            txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(281, 27);
-            txtUserName.TabIndex = 1;
-            txtUserName.TextChanged += USerName_TextChanged;
+            USerName.AcceptsTab = true;
+            USerName.AllowDrop = true;
+            USerName.Location = new Point(67, 227);
+            USerName.Name = "USerName";
+            USerName.Size = new Size(281, 27);
+            USerName.TabIndex = 1;
+            USerName.TextChanged += USerName_TextChanged;
             // 
             // frmLogin
             // 
@@ -286,8 +286,8 @@
             Controls.Add(DataBaseName);
             Controls.Add(ServerName);
             Controls.Add(Password);
-            Controls.Add(txtUserName);
             Controls.Add(USerName);
+            Controls.Add(txtDesktopName);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel4);
@@ -327,7 +327,7 @@
         private Button LOGINBUTTON;
         private Label label1;
         private Label label2;
-        private TextBox USerName;
+        private TextBox txtDesktopName;
         private TextBox Password;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
@@ -339,6 +339,6 @@
         private Label label4;
         private PictureBox pictureBox6;
         private Panel panel5;
-        private TextBox txtUserName;
+        private TextBox USerName;
     }
 }

@@ -30,8 +30,8 @@ namespace AuditReportWriter
             Application.Exit();
         }
 
-         private void frmAuditNavigator_Load(object sender, EventArgs e)
-        { 
+        private void frmAuditNavigator_Load(object sender, EventArgs e)
+        {
 
         }
 
