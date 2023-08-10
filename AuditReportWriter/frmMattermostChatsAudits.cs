@@ -73,7 +73,7 @@ namespace AuditReportWriter
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(user);
+            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
             frmMattermostChatsAudits.Show();
         }
 
