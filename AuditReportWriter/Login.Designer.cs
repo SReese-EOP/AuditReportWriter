@@ -331,11 +331,6 @@
             PerformLayout();
         }
 
-        private void TxtTESTUser_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         private PictureBox pictureBox1;

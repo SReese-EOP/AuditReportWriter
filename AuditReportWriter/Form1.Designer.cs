@@ -102,7 +102,6 @@ namespace AuditReportWriter
             cboBodyValueResult = new ComboBox();
             lblBodyValueAuditResult = new Label();
             btnReset = new Button();
-            bttnReturntoNav = new Button();
             grpSenderResults.SuspendLayout();
             grpReceivedTImeResults.SuspendLayout();
             grpOverallAudit.SuspendLayout();
@@ -943,23 +942,11 @@ namespace AuditReportWriter
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += button1_Click;
             // 
-            // bttnReturntoNav
-            // 
-            bttnReturntoNav.Location = new Point(1145, 1224);
-            bttnReturntoNav.Name = "bttnReturntoNav";
-            bttnReturntoNav.Size = new Size(193, 29);
-            bttnReturntoNav.TabIndex = 20;
-            bttnReturntoNav.Text = "Return to Navigation";
-            bttnReturntoNav.UseVisualStyleBackColor = true;
-            bttnReturntoNav.Click += bttnReturntoNav_Click;
-            // 
             // frmEmailAuditReport
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
-            ClientSize = new Size(1774, 1271);
-            Controls.Add(bttnReturntoNav);
+            ClientSize = new Size(2218, 1589);
             Controls.Add(btnReset);
             Controls.Add(grpAttachementResult);
             Controls.Add(grpBodyResults);
@@ -1074,6 +1061,5 @@ namespace AuditReportWriter
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private Button bttnReturntoNav;
     }
 }
