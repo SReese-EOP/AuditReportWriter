@@ -38,7 +38,7 @@
             LOGINBUTTON = new Button();
             label1 = new Label();
             label2 = new Label();
-            USerName = new TextBox();
+            txtDesktopName = new TextBox();
             Password = new TextBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
@@ -48,11 +48,15 @@
             DataBaseName = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            pictureBox6 = new PictureBox();
+            panel5 = new Panel();
+            USerName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -150,16 +154,15 @@
             label2.Text = "EXIT";
             label2.Click += label2_Click;
             // 
-            // USerName
+            // txtDesktopName
             // 
-            USerName.AcceptsTab = true;
-            USerName.AllowDrop = true;
-            USerName.Location = new Point(57, 172);
-            USerName.Margin = new Padding(3, 2, 3, 2);
-            USerName.Name = "USerName";
-            USerName.Size = new Size(246, 23);
-            USerName.TabIndex = 1;
-
+            txtDesktopName.AcceptsTab = true;
+            txtDesktopName.AllowDrop = true;
+            txtDesktopName.Location = new Point(65, 727);
+            txtDesktopName.Name = "txtDesktopName";
+            txtDesktopName.Size = new Size(278, 27);
+            txtDesktopName.TabIndex = 1;
+            txtDesktopName.TextChanged += USerName_TextChanged;
             // 
             // Password
             // 
@@ -171,6 +174,7 @@
             Password.Size = new Size(246, 23);
             Password.TabIndex = 2;
             Password.UseSystemPasswordChar = true;
+            Password.TextChanged += Password_TextChanged;
             // 
             // pictureBox4
             // 
@@ -257,18 +261,46 @@
             label4.Text = "Manual Audit Process";
             label4.Click += label4_Click;
             // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(11, 727);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(47, 37);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 2;
+            pictureBox6.TabStop = false;
+            // 
+            // panel5
+            // 
+            panel5.Location = new Point(11, 769);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(337, 3);
+            panel5.TabIndex = 3;
+            // 
+            // USerName
+            // 
+            USerName.AcceptsTab = true;
+            USerName.AllowDrop = true;
+            USerName.Location = new Point(67, 227);
+            USerName.Name = "USerName";
+            USerName.Size = new Size(281, 27);
+            USerName.TabIndex = 1;
+            USerName.TextChanged += USerName_TextChanged;
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(320, 562);
+            ClientSize = new Size(366, 810);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(DataBaseName);
             Controls.Add(ServerName);
             Controls.Add(Password);
             Controls.Add(USerName);
+            Controls.Add(txtDesktopName);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel4);
@@ -276,9 +308,11 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(pictureBox5);
+            Controls.Add(panel5);
             Controls.Add(panel1);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
+            Controls.Add(pictureBox6);
             Controls.Add(pictureBox2);
             Controls.Add(LoginLabel);
             Controls.Add(pictureBox1);
@@ -292,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -307,7 +342,7 @@
         private Button LOGINBUTTON;
         private Label label1;
         private Label label2;
-        private TextBox USerName;
+        private TextBox txtDesktopName;
         private TextBox Password;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
@@ -317,5 +352,8 @@
         private TextBox DataBaseName;
         private Label label3;
         private Label label4;
+        private PictureBox pictureBox6;
+        private Panel panel5;
+        private TextBox USerName;
     }
 }

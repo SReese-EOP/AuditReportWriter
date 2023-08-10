@@ -111,6 +111,7 @@
             Controls.Add(tabControl1);
             Controls.Add(lblSelectAudit);
             Name = "frmAuditNavigator";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Audit Navigation";
             Load += frmAuditNavigator_Load;
             tabControl1.ResumeLayout(false);
