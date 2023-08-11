@@ -21,5 +21,10 @@ namespace AuditReportWriter
         {
 
         }
+
+        private void bttnReturntoNav_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

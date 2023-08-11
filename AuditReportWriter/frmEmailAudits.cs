@@ -8,6 +8,7 @@ namespace AuditReportWriter
     public partial class frmEmailAuditReport : Form
     {
         private userInfo emailUser;
+        private userInfo user;
 
         public frmEmailAuditReport(userInfo navuser)
         {
@@ -299,6 +300,7 @@ namespace AuditReportWriter
             txtMessageID.Text = null;
             txtOBSObject.Text = null;
             txtJournaledMailbox.Text = null;
+            txtJounalEmailId.Text = null;
             cboOverallAuditResult.Text = null;
             cboReceivedTimeResult.Text = null;
             cbobccAuditResult.Text = null;
@@ -331,6 +333,18 @@ namespace AuditReportWriter
         private void dtExchMessageRecievedTime_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtJounalEmailId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttnReturntoNav_Click(object sender, EventArgs e)
+        {
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+            frmAuditNavigator.Show();
+            this.Hide();
         }
     }
 }
