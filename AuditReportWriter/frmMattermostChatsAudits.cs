@@ -28,5 +28,12 @@ namespace AuditReportWriter
             frmAuditNavigator.Show();
             this.Close();
         }
+
+        private void bttnReset_Click(object sender, EventArgs e)
+        {
+            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
+            frmMattermostChatsAudits.Show();
+            frmMattermostChatsAudits.Close();
+        }
     }
 }
