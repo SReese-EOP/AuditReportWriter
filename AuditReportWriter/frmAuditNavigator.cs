@@ -59,7 +59,7 @@ namespace AuditReportWriter
         private void cboSourceApplication_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Exchange")
-            {   
+            {
                 cboTypeofAudit.Items.Clear();
                 cboTypeofAudit.Items.Add("Email Audit");
                 cboTypeofAudit.Items.Add("Calendar Audit");
@@ -69,6 +69,23 @@ namespace AuditReportWriter
                 cboTypeofAudit.Items.Clear();
                 cboTypeofAudit.Items.Add("Chat Audit");
                 cboTypeofAudit.Items.Add("Other Audit");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cboTypeofAudit.SelectedItem.ToString()!= null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
+            {
+                frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
+                frmMattermostChatsAudits.Show();
+                this.Close();
+            }
+
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Email Audit")
+            {
+                frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
+                frmEmailAuditReport.Show();
+                this.Close();
             }
         }
     }
