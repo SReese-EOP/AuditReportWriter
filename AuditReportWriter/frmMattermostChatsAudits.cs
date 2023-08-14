@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace AuditReportWriter
 {
     public partial class frmMattermostChatsAudits : Form
     {
+        public userInfo user;
+
         public frmMattermostChatsAudits()
         {
             InitializeComponent();
+            
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
@@ -24,7 +28,7 @@ namespace AuditReportWriter
 
         private void bttnReturntoNav_Click(object sender, EventArgs e)
         {
-            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator();
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
             frmAuditNavigator.Show();
             this.Close();
         }
@@ -34,6 +38,11 @@ namespace AuditReportWriter
             frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
             frmMattermostChatsAudits.Show();
             frmMattermostChatsAudits.Close();
+        }
+
+        private void bttnSubmit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

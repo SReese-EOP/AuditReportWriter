@@ -649,6 +649,7 @@
             bttnSubmit.TabIndex = 21;
             bttnSubmit.Text = "&Submit";
             bttnSubmit.UseVisualStyleBackColor = true;
+            bttnSubmit.Click += bttnSubmit_Click;
             // 
             // frmMattermostChatsAudits
             // 
