@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AuditReportWriter.AuditReportController;
+using static AuditReportWriter.Utilities;
 
 namespace AuditReportWriter
 {
@@ -34,9 +36,8 @@ namespace AuditReportWriter
 
         private void bttnReset_Click(object sender, EventArgs e)
         {
-            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
-            frmMattermostChatsAudits.Show();
-            frmMattermostChatsAudits.Close();
+            Utilities.ResetAllConstrols(this);
+
         }
 
         private void bttnSubmit_Click(object sender, EventArgs e)
