@@ -293,6 +293,7 @@
             cboCreatedTimeResult.Name = "cboCreatedTimeResult";
             cboCreatedTimeResult.Size = new Size(162, 28);
             cboCreatedTimeResult.TabIndex = 10;
+            cboCreatedTimeResult.SelectedIndexChanged += cboCreatedTimeResult_SelectedIndexChanged_1;
             // 
             // grpUpdateTime
             // 
@@ -372,6 +373,7 @@
             cboUpdatedTimeResult.Name = "cboUpdatedTimeResult";
             cboUpdatedTimeResult.Size = new Size(162, 28);
             cboUpdatedTimeResult.TabIndex = 10;
+            cboUpdatedTimeResult.SelectedIndexChanged += cboUpdatedTimeResult_SelectedIndexChanged_1;
             // 
             // grpMessageText
             // 
@@ -445,6 +447,7 @@
             cboMessageTextAuditResult.Name = "cboMessageTextAuditResult";
             cboMessageTextAuditResult.Size = new Size(162, 28);
             cboMessageTextAuditResult.TabIndex = 10;
+            cboMessageTextAuditResult.SelectedIndexChanged += cboMessageTextAuditResult_SelectedIndexChanged_1;
             // 
             // grpAttachments
             // 
@@ -518,6 +521,7 @@
             cboAttachmentsResult.Name = "cboAttachmentsResult";
             cboAttachmentsResult.Size = new Size(162, 28);
             cboAttachmentsResult.TabIndex = 10;
+            cboAttachmentsResult.SelectedIndexChanged += cboAttachmentsResult_SelectedIndexChanged_1;
             // 
             // grpEmail
             // 
@@ -591,6 +595,7 @@
             cboEmailAuditResult.Name = "cboEmailAuditResult";
             cboEmailAuditResult.Size = new Size(162, 28);
             cboEmailAuditResult.TabIndex = 10;
+            cboEmailAuditResult.SelectedIndexChanged += cboEmailAuditResult_SelectedIndexChanged_1;
             // 
             // grpUserName
             // 
@@ -664,6 +669,7 @@
             cboUsernameResult.Name = "cboUsernameResult";
             cboUsernameResult.Size = new Size(162, 28);
             cboUsernameResult.TabIndex = 10;
+            cboUsernameResult.SelectedIndexChanged += cboUsernameResult_SelectedIndexChanged_1;
             // 
             // bttnReset
             // 

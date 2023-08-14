@@ -24,89 +24,6 @@ namespace AuditReportWriter
                {
 
                }*/
-        private void cboCreatedTimeResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboCreatedTimeResult.SelectedItem != null && cboCreatedTimeResult.SelectedItem.ToString() == "FAIL")
-            {
-                dtMMCreatedTime.Enabled = true;
-                dtOBSCreatedTime.Enabled = true;
-            }
-            else
-            {
-                dtMMCreatedTime.Enabled = false;
-                dtOBSCreatedTime.Enabled = false;
-            }
-        }
-
-        private void cboUpdatedTimeResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboUpdatedTimeResult.SelectedItem != null && cboUpdatedTimeResult.SelectedItem.ToString() == "FAIL")
-            {
-                dtMMUpdatedTime.Enabled = true;
-                dtOBSUpdatedTime.Enabled = true;
-            }
-            else
-            {
-                dtMMUpdatedTime.Enabled = false;
-                dtOBSUpdatedTime.Enabled = false;
-            }
-        }
-
-        private void cboMessageTextAuditResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboMessageTextAuditResult.SelectedItem != null && cboMessageTextAuditResult.SelectedItem.ToString() == "FAIL")
-            {
-                txtMMMessageTextResult.Enabled = true;
-                txtOBSMessageTextResult.Enabled = true;
-            }
-            else
-            {
-                txtMMMessageTextResult.Enabled = false;
-                txtOBSMessageTextResult.Enabled = false;
-            }
-        }
-
-        private void cboAttachmentsResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboAttachmentsResult.SelectedItem != null && cboAttachmentsResult.SelectedItem.ToString() == "FAIL")
-            {
-                txtMMAttachmentsResult.Enabled = true;
-                txtOBSAttachmentsResult.Enabled = true;
-            }
-            else
-            {
-                txtMMAttachmentsResult.Enabled = false;
-                txtOBSAttachmentsResult.Enabled = false;
-            }
-        }
-
-        private void cboEmailAuditResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboEmailAuditResult.SelectedItem != null && cboEmailAuditResult.SelectedItem.ToString() == "FAIL")
-            {
-                txtMMEmailResult.Enabled = true;
-                txtOBSEmailResult.Enabled = true;
-            }
-            else
-            {
-                txtMMEmailResult.Enabled = false;
-                txtOBSEmailResult.Enabled = false;
-            }
-        }
-
-        private void cboUsernameResult_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboUsernameResult.SelectedItem != null && cboUsernameResult.SelectedItem.ToString() == "FAIL")
-            {
-                txtMMUsernameResult.Enabled = true;
-                txtOBSUsernameResult.Enabled = true;
-            }
-            else
-            {
-                txtMMUsernameResult.Enabled = false;
-                txtOBSUsernameResult.Enabled = false;
-            }
-        }
 
         private void bttnReturntoNav_Click(object sender, EventArgs e)
         {
@@ -169,6 +86,90 @@ namespace AuditReportWriter
                 cboEmailAuditResult.SelectedItem = "PASS";
                 cboCreatedTimeResult.SelectedItem = "PASS";
                 cboAttachmentsResult.SelectedItem = "PASS";
+            }
+        }
+
+        private void cboCreatedTimeResult_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cboCreatedTimeResult.SelectedItem != null && cboCreatedTimeResult.SelectedItem.ToString() == "FAIL")
+            {
+                dtMMCreatedTime.Enabled = true;
+                dtOBSCreatedTime.Enabled = true;
+            }
+            else
+            {
+                dtMMCreatedTime.Enabled = false;
+                dtOBSCreatedTime.Enabled = false;
+            }
+        }
+
+        private void cboUpdatedTimeResult_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cboUpdatedTimeResult.SelectedItem != null && cboUpdatedTimeResult.SelectedItem.ToString() == "FAIL")
+            {
+                dtMMUpdatedTime.Enabled = true;
+                dtOBSUpdatedTime.Enabled = true;
+            }
+            else
+            {
+                dtMMUpdatedTime.Enabled = false;
+                dtOBSUpdatedTime.Enabled = false;
+            }
+        }
+
+        private void cboMessageTextAuditResult_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cboMessageTextAuditResult.SelectedItem != null && cboMessageTextAuditResult.SelectedItem.ToString() == "FAIL")
+            {
+                txtMMMessageTextResult.Enabled = true;
+                txtOBSMessageTextResult.Enabled = true;
+            }
+            else
+            {
+                txtMMMessageTextResult.Enabled = false;
+                txtOBSMessageTextResult.Enabled = false;
+            }
+        }
+
+        private void cboAttachmentsResult_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cboAttachmentsResult.SelectedItem != null && cboAttachmentsResult.SelectedItem.ToString() == "FAIL")
+            {
+                txtMMAttachmentsResult.Enabled = true;
+                txtOBSAttachmentsResult.Enabled = true;
+            }
+            else
+            {
+                txtMMAttachmentsResult.Enabled = false;
+                txtOBSAttachmentsResult.Enabled = false;
+            }
+        }
+
+        private void cboEmailAuditResult_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cboEmailAuditResult.SelectedItem != null && cboEmailAuditResult.SelectedItem.ToString() == "FAIL")
+            {
+                txtMMEmailResult.Enabled = true;
+                txtOBSEmailResult.Enabled = true;
+            }
+            else
+            {
+                txtMMEmailResult.Enabled = false;
+                txtOBSEmailResult.Enabled = false;
+            }
+        }
+
+        private void cboUsernameResult_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cboUsernameResult.SelectedItem != null && cboUsernameResult.SelectedItem.ToString() == "FAIL")
+            {
+                txtMMUsernameResult.Enabled = true;
+                txtOBSUsernameResult.Enabled = true;
+            }
+            else
+            {
+                txtMMUsernameResult.Enabled = false;
+                txtOBSUsernameResult.Enabled = false;
             }
         }
     }
