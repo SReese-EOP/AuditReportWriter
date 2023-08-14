@@ -83,8 +83,6 @@
             lblMMUsernameResult = new Label();
             lblUsernameAuditResult = new Label();
             cboUsernameResult = new ComboBox();
-            btnReset = new Button();
-            btnSubmit = new Button();
             grpOverallAudit.SuspendLayout();
             grpCreatedTime.SuspendLayout();
             grpUpdateTime.SuspendLayout();
@@ -96,13 +94,12 @@
             // 
             // bttnReturntoNav
             // 
-            bttnReturntoNav.Location = new Point(1167, 1060);
+            bttnReturntoNav.Location = new Point(1387, 1058);
             bttnReturntoNav.Name = "bttnReturntoNav";
             bttnReturntoNav.Size = new Size(193, 29);
             bttnReturntoNav.TabIndex = 0;
             bttnReturntoNav.Text = "Return to Navigation";
             bttnReturntoNav.UseVisualStyleBackColor = true;
-            bttnReturntoNav.Click += bttnReturntoNav_Click;
             // 
             // grpOverallAudit
             // 
@@ -129,11 +126,10 @@
             // rbManualAudit
             // 
             rbManualAudit.AutoSize = true;
-            rbManualAudit.Checked = true;
             rbManualAudit.Location = new Point(423, 134);
             rbManualAudit.Name = "rbManualAudit";
             rbManualAudit.Size = new Size(119, 24);
-            rbManualAudit.TabIndex = 5;
+            rbManualAudit.TabIndex = 19;
             rbManualAudit.TabStop = true;
             rbManualAudit.Text = "Manual Audit";
             rbManualAudit.UseVisualStyleBackColor = true;
@@ -153,7 +149,7 @@
             txtChannelID.Margin = new Padding(3, 4, 3, 4);
             txtChannelID.Name = "txtChannelID";
             txtChannelID.Size = new Size(369, 27);
-            txtChannelID.TabIndex = 3;
+            txtChannelID.TabIndex = 16;
             // 
             // txtOBSObject
             // 
@@ -161,7 +157,7 @@
             txtOBSObject.Margin = new Padding(3, 4, 3, 4);
             txtOBSObject.Name = "txtOBSObject";
             txtOBSObject.Size = new Size(863, 27);
-            txtOBSObject.TabIndex = 2;
+            txtOBSObject.TabIndex = 14;
             // 
             // label8
             // 
@@ -180,8 +176,7 @@
             cboOverallAuditResult.Margin = new Padding(3, 4, 3, 4);
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(162, 28);
-            cboOverallAuditResult.TabIndex = 6;
-            cboOverallAuditResult.SelectedIndexChanged += cboOverallAuditResult_SelectedIndexChanged;
+            cboOverallAuditResult.TabIndex = 12;
             // 
             // label4
             // 
@@ -257,7 +252,7 @@
             dtOBSCreatedTime.Margin = new Padding(3, 4, 3, 4);
             dtOBSCreatedTime.Name = "dtOBSCreatedTime";
             dtOBSCreatedTime.Size = new Size(283, 27);
-            dtOBSCreatedTime.TabIndex = 9;
+            dtOBSCreatedTime.TabIndex = 14;
             dtOBSCreatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
             // lblCreatedTimeOBS
@@ -278,7 +273,7 @@
             dtMMCreatedTime.Margin = new Padding(3, 4, 3, 4);
             dtMMCreatedTime.Name = "dtMMCreatedTime";
             dtMMCreatedTime.Size = new Size(283, 27);
-            dtMMCreatedTime.TabIndex = 8;
+            dtMMCreatedTime.TabIndex = 13;
             dtMMCreatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
             // lblCreatedTimeMM
@@ -307,8 +302,7 @@
             cboCreatedTimeResult.Margin = new Padding(3, 4, 3, 4);
             cboCreatedTimeResult.Name = "cboCreatedTimeResult";
             cboCreatedTimeResult.Size = new Size(162, 28);
-            cboCreatedTimeResult.TabIndex = 7;
-            cboCreatedTimeResult.SelectedIndexChanged += cboCreatedTimeResult_SelectedIndexChanged;
+            cboCreatedTimeResult.TabIndex = 10;
             // 
             // grpUpdateTime
             // 
@@ -337,7 +331,7 @@
             dtOBSUpdatedTime.Margin = new Padding(3, 4, 3, 4);
             dtOBSUpdatedTime.Name = "dtOBSUpdatedTime";
             dtOBSUpdatedTime.Size = new Size(283, 27);
-            dtOBSUpdatedTime.TabIndex = 12;
+            dtOBSUpdatedTime.TabIndex = 14;
             dtOBSUpdatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
             // lblUpdatedTimeOBS
@@ -358,7 +352,7 @@
             dtMMUpdatedTime.Margin = new Padding(3, 4, 3, 4);
             dtMMUpdatedTime.Name = "dtMMUpdatedTime";
             dtMMUpdatedTime.Size = new Size(283, 27);
-            dtMMUpdatedTime.TabIndex = 11;
+            dtMMUpdatedTime.TabIndex = 13;
             dtMMUpdatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
             // lblUpdatedTimeMM
@@ -388,7 +382,6 @@
             cboUpdatedTimeResult.Name = "cboUpdatedTimeResult";
             cboUpdatedTimeResult.Size = new Size(162, 28);
             cboUpdatedTimeResult.TabIndex = 10;
-            cboUpdatedTimeResult.SelectedIndexChanged += cboUpdatedTimeResult_SelectedIndexChanged;
             // 
             // grpMessageText
             // 
@@ -415,7 +408,7 @@
             txtOBSMessageTextResult.Margin = new Padding(3, 4, 3, 4);
             txtOBSMessageTextResult.Name = "txtOBSMessageTextResult";
             txtOBSMessageTextResult.Size = new Size(754, 27);
-            txtOBSMessageTextResult.TabIndex = 16;
+            txtOBSMessageTextResult.TabIndex = 12;
             // 
             // txtMMMessageTextResult
             // 
@@ -424,7 +417,7 @@
             txtMMMessageTextResult.Margin = new Padding(3, 4, 3, 4);
             txtMMMessageTextResult.Name = "txtMMMessageTextResult";
             txtMMMessageTextResult.Size = new Size(754, 27);
-            txtMMMessageTextResult.TabIndex = 15;
+            txtMMMessageTextResult.TabIndex = 11;
             // 
             // lblMessageTextOBS
             // 
@@ -461,8 +454,7 @@
             cboMessageTextAuditResult.Margin = new Padding(3, 4, 3, 4);
             cboMessageTextAuditResult.Name = "cboMessageTextAuditResult";
             cboMessageTextAuditResult.Size = new Size(162, 28);
-            cboMessageTextAuditResult.TabIndex = 14;
-            cboMessageTextAuditResult.SelectedIndexChanged += cboMessageTextAuditResult_SelectedIndexChanged;
+            cboMessageTextAuditResult.TabIndex = 10;
             // 
             // grpAttachments
             // 
@@ -489,7 +481,7 @@
             txtOBSAttachmentsResult.Margin = new Padding(3, 4, 3, 4);
             txtOBSAttachmentsResult.Name = "txtOBSAttachmentsResult";
             txtOBSAttachmentsResult.Size = new Size(754, 27);
-            txtOBSAttachmentsResult.TabIndex = 19;
+            txtOBSAttachmentsResult.TabIndex = 16;
             // 
             // txtMMAttachmentsResult
             // 
@@ -498,7 +490,7 @@
             txtMMAttachmentsResult.Margin = new Padding(3, 4, 3, 4);
             txtMMAttachmentsResult.Name = "txtMMAttachmentsResult";
             txtMMAttachmentsResult.Size = new Size(754, 27);
-            txtMMAttachmentsResult.TabIndex = 18;
+            txtMMAttachmentsResult.TabIndex = 15;
             // 
             // lblAttachmentsOBSResult
             // 
@@ -535,8 +527,7 @@
             cboAttachmentsResult.Margin = new Padding(3, 4, 3, 4);
             cboAttachmentsResult.Name = "cboAttachmentsResult";
             cboAttachmentsResult.Size = new Size(162, 28);
-            cboAttachmentsResult.TabIndex = 17;
-            cboAttachmentsResult.SelectedIndexChanged += cboAttachmentsResult_SelectedIndexChanged;
+            cboAttachmentsResult.TabIndex = 10;
             // 
             // grpEmail
             // 
@@ -563,7 +554,7 @@
             txtOBSEmailResult.Margin = new Padding(3, 4, 3, 4);
             txtOBSEmailResult.Name = "txtOBSEmailResult";
             txtOBSEmailResult.Size = new Size(754, 27);
-            txtOBSEmailResult.TabIndex = 22;
+            txtOBSEmailResult.TabIndex = 16;
             // 
             // txtMMEmailResult
             // 
@@ -572,7 +563,7 @@
             txtMMEmailResult.Margin = new Padding(3, 4, 3, 4);
             txtMMEmailResult.Name = "txtMMEmailResult";
             txtMMEmailResult.Size = new Size(754, 27);
-            txtMMEmailResult.TabIndex = 21;
+            txtMMEmailResult.TabIndex = 15;
             // 
             // label15
             // 
@@ -609,8 +600,7 @@
             cboEmailAuditResult.Margin = new Padding(3, 4, 3, 4);
             cboEmailAuditResult.Name = "cboEmailAuditResult";
             cboEmailAuditResult.Size = new Size(162, 28);
-            cboEmailAuditResult.TabIndex = 20;
-            cboEmailAuditResult.SelectedIndexChanged += cboEmailAuditResult_SelectedIndexChanged;
+            cboEmailAuditResult.TabIndex = 10;
             // 
             // grpUserName
             // 
@@ -637,7 +627,7 @@
             txtOBSUsernameResult.Margin = new Padding(3, 4, 3, 4);
             txtOBSUsernameResult.Name = "txtOBSUsernameResult";
             txtOBSUsernameResult.Size = new Size(754, 27);
-            txtOBSUsernameResult.TabIndex = 25;
+            txtOBSUsernameResult.TabIndex = 16;
             // 
             // txtMMUsernameResult
             // 
@@ -646,7 +636,7 @@
             txtMMUsernameResult.Margin = new Padding(3, 4, 3, 4);
             txtMMUsernameResult.Name = "txtMMUsernameResult";
             txtMMUsernameResult.Size = new Size(754, 27);
-            txtMMUsernameResult.TabIndex = 24;
+            txtMMUsernameResult.TabIndex = 15;
             // 
             // lblOBSUsernameResult
             // 
@@ -683,29 +673,7 @@
             cboUsernameResult.Margin = new Padding(3, 4, 3, 4);
             cboUsernameResult.Name = "cboUsernameResult";
             cboUsernameResult.Size = new Size(162, 28);
-            cboUsernameResult.TabIndex = 23;
-            cboUsernameResult.SelectedIndexChanged += cboUsernameResult_SelectedIndexChanged;
-            // 
-            // btnReset
-            // 
-            btnReset.Location = new Point(1381, 1058);
-            btnReset.Margin = new Padding(3, 4, 3, 4);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(176, 31);
-            btnReset.TabIndex = 20;
-            btnReset.Text = "&Reset Form";
-            btnReset.UseVisualStyleBackColor = true;
-            btnReset.Click += btnReset_Click;
-            // 
-            // btnSubmit
-            // 
-            btnSubmit.Location = new Point(1563, 1058);
-            btnSubmit.Margin = new Padding(3, 4, 3, 4);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(197, 31);
-            btnSubmit.TabIndex = 21;
-            btnSubmit.Text = "&Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
+            cboUsernameResult.TabIndex = 10;
             // 
             // frmMattermostChatsAudits
             // 
@@ -714,8 +682,6 @@
             AutoScroll = true;
             AutoSize = true;
             ClientSize = new Size(1772, 1099);
-            Controls.Add(btnSubmit);
-            Controls.Add(btnReset);
             Controls.Add(grpUserName);
             Controls.Add(grpEmail);
             Controls.Add(grpAttachments);
@@ -813,7 +779,7 @@
         private Label lblEmailAuditResult;
         private Label lblMMUsernameResult;
         private Label lblUsernameAuditResult;
-        private Button btnReset;
-        private Button btnSubmit;
+
+
     }
 }

@@ -1,13 +1,13 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Security.Principal;
 
 namespace AuditReportWriter
 {
     public partial class frmEmailAuditReport : Form
     {
         private userInfo emailUser;
-        private userInfo user;
 
         public frmEmailAuditReport(userInfo navuser)
         {
@@ -160,6 +160,7 @@ namespace AuditReportWriter
             emailAuditReport.JournalEmailId = txtJounalEmailId.Text;
             emailAuditReport.MessageAuditResult = cboOverallAuditResult.SelectedItem.ToString();
             emailAuditReport.ObsObject = txtOBSObject.Text;
+            emailAuditReport.Auditor = WindowsIdentity.GetCurrent().Name;
 
             //execute the audit report write
             auditReportController.WriteEmailAuditReport(emailAuditReport, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
@@ -296,6 +297,30 @@ namespace AuditReportWriter
         private void button1_Click(object sender, EventArgs e)
         {
             txtMessageID.Text = null;
+            txtOBSObject.Text = null;
+            txtJournaledMailbox.Text = null;
+            cboOverallAuditResult.Text = null;
+            cboReceivedTimeResult.Text = null;
+            cbobccAuditResult.Text = null;
+            txtbccExchangeResult.Text = null;
+            txtbccOBSResult.Text = null;
+            cboSenderResult.Text = null;
+            txtExchSenderResult.Text = null;
+            txtOBSSenderResult.Text = null;
+            cboSubjectValueResult.Text = null;
+            txtSubjectExchangeResult.Text = null;
+            txtSubjectOBSResult.Text = null;
+            cboToAuditResult.Text = null;
+            txtExchToResult.Text = null;
+            txtOBSToResult.Text = null;
+            cboBodyValueResult.Text = null;
+            txtBodyExchangeResult.Text = null;
+            txtBodyOBSResult.Text = null;
+            cboCCAuditResult.Text = null;
+            txtCCExchResult.Text = null;
+            cboAttachementAuditResult.Text = null;
+            txtAttachmentExchangeResult.Text = null;
+            txtAttachmentOBSResult.Text = null;
         }
 
         private void txtMessageID_TextChanged(object sender, EventArgs e)
@@ -303,11 +328,9 @@ namespace AuditReportWriter
 
         }
 
-        private void bttnReturntoNav_Click(object sender, EventArgs e)
+        private void dtExchMessageRecievedTime_ValueChanged(object sender, EventArgs e)
         {
-            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
-            frmAuditNavigator.Show();
-            this.Hide();
+
         }
     }
 }

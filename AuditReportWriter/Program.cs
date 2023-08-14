@@ -1,6 +1,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace AuditReportWriter
@@ -59,6 +60,7 @@ namespace AuditReportWriter
         public string MessageAttachmentsValueExchange { get; set; }
         public string MessageAttachmentsValueOBS { get; set; }
         public int ProcessId { get; set; }
+        public string Auditor { get; set; }
     }
 
 
@@ -74,7 +76,7 @@ namespace AuditReportWriter
         public void WriteEmailAuditReport(EmailAuditReport auditReport, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
         {
             string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
-
+            string userName = WindowsIdentity.GetCurrent().Name;
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -95,7 +97,7 @@ namespace AuditReportWriter
                         [MessageSenderValueExchange], [MessageSenderValueOBS], [MessageTOValueExchange], [MessageTOValueOBS],
                         [MessageCCValueExchange], [MessageCCValueOBS], [MessageBCCValueExchange], [MessageBCCValueOBS],
                         [MessageSubjectValueExchange], [MessageSubjectValueOBS], [MessageBodyValueExchange], [MessageBodyValueOBS],
-                        [MessageAttachmentsValueExchange], [MessageAttachmentsValueOBS])
+                        [MessageAttachmentsValueExchange], [MessageAttachmentsValueOBS], [Auditor])
                     VALUES (
                         @AuditID, @AuditDateTime, @MessageID, @MessageReceivedTime, @MessageSender, @MessageTO, @MessageCC, @MessageBCC,
                         @MessageSubject, @MessageBody, @MessageAttachments, @MessageAuditResult, @Mailbox, 
@@ -103,7 +105,7 @@ namespace AuditReportWriter
                         @MessageSenderValueExchange, @MessageSenderValueOBS, @MessageTOValueExchange, @MessageTOValueOBS,
                         @MessageCCValueExchange, @MessageCCValueOBS, @MessageBCCValueExchange, @MessageBCCValueOBS,
                         @MessageSubjectValueExchange, @MessageSubjectValueOBS, @MessageBodyValueExchange, @MessageBodyValueOBS,
-                        @MessageAttachmentsValueExchange, @MessageAttachmentsValueOBS)";
+                        @MessageAttachmentsValueExchange, @MessageAttachmentsValueOBS, @Auditor)";
 
                         command.Parameters.AddWithValue("@AuditID", auditReport.AuditId);
                         command.Parameters.AddWithValue("@AuditDateTime", auditReport.AuditDateTime);
@@ -136,8 +138,7 @@ namespace AuditReportWriter
                         command.Parameters.AddWithValue("@MessageBodyValueOBS", (object)auditReport.MessageBodyValueOBS ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MessageAttachmentsValueExchange", (object)auditReport.MessageAttachmentsValueExchange ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MessageAttachmentsValueOBS", (object)auditReport.MessageAttachmentsValueOBS ?? DBNull.Value);
-
-
+                        command.Parameters.AddWithValue("@Auditor", (object)auditReport.Auditor ?? DBNull.Value);
                         command.ExecuteNonQuery();
                     }
                 }

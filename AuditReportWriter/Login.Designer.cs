@@ -158,11 +158,11 @@
             // 
             txtDesktopName.AcceptsTab = true;
             txtDesktopName.AllowDrop = true;
-            txtDesktopName.Location = new Point(57, 545);
+            txtDesktopName.Location = new Point(57, 550);
             txtDesktopName.Margin = new Padding(3, 2, 3, 2);
             txtDesktopName.Name = "txtDesktopName";
             txtDesktopName.Size = new Size(244, 23);
-            txtDesktopName.TabIndex = 10;
+            txtDesktopName.TabIndex = 1;
             txtDesktopName.TextChanged += USerName_TextChanged;
             // 
             // Password
@@ -324,6 +324,7 @@
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += frmLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -334,10 +335,7 @@
             PerformLayout();
         }
 
-        private void TxtTESTUser_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+
 
         #endregion
 
