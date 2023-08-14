@@ -109,3 +109,4 @@ C:\Users\kmhar\Documents\GCyber\GitHub2\AuditReportWriter\AuditReportWriter\obj\
 C:\Users\kmhar\Documents\GCyber\GitHub2\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.pdb
 C:\Users\kmhar\Documents\GCyber\GitHub2\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.genruntimeconfig.cache
 C:\Users\kmhar\Documents\GCyber\GitHub2\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\ref\AuditReportWriter.dll
+C:\Users\kmhar\Documents\GCyber\GitHub2\AuditReportWriter\AuditReportWriter\bin\Debug\net7.0-windows\AuditReportWriter.dll.config
