@@ -30,7 +30,6 @@
         {
             bttnReturntoNav = new Button();
             grpOverallAudit = new GroupBox();
-            rbManualAudit = new RadioButton();
             lblChannelID = new Label();
             txtChannelID = new TextBox();
             txtOBSObject = new TextBox();
@@ -83,6 +82,8 @@
             lblMMUsernameResult = new Label();
             lblUsernameAuditResult = new Label();
             cboUsernameResult = new ComboBox();
+            bttnReset = new Button();
+            bttnSubmit = new Button();
             grpOverallAudit.SuspendLayout();
             grpCreatedTime.SuspendLayout();
             grpUpdateTime.SuspendLayout();
@@ -94,16 +95,16 @@
             // 
             // bttnReturntoNav
             // 
-            bttnReturntoNav.Location = new Point(1387, 1058);
+            bttnReturntoNav.Location = new Point(1134, 1058);
             bttnReturntoNav.Name = "bttnReturntoNav";
             bttnReturntoNav.Size = new Size(193, 29);
             bttnReturntoNav.TabIndex = 0;
             bttnReturntoNav.Text = "Return to Navigation";
             bttnReturntoNav.UseVisualStyleBackColor = true;
+            bttnReturntoNav.Click += bttnReturntoNav_Click;
             // 
             // grpOverallAudit
             // 
-            grpOverallAudit.Controls.Add(rbManualAudit);
             grpOverallAudit.Controls.Add(lblChannelID);
             grpOverallAudit.Controls.Add(txtChannelID);
             grpOverallAudit.Controls.Add(txtOBSObject);
@@ -122,17 +123,6 @@
             grpOverallAudit.TabIndex = 13;
             grpOverallAudit.TabStop = false;
             grpOverallAudit.Text = "Audit Information";
-            // 
-            // rbManualAudit
-            // 
-            rbManualAudit.AutoSize = true;
-            rbManualAudit.Location = new Point(423, 134);
-            rbManualAudit.Name = "rbManualAudit";
-            rbManualAudit.Size = new Size(119, 24);
-            rbManualAudit.TabIndex = 19;
-            rbManualAudit.TabStop = true;
-            rbManualAudit.Text = "Manual Audit";
-            rbManualAudit.UseVisualStyleBackColor = true;
             // 
             // lblChannelID
             // 
@@ -675,13 +665,34 @@
             cboUsernameResult.Size = new Size(162, 28);
             cboUsernameResult.TabIndex = 10;
             // 
+            // bttnReset
+            // 
+            bttnReset.Location = new Point(1342, 1058);
+            bttnReset.Name = "bttnReset";
+            bttnReset.Size = new Size(193, 29);
+            bttnReset.TabIndex = 20;
+            bttnReset.Text = "&Reset";
+            bttnReset.UseVisualStyleBackColor = true;
+            // 
+            // bttnSubmit
+            // 
+            bttnSubmit.Location = new Point(1548, 1058);
+            bttnSubmit.Name = "bttnSubmit";
+            bttnSubmit.Size = new Size(193, 29);
+            bttnSubmit.TabIndex = 21;
+            bttnSubmit.Text = "&Submit";
+            bttnSubmit.UseVisualStyleBackColor = true;
+            // 
             // frmMattermostChatsAudits
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1772, 1099);
+            Controls.Add(bttnSubmit);
+            Controls.Add(bttnReset);
             Controls.Add(grpUserName);
             Controls.Add(grpEmail);
             Controls.Add(grpAttachments);
@@ -727,7 +738,6 @@
         private Label dtAuditDate;
         private DateTimePicker dtAuditDateTime;
         private GroupBox groupBox1;
-        private RadioButton rbManualAudit;
         private GroupBox grpCreatedTime;
         private DateTimePicker dtOBSCreatedTime;
         private Label lblCreatedTimeOBS;
@@ -779,7 +789,7 @@
         private Label lblEmailAuditResult;
         private Label lblMMUsernameResult;
         private Label lblUsernameAuditResult;
-
-
+        private Button bttnReset;
+        private Button bttnSubmit;
     }
 }
