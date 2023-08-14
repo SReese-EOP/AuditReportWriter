@@ -20,18 +20,6 @@ namespace AuditReportWriter
         {
             InitializeComponent();
             navUser = user;
-            string mainconn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(mainconn);
-            string sqlquery = "select * from [dbo].[AuditOverview]";
-            SqlCommand sqlcomm = new SqlCommand(sqlquery, sqlconn);
-            sqlconn.Open();
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            cboSourceApplication.ValueMember = "AuditSource";
-            cboSourceApplication.DisplayMember = "AuditSource";
-            cboSourceApplication.DataSource = dt;
-            cboTypeofAudit.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,19 +60,7 @@ namespace AuditReportWriter
         {
             if (cboSourceApplication.SelectedValue.ToString() != null)
             {
-                string mainconn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-                SqlConnection sqlconn = new SqlConnection(mainconn);
-                string sqlquery = "select * from [dbo].[AuditOverview] where AuditSource = @AuditSource";
-                SqlCommand sqlcomm = new SqlCommand(sqlquery, sqlconn);
-                sqlconn.Open();
-                sqlcomm.Parameters.AddWithValue("@AuditSource", cboSourceApplication.SelectedValue.ToString());
-                SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                cboTypeofAudit.ValueMember = "Audits";
-                cboTypeofAudit.DisplayMember = "Audits";
-                cboTypeofAudit.DataSource = dt;
-                cboTypeofAudit.Enabled = true;
+
             }
         }
     }
