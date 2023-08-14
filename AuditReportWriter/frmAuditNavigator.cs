@@ -58,9 +58,17 @@ namespace AuditReportWriter
 
         private void cboSourceApplication_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboSourceApplication.SelectedValue.ToString() != null)
+            if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Exchange")
+            {   
+                cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Items.Add("Email Audit");
+                cboTypeofAudit.Items.Add("Calendar Audit");
+            }
+            if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Mattermost")
             {
-
+                cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Items.Add("Chat Audit");
+                cboTypeofAudit.Items.Add("Other Audit");
             }
         }
     }
