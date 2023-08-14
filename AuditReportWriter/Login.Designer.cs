@@ -51,7 +51,6 @@
             pictureBox6 = new PictureBox();
             panel5 = new Panel();
             USerName = new TextBox();
-            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -159,11 +158,11 @@
             // 
             txtDesktopName.AcceptsTab = true;
             txtDesktopName.AllowDrop = true;
-            txtDesktopName.Location = new Point(57, 526);
+            txtDesktopName.Location = new Point(57, 545);
             txtDesktopName.Margin = new Padding(3, 2, 3, 2);
             txtDesktopName.Name = "txtDesktopName";
             txtDesktopName.Size = new Size(244, 23);
-            txtDesktopName.TabIndex = 1;
+            txtDesktopName.TabIndex = 10;
             txtDesktopName.TextChanged += USerName_TextChanged;
             // 
             // Password
@@ -293,23 +292,12 @@
             USerName.TabIndex = 1;
             USerName.TextChanged += USerName_TextChanged;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(59, 558);
-            label5.Name = "label5";
-            label5.Size = new Size(165, 15);
-            label5.TabIndex = 9;
-            label5.Text = "this is text - can it be dynamic";
-            label5.Click += label5_Click;
-            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(320, 608);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(DataBaseName);
@@ -375,6 +363,5 @@
         private PictureBox pictureBox6;
         private Panel panel5;
         private TextBox USerName;
-        private Label label5;
     }
 }
