@@ -172,5 +172,10 @@ namespace AuditReportWriter
                 txtOBSUsernameResult.Enabled = false;
             }
         }
+
+        private void dtOBSUpdatedTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
