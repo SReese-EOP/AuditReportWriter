@@ -74,7 +74,11 @@ namespace AuditReportWriter
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cboTypeofAudit.SelectedItem.ToString()!= null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
+            if (cboTypeofAudit == null)
+            {
+                Enabled = false;
+            }
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
                 frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
                 frmMattermostChatsAudits.Show();

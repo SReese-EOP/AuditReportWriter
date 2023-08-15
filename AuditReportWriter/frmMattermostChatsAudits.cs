@@ -36,7 +36,7 @@ namespace AuditReportWriter
 
         private void bttnReset_Click(object sender, EventArgs e)
         {
-            Utilities.ResetAllConstrols(this);
+            ResetAllControls(this);
 
         }
 
