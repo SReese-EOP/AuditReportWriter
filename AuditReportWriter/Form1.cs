@@ -332,5 +332,12 @@ namespace AuditReportWriter
         {
 
         }
+
+        private void bttnReturntoNav_Click(object sender, EventArgs e)
+        {
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(emailUser);
+            frmAuditNavigator.Show();
+            this.Close();
+        }
     }
 }

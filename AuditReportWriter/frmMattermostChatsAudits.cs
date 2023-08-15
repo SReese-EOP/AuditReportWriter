@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +8,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AuditReportWriter.AuditReportController;
+using static AuditReportWriter.Utilities;
 
 namespace AuditReportWriter
 {
     public partial class frmMattermostChatsAudits : Form
     {
-        private userInfo user;
+        public userInfo user;
 
         public frmMattermostChatsAudits()
         {
             InitializeComponent();
+
+        }
+        /*       private void dtAuditDateTime_ValueChanged(object sender, EventArgs e) 
+               {
+
+               }*/
+
+        private void bttnReturntoNav_Click(object sender, EventArgs e)
+        {
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+            frmAuditNavigator.Show();
+            this.Close();
+        }
+
+        private void bttnReset_Click(object sender, EventArgs e)
+        {
+            //ResetAllControls(this);
+            txtMessageID.Controls.Clear();
+            txtOBSObject.Controls.Clear();
+            txtChannelID.Controls.Clear();
+            cboOverallAuditResult.Controls.Clear();
+            grpOverallAudit.Controls.Clear();
+            grpAttachments.Controls.Clear();
+            grpCreatedTime.Controls.Clear();
+            grpEmail.Controls.Clear();
+            grpMessageText.Controls.Clear();
+            grpUpdateTime.Controls.Clear();
+            grpUserName.Controls.Clear();
+
+        }
+
+        private void bttnSubmit_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
@@ -29,56 +66,42 @@ namespace AuditReportWriter
             if (cboOverallAuditResult.SelectedItem != null && cboOverallAuditResult.SelectedItem.ToString() == "FAIL")
             {
                 //enable the groups for the audit reults
-                grpCreatedTime.Enabled = true;
-                grpUpdateTime.Enabled = true;
-                grpMessageText.Enabled = true;
                 grpAttachments.Enabled = true;
+                grpCreatedTime.Enabled = true;
                 grpEmail.Enabled = true;
+                grpMessageText.Enabled = true;
+                grpUpdateTime.Enabled = true;
                 grpUserName.Enabled = true;
                 //set the groups to blank for data entry
-                cboCreatedTimeResult.SelectedItem = null;
-                cboUpdatedTimeResult.SelectedItem = null;
-                cboMessageTextAuditResult.SelectedItem = null;
-                cboEmailAuditResult.SelectedItem = null;
-                cboUsernameResult.SelectedItem = null;
                 cboAttachmentsResult.SelectedItem = null;
+                cboCreatedTimeResult.SelectedItem = null;
+                cboEmailAuditResult.SelectedItem = null;
+                cboMessageTextAuditResult.SelectedItem = null;
+                cboUpdatedTimeResult.SelectedItem = null;
+                cboUsernameResult.SelectedItem = null;
 
             }
             else
             {
                 //disable all the groups since the audit results are passing
-                grpCreatedTime.Enabled = false;
-                grpUpdateTime.Enabled = false;
-                grpMessageText.Enabled = false;
                 grpAttachments.Enabled = false;
+                grpCreatedTime.Enabled = false;
                 grpEmail.Enabled = false;
+                grpMessageText.Enabled = false;
+                grpUpdateTime.Enabled = false;
                 grpUserName.Enabled = false;
 
                 //mark all of the audit results as passing
-                cboCreatedTimeResult.SelectedItem = "PASS";
+                cboUsernameResult.SelectedItem = "PASS";
                 cboUpdatedTimeResult.SelectedItem = "PASS";
                 cboMessageTextAuditResult.SelectedItem = "PASS";
                 cboEmailAuditResult.SelectedItem = "PASS";
-                cboUsernameResult.SelectedItem = "PASS";
+                cboCreatedTimeResult.SelectedItem = "PASS";
                 cboAttachmentsResult.SelectedItem = "PASS";
             }
         }
 
-        private void bttnReturntoNav_Click(object sender, EventArgs e)
-        {
-            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
-            frmAuditNavigator.Show();
-            this.Hide();
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
-            frmMattermostChatsAudits.Show();
-            this.Hide();
-        }
-
-        private void cboCreatedTimeResult_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboCreatedTimeResult_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboCreatedTimeResult.SelectedItem != null && cboCreatedTimeResult.SelectedItem.ToString() == "FAIL")
             {
@@ -92,7 +115,7 @@ namespace AuditReportWriter
             }
         }
 
-        private void cboUpdatedTimeResult_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboUpdatedTimeResult_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboUpdatedTimeResult.SelectedItem != null && cboUpdatedTimeResult.SelectedItem.ToString() == "FAIL")
             {
@@ -106,7 +129,7 @@ namespace AuditReportWriter
             }
         }
 
-        private void cboMessageTextAuditResult_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboMessageTextAuditResult_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboMessageTextAuditResult.SelectedItem != null && cboMessageTextAuditResult.SelectedItem.ToString() == "FAIL")
             {
@@ -120,7 +143,7 @@ namespace AuditReportWriter
             }
         }
 
-        private void cboAttachmentsResult_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboAttachmentsResult_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboAttachmentsResult.SelectedItem != null && cboAttachmentsResult.SelectedItem.ToString() == "FAIL")
             {
@@ -134,7 +157,7 @@ namespace AuditReportWriter
             }
         }
 
-        private void cboEmailAuditResult_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboEmailAuditResult_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboEmailAuditResult.SelectedItem != null && cboEmailAuditResult.SelectedItem.ToString() == "FAIL")
             {
@@ -148,7 +171,7 @@ namespace AuditReportWriter
             }
         }
 
-        private void cboUsernameResult_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboUsernameResult_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboUsernameResult.SelectedItem != null && cboUsernameResult.SelectedItem.ToString() == "FAIL")
             {
@@ -161,6 +184,10 @@ namespace AuditReportWriter
                 txtOBSUsernameResult.Enabled = false;
             }
         }
+
+        private void dtOBSUpdatedTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-

@@ -20,18 +20,6 @@ namespace AuditReportWriter
         {
             InitializeComponent();
             navUser = user;
-            string mainconn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(mainconn);
-            string sqlquery = "select * from [dbo].[AuditOverview]";
-            SqlCommand sqlcomm = new SqlCommand(sqlquery, sqlconn);
-            sqlconn.Open();
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            cboSourceApplication.ValueMember = "AuditSource";
-            cboSourceApplication.DisplayMember = "AuditSource";
-            cboSourceApplication.DataSource = dt;
-            cboTypeofAudit.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -70,21 +58,38 @@ namespace AuditReportWriter
 
         private void cboSourceApplication_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboSourceApplication.SelectedValue.ToString() != null)
+            if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Exchange")
             {
-                string mainconn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
-                SqlConnection sqlconn = new SqlConnection(mainconn);
-                string sqlquery = "select * from [dbo].[AuditOverview] where AuditSource = @AuditSource";
-                SqlCommand sqlcomm = new SqlCommand(sqlquery, sqlconn);
-                sqlconn.Open();
-                sqlcomm.Parameters.AddWithValue("@AuditSource", cboSourceApplication.SelectedValue.ToString());
-                SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                cboTypeofAudit.ValueMember = "Audits";
-                cboTypeofAudit.DisplayMember = "Audits";
-                cboTypeofAudit.DataSource = dt;
-                cboTypeofAudit.Enabled = true;
+                cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Items.Add("Email Audit");
+                cboTypeofAudit.Items.Add("Calendar Audit");
+            }
+            if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Mattermost")
+            {
+                cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Items.Add("Chat Audit");
+                cboTypeofAudit.Items.Add("Other Audit");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cboTypeofAudit == null)
+            {
+                Enabled = false;
+            }
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
+            {
+                frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
+                frmMattermostChatsAudits.Show();
+                this.Close();
+            }
+
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Email Audit")
+            {
+                frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
+                frmEmailAuditReport.Show();
+                this.Close();
             }
         }
     }

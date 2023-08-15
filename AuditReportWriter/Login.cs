@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -101,7 +100,9 @@ namespace AuditReportWriter
 
         }
 
-        private void label5_Click(object sender, EventArgs e) => txtDesktopName.Text = WindowsIdentity.GetCurrent().Name;
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
