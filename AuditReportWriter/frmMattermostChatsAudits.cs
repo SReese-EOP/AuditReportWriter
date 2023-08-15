@@ -37,33 +37,8 @@ namespace AuditReportWriter
         private void bttnReset_Click(object sender, EventArgs e)
         {
             //ResetAllControls(this);
-            foreach (Control control in form.Controls)
-            {
-                if (control is TextBox)
-                {
-                    TextBox textbox = (TextBox)control;
-                    textbox.Text = null;
-                }
-                if (control is ComboBox)
-                {
-                    ComboBox combobox = (ComboBox)control;
-                    if (combobox.Items.Count > 0)
-                        combobox.SelectedIndex = 0;
-                }
-
-                if (control is CheckBox)
-                {
-                    CheckBox checkbox = (CheckBox)control;
-                    checkbox.Checked = false;
-                }
-
-                if (control is ListBox)
-                {
-                    ListBox listbox = (ListBox)control;
-                    listbox.ClearSelected();
-                }
-            }
-
+            this.Controls.Clear();
+            this.InitializeComponent();
         }
 
         private void bttnSubmit_Click(object sender, EventArgs e)
