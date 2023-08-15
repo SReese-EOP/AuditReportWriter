@@ -36,7 +36,18 @@ namespace AuditReportWriter
 
         private void bttnReset_Click(object sender, EventArgs e)
         {
-            ResetAllControls(this);
+            //ResetAllControls(this);
+            txtMessageID.Controls.Clear();
+            txtOBSObject.Controls.Clear();
+            txtChannelID.Controls.Clear();
+            cboOverallAuditResult.Controls.Clear();
+            grpOverallAudit.Controls.Clear();
+            grpAttachments.Controls.Clear();
+            grpCreatedTime.Controls.Clear();
+            grpEmail.Controls.Clear();
+            grpMessageText.Controls.Clear();
+            grpUpdateTime.Controls.Clear();
+            grpUserName.Controls.Clear();
 
         }
 
