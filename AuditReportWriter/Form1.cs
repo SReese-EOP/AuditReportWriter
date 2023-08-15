@@ -296,6 +296,10 @@ namespace AuditReportWriter
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Try using the commented out lines of code - they will reset the whole form regardless of changes made
+            //plus it is much shorter to reset the form
+            //this.Controls.Clear();
+            //this.InitializeComponent();
             txtMessageID.Text = null;
             txtOBSObject.Text = null;
             txtJournaledMailbox.Text = null;
