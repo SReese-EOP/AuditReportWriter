@@ -165,6 +165,23 @@ namespace AuditReportWriter
             //execute the audit report write
             auditReportController.WriteEmailAuditReport(emailAuditReport, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
             MessageBox.Show("Email audit was successfully submitted under Audit ID: " + emailAuditReport.AuditId);
+            DialogResult result = MessageBox.Show("");
+
+            if(result == DialogResult.Yes)
+            {
+                this.Controls.Clear();
+                this.InitializeComponent();
+                txtMessageID.Focus();
+            }
+            else
+            {
+                frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(emailUser);
+                frmAuditNavigator.Show();
+                this.Close();
+            }
+
+
+
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,7 +44,54 @@ namespace AuditReportWriter
 
         private void bttnSubmit_Click(object sender, EventArgs e)
         {
+            //init a new email audit report object
+            MMAuditReport mmAuditReport = new MMAuditReport();
 
+            //init a new controller to write the audit report
+            MMAuditReportController MMauditReportController = new MMAuditReportController();
+
+            //add the audit report data
+            mmAuditReport.AuditDateTime = dtAuditDateTime.Value;
+            mmAuditReport.ChannelID = txtChannelID.Text;
+            mmAuditReport.PostID = txtMessageID.Text;
+            mmAuditReport.CreateTime = cboCreatedTimeResult.SelectedItem.ToString();
+            mmAuditReport.CreateTimeValueMM = dtMMCreatedTime.Value;
+            mmAuditReport.CreateTimeValueOBS = dtOBSCreatedTime.Value;
+            mmAuditReport.UpdateTime = cboUpdatedTimeResult.SelectedItem.ToString();
+            mmAuditReport.UpdateTimeValueMM = dtMMUpdatedTime.Value;
+            mmAuditReport.UpdateTimeValueOBS = dtOBSUpdatedTime.Value;
+            mmAuditReport.MessageText = cboMessageTextAuditResult.SelectedItem.ToString();
+            mmAuditReport.MessageTextValueMM = txtMMMessageTextResult.Text;
+            mmAuditReport.MessageTextValueOBS = txtOBSMessageTextResult.Text;
+            mmAuditReport.Attachments = cboAttachmentsResult.SelectedItem.ToString();
+            mmAuditReport.AttachmentsValueMM = txtMMAttachmentsResult.Text;
+            mmAuditReport.AttachmentsValueOBS = txtOBSAttachmentsResult.Text;
+            mmAuditReport.Email = cboEmailAuditResult.SelectedItem.ToString();
+            mmAuditReport.EmailValueMM = txtMMEmailResult.Text;
+            mmAuditReport.EmailValueOBS = txtOBSEmailResult.Text;
+            mmAuditReport.UserName = cboUsernameResult.SelectedItem.ToString();
+            mmAuditReport.UserNameValueMM = txtMMUsernameResult.Text;
+            mmAuditReport.UserNameValueOBS = txtOBSUsernameResult.Text;
+            mmAuditReport.AuditResults = cboOverallAuditResult.SelectedItem.ToString();
+            mmAuditReport.Auditor = WindowsIdentity.GetCurrent().Name;
+
+            //execute the audit report write
+            MMauditReportController.WriteMMAuditReport(mmAuditReport, user.Server, user.Database, user.UserName, user.Password);
+            MessageBox.Show("Mattermost audit was successfully submitted under Audit ID: " + mmAuditReport.auditID);
+            DialogResult result = MessageBox.Show("");
+
+            if (result == DialogResult.Yes)
+            {
+                this.Controls.Clear();
+                this.InitializeComponent();
+                txtMessageID.Focus();
+            }
+            else
+            {
+                frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+                frmAuditNavigator.Show();
+                this.Close();
+            }
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
