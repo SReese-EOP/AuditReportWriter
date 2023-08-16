@@ -62,13 +62,13 @@ namespace AuditReportWriter
             {
                 cboTypeofAudit.Items.Clear();
                 cboTypeofAudit.Items.Add("Email Audit");
-                cboTypeofAudit.Items.Add("Calendar Audit");
+                //cboTypeofAudit.Items.Add("Calendar Audit");
             }
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Mattermost")
             {
                 cboTypeofAudit.Items.Clear();
                 cboTypeofAudit.Items.Add("Chat Audit");
-                cboTypeofAudit.Items.Add("Other Audit");
+                //cboTypeofAudit.Items.Add("Other Audit");
             }
         }
 
