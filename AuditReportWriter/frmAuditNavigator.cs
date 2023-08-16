@@ -46,7 +46,7 @@ namespace AuditReportWriter
 
         private void bttnChatAudit_Click(object sender, EventArgs e)
         {
-            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
+            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
             frmMattermostChatsAudits.Show();
             this.Hide();
         }
@@ -80,7 +80,7 @@ namespace AuditReportWriter
             }
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
-                frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
+                frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
                 frmMattermostChatsAudits.Show();
                 this.Close();
             }

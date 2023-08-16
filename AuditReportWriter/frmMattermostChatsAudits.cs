@@ -16,12 +16,12 @@ namespace AuditReportWriter
 {
     public partial class frmMattermostChatsAudits : Form
     {
-        public userInfo user;
+        public userInfo MMuser;
 
         public frmMattermostChatsAudits(userInfo navuser)
         {
             InitializeComponent();
-            user = navuser;
+            MMuser = navuser;
 
         }
         /*       private void dtAuditDateTime_ValueChanged(object sender, EventArgs e) 
@@ -31,7 +31,7 @@ namespace AuditReportWriter
 
         private void bttnReturntoNav_Click(object sender, EventArgs e)
         {
-            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(MMuser);
             frmAuditNavigator.Show();
             this.Close();
         }
@@ -77,9 +77,9 @@ namespace AuditReportWriter
             mmAuditReport.Auditor = WindowsIdentity.GetCurrent().Name;
 
             //execute the audit report write
-            MMauditReportController.WriteMMAuditReport(mmAuditReport, user.Server, user.Database, user.UserName, user.Password);
+            MMauditReportController.WriteMMAuditReport(mmAuditReport, MMuser.Server, MMuser.Database, MMuser.UserName, MMuser.Password);
             MessageBox.Show("Mattermost audit was successfully submitted under Audit ID: " + mmAuditReport.auditID);
-            DialogResult result = MessageBox.Show("");
+            DialogResult result = MessageBox.Show("Do you want to enter another audit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -89,7 +89,7 @@ namespace AuditReportWriter
             }
             else
             {
-                frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+                frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(MMuser);
                 frmAuditNavigator.Show();
                 this.Close();
             }
