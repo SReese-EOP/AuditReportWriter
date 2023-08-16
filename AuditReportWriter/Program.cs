@@ -208,8 +208,8 @@ namespace AuditReportWriter
         private int CreateMMAuditId(SqlCommand sqlCommand)
         {
             sqlCommand.CommandText = "SELECT MAX(auditID) FROM dbo.MMauditdata";
-            int auditID = Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1;
-            return auditID;
+            int auditId = Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1;
+            return auditId;
         }
 
         public void WriteMMAuditReport(MMAuditReport auditReport, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
@@ -224,7 +224,7 @@ namespace AuditReportWriter
                     using (SqlCommand command = connection.CreateCommand())
                     {
                         int auditId = CreateMMAuditId(command);
-                        auditReport.auditID = auditID;
+                        auditReport.auditID = auditId;
                     }
 
                     using (SqlCommand command = connection.CreateCommand())

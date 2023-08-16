@@ -18,9 +18,10 @@ namespace AuditReportWriter
     {
         public userInfo user;
 
-        public frmMattermostChatsAudits()
+        public frmMattermostChatsAudits(userInfo navuser)
         {
             InitializeComponent();
+            user = navuser;
 
         }
         /*       private void dtAuditDateTime_ValueChanged(object sender, EventArgs e) 
