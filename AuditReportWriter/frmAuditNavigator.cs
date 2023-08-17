@@ -78,13 +78,6 @@ namespace AuditReportWriter
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (cboTypeofAudit == null)
-            {
-                Enabled = false;
-            }
-            else { Enabled = true; }
-
             cboSourceApplication.Items.Clear();
             cboTypeofAudit.Items.Clear();
 
@@ -105,7 +98,10 @@ namespace AuditReportWriter
 
         private void cboTypeofAudit_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cboTypeofAudit != null)
+            {
+                btnGo.Enabled = true;
+            }
         }
     }
 }
