@@ -63,6 +63,7 @@ namespace AuditReportWriter
                 cboTypeofAudit.Items.Clear();
                 cboTypeofAudit.Text = string.Empty;
                 cboTypeofAudit.Items.Add("Email Audit");
+                cboTypeofAudit.Enabled = true;
                 //cboTypeofAudit.Items.Add("Calendar Audit");
             }
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Mattermost")
@@ -70,6 +71,7 @@ namespace AuditReportWriter
                 cboTypeofAudit.Items.Clear();
                 cboTypeofAudit.Text = string.Empty;
                 cboTypeofAudit.Items.Add("Chat Audit");
+                cboTypeofAudit.Enabled = true;
                 //cboTypeofAudit.Items.Add("Other Audit");
             }
         }

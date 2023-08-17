@@ -684,7 +684,6 @@
             // 
             // bttnSubmit
             // 
-            bttnSubmit.Enabled = false;
             bttnSubmit.Location = new Point(1545, 1044);
             bttnSubmit.Name = "bttnSubmit";
             bttnSubmit.Size = new Size(193, 29);

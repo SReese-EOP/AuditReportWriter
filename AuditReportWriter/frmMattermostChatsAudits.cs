@@ -45,6 +45,8 @@ namespace AuditReportWriter
 
         private void bttnSubmit_Click(object sender, EventArgs e)
         {
+            //if (txtChannelID != null && txtPostID != null && all of the fields need to not be null)
+            //else messagebox = there is a fialuer - and it can be done either at individaul if else statemetns, or do it in one long sting
             //init a new email audit report object
             MMAuditReport mmAuditReport = new MMAuditReport();
 
@@ -93,6 +95,8 @@ namespace AuditReportWriter
                 frmAuditNavigator.Show();
                 this.Close();
             }
+
+            //else the form isn't filled out the correct way
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)

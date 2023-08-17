@@ -58,6 +58,7 @@
             // 
             // cboTypeofAudit
             // 
+            cboTypeofAudit.Enabled = false;
             cboTypeofAudit.FormattingEnabled = true;
             cboTypeofAudit.Location = new Point(205, 102);
             cboTypeofAudit.Name = "cboTypeofAudit";
