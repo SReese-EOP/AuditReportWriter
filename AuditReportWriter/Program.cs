@@ -192,6 +192,7 @@ namespace AuditReportWriter
                         command.Parameters.AddWithValue("@MessageAttachmentsValueOBS", (object)auditReport.MessageAttachmentsValueOBS ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Auditor", (object)auditReport.Auditor ?? DBNull.Value);
                         command.ExecuteNonQuery();
+                        connection.Close();
                     }
                 }
             }
@@ -264,8 +265,10 @@ namespace AuditReportWriter
                         command.Parameters.AddWithValue("@emailvalueOBS", (object)auditReport.EmailValueOBS ?? DBNull.Value);
                         command.Parameters.AddWithValue("@usernamevalueMM", (object)auditReport.UserNameValueMM ?? DBNull.Value);
                         command.Parameters.AddWithValue("@usernamevalueOBS", (object)auditReport.UserNameValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@AuditDateTime", auditReport.AuditDateTime);
                         command.Parameters.AddWithValue("@Auditor", (object)auditReport.Auditor ?? DBNull.Value);
                         command.ExecuteNonQuery();
+                        connection.Close();
                     }
                 }
             }

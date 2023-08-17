@@ -63,6 +63,7 @@
             cboTypeofAudit.Name = "cboTypeofAudit";
             cboTypeofAudit.Size = new Size(151, 28);
             cboTypeofAudit.TabIndex = 2;
+            cboTypeofAudit.SelectedIndexChanged += cboTypeofAudit_SelectedIndexChanged;
             // 
             // lblSourceApp
             // 
@@ -85,6 +86,7 @@
             // 
             // btnGo
             // 
+            btnGo.Enabled = false;
             btnGo.Location = new Point(428, 101);
             btnGo.Name = "btnGo";
             btnGo.Size = new Size(94, 29);

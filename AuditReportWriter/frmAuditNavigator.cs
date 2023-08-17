@@ -61,12 +61,14 @@ namespace AuditReportWriter
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Exchange")
             {
                 cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Text = string.Empty;
                 cboTypeofAudit.Items.Add("Email Audit");
                 //cboTypeofAudit.Items.Add("Calendar Audit");
             }
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Mattermost")
             {
                 cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Text = string.Empty;
                 cboTypeofAudit.Items.Add("Chat Audit");
                 //cboTypeofAudit.Items.Add("Other Audit");
             }
@@ -74,10 +76,16 @@ namespace AuditReportWriter
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             if (cboTypeofAudit == null)
             {
                 Enabled = false;
             }
+            else { Enabled = true; }
+
+            cboSourceApplication.Items.Clear();
+            cboTypeofAudit.Items.Clear();
+
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
                 frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
@@ -91,6 +99,11 @@ namespace AuditReportWriter
                 frmEmailAuditReport.Show();
                 this.Close();
             }
+        }
+
+        private void cboTypeofAudit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
