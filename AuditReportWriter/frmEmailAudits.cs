@@ -166,6 +166,44 @@ namespace AuditReportWriter
             //execute the audit report write
             auditReportController.WriteEmailAuditReport(emailAuditReport, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
             MessageBox.Show("Email audit was successfully submitted under Audit ID: " + emailAuditReport.AuditId);
+            DialogResult result = MessageBox.Show("Do you want to enter another audit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                txtMessageID.Text = null;
+                txtOBSObject.Text = null;
+                txtJournaledMailbox.Text = null;
+                txtJounalEmailId.Text = null;
+                cboOverallAuditResult.Text = null;
+                cboReceivedTimeResult.Text = null;
+                cbobccAuditResult.Text = null;
+                txtbccExchangeResult.Text = null;
+                txtbccOBSResult.Text = null;
+                cboSenderResult.Text = null;
+                txtExchSenderResult.Text = null;
+                txtOBSSenderResult.Text = null;
+                cboSubjectValueResult.Text = null;
+                txtSubjectExchangeResult.Text = null;
+                txtSubjectOBSResult.Text = null;
+                cboToAuditResult.Text = null;
+                txtExchToResult.Text = null;
+                txtOBSToResult.Text = null;
+                cboBodyValueResult.Text = null;
+                txtBodyExchangeResult.Text = null;
+                txtBodyOBSResult.Text = null;
+                cboCCAuditResult.Text = null;
+                txtCCExchResult.Text = null;
+                cboAttachementAuditResult.Text = null;
+                txtAttachmentExchangeResult.Text = null;
+                txtAttachmentOBSResult.Text = null;
+                txtMessageID.Focus();
+            }
+            else
+            {
+                frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(emailUser);
+                frmAuditNavigator.Show();
+                this.Hide();
+            }
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
