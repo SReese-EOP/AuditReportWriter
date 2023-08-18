@@ -148,7 +148,40 @@ namespace AuditReportWriter
                 //write admin logs to show what happened.
             }
         }
+    }
 
+    public class Utilities
+        {
+            public static void ResetAllControls (Control form)
+            {
+                foreach(Control control in form.Controls) 
+                {
+                    if (control is TextBox)
+                    {
+                        TextBox textbox = (TextBox)control;
+                        textbox.Text = null;
+                     }
+                    if (control is ComboBox)
+                    {
+                        ComboBox combobox = (ComboBox)control;
+                        if (combobox.Items.Count >0)
+                            combobox.SelectedIndex = 0;
+                    }
+
+                    if (control is CheckBox)
+                    {
+                        CheckBox checkbox = (CheckBox)control;
+                        checkbox.Checked = false;
+                    }
+
+                    if (control is ListBox)
+                    {
+                        ListBox listbox = (ListBox)control;
+                        listbox.ClearSelected();
+                    }
+                }
+            }
+        
        
     }
 }

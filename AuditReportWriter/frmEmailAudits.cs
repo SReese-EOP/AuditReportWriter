@@ -342,9 +342,9 @@ namespace AuditReportWriter
 
         private void bttnReturntoNav_Click(object sender, EventArgs e)
         {
-            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(user);
+            frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(emailUser);
             frmAuditNavigator.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

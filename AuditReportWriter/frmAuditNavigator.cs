@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace AuditReportWriter
 {
@@ -47,6 +49,48 @@ namespace AuditReportWriter
             frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
             frmMattermostChatsAudits.Show();
             this.Hide();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSourceApplication_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Exchange")
+            {
+                cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Items.Add("Email Audit");
+                cboTypeofAudit.Items.Add("Calendar Audit");
+            }
+            if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Mattermost")
+            {
+                cboTypeofAudit.Items.Clear();
+                cboTypeofAudit.Items.Add("Chat Audit");
+                cboTypeofAudit.Items.Add("Other Audit");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cboTypeofAudit == null)
+            {
+                Enabled = false;
+            }
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
+            {
+                frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
+                frmMattermostChatsAudits.Show();
+                this.Close();
+            }
+
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Email Audit")
+            {
+                frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
+                frmEmailAuditReport.Show();
+                this.Close();
+            }
         }
     }
 }
