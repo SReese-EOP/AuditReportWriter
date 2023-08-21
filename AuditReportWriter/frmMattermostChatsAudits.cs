@@ -57,8 +57,10 @@ namespace AuditReportWriter
                 cboEmailAuditResult != null &&
                 cboMessageTextAuditResult != null &&
                 cboUpdatedTimeResult != null &&
-                cboUsernameResult != null)
+                cboUsernameResult != null
+                )
             {
+                bttnSubmit.Enabled = true;
                 //else messagebox = there is a fialuer - and it can be done either at individaul if else statemetns, or do it in one long sting
                 //init a new email audit report object
                 MMAuditReport mmAuditReport = new MMAuditReport();
