@@ -53,16 +53,18 @@
             cboSourceApplication.Location = new Point(12, 103);
             cboSourceApplication.Name = "cboSourceApplication";
             cboSourceApplication.Size = new Size(151, 28);
-            cboSourceApplication.TabIndex = 4;
+            cboSourceApplication.TabIndex = 1;
             cboSourceApplication.SelectedIndexChanged += cboSourceApplication_SelectedIndexChanged;
             // 
             // cboTypeofAudit
             // 
+            cboTypeofAudit.Enabled = false;
             cboTypeofAudit.FormattingEnabled = true;
             cboTypeofAudit.Location = new Point(205, 102);
             cboTypeofAudit.Name = "cboTypeofAudit";
             cboTypeofAudit.Size = new Size(151, 28);
-            cboTypeofAudit.TabIndex = 4;
+            cboTypeofAudit.TabIndex = 2;
+            cboTypeofAudit.SelectedIndexChanged += cboTypeofAudit_SelectedIndexChanged;
             // 
             // lblSourceApp
             // 
@@ -85,10 +87,11 @@
             // 
             // btnGo
             // 
+            btnGo.Enabled = false;
             btnGo.Location = new Point(428, 101);
             btnGo.Name = "btnGo";
             btnGo.Size = new Size(94, 29);
-            btnGo.TabIndex = 6;
+            btnGo.TabIndex = 3;
             btnGo.Text = "Go";
             btnGo.UseVisualStyleBackColor = true;
             btnGo.Click += button1_Click;
