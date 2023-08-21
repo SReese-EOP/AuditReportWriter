@@ -46,57 +46,76 @@ namespace AuditReportWriter
         private void bttnSubmit_Click(object sender, EventArgs e)
         {
             //if (txtChannelID != null && txtPostID != null && all of the fields need to not be null)
-            //else messagebox = there is a fialuer - and it can be done either at individaul if else statemetns, or do it in one long sting
-            //init a new email audit report object
-            MMAuditReport mmAuditReport = new MMAuditReport();
-
-            //init a new controller to write the audit report
-            MMAuditReportController MMauditReportController = new MMAuditReportController();
-
-            //add the audit report data
-            mmAuditReport.AuditDateTime = dtAuditDateTime.Value;
-            mmAuditReport.ChannelID = txtChannelID.Text;
-            mmAuditReport.PostID = txtMessageID.Text;
-            mmAuditReport.CreateTime = cboCreatedTimeResult.SelectedItem.ToString();
-            mmAuditReport.CreateTimeValueMM = dtMMCreatedTime.Value;
-            mmAuditReport.CreateTimeValueOBS = dtOBSCreatedTime.Value;
-            mmAuditReport.UpdateTime = cboUpdatedTimeResult.SelectedItem.ToString();
-            mmAuditReport.UpdateTimeValueMM = dtMMUpdatedTime.Value;
-            mmAuditReport.UpdateTimeValueOBS = dtOBSUpdatedTime.Value;
-            mmAuditReport.MessageText = cboMessageTextAuditResult.SelectedItem.ToString();
-            mmAuditReport.MessageTextValueMM = txtMMMessageTextResult.Text;
-            mmAuditReport.MessageTextValueOBS = txtOBSMessageTextResult.Text;
-            mmAuditReport.Attachments = cboAttachmentsResult.SelectedItem.ToString();
-            mmAuditReport.AttachmentsValueMM = txtMMAttachmentsResult.Text;
-            mmAuditReport.AttachmentsValueOBS = txtOBSAttachmentsResult.Text;
-            mmAuditReport.Email = cboEmailAuditResult.SelectedItem.ToString();
-            mmAuditReport.EmailValueMM = txtMMEmailResult.Text;
-            mmAuditReport.EmailValueOBS = txtOBSEmailResult.Text;
-            mmAuditReport.UserName = cboUsernameResult.SelectedItem.ToString();
-            mmAuditReport.UserNameValueMM = txtMMUsernameResult.Text;
-            mmAuditReport.UserNameValueOBS = txtOBSUsernameResult.Text;
-            mmAuditReport.AuditResults = cboOverallAuditResult.SelectedItem.ToString();
-            mmAuditReport.Auditor = WindowsIdentity.GetCurrent().Name;
-
-            //execute the audit report write
-            MMauditReportController.WriteMMAuditReport(mmAuditReport, MMuser.Server, MMuser.Database, MMuser.UserName, MMuser.Password);
-            MessageBox.Show("Mattermost audit was successfully submitted under Audit ID: " + mmAuditReport.auditID);
-            DialogResult result = MessageBox.Show("Do you want to enter another audit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (
+                txtMessageID.Text == null &&
+                txtOBSObject.Text == null &&
+                txtChannelID == null &&
+                dtAuditDate.Text == null &&
+                cboOverallAuditResult == null &&
+                cboAttachmentsResult == null &&
+                cboCreatedTimeResult == null &&
+                cboEmailAuditResult == null &&
+                cboMessageTextAuditResult == null &&
+                cboUpdatedTimeResult == null &&
+                cboUsernameResult == null)
             {
-                this.Controls.Clear();
-                this.InitializeComponent();
-                txtMessageID.Focus();
+                //else messagebox = there is a fialuer - and it can be done either at individaul if else statemetns, or do it in one long sting
+                //init a new email audit report object
+                MMAuditReport mmAuditReport = new MMAuditReport();
+
+                //init a new controller to write the audit report
+                MMAuditReportController MMauditReportController = new MMAuditReportController();
+
+                //add the audit report data
+                mmAuditReport.AuditDateTime = dtAuditDateTime.Value;
+                mmAuditReport.ChannelID = txtChannelID.Text;
+                mmAuditReport.PostID = txtMessageID.Text;
+                mmAuditReport.CreateTime = cboCreatedTimeResult.SelectedItem.ToString();
+                mmAuditReport.CreateTimeValueMM = dtMMCreatedTime.Value;
+                mmAuditReport.CreateTimeValueOBS = dtOBSCreatedTime.Value;
+                mmAuditReport.UpdateTime = cboUpdatedTimeResult.SelectedItem.ToString();
+                mmAuditReport.UpdateTimeValueMM = dtMMUpdatedTime.Value;
+                mmAuditReport.UpdateTimeValueOBS = dtOBSUpdatedTime.Value;
+                mmAuditReport.MessageText = cboMessageTextAuditResult.SelectedItem.ToString();
+                mmAuditReport.MessageTextValueMM = txtMMMessageTextResult.Text;
+                mmAuditReport.MessageTextValueOBS = txtOBSMessageTextResult.Text;
+                mmAuditReport.Attachments = cboAttachmentsResult.SelectedItem.ToString();
+                mmAuditReport.AttachmentsValueMM = txtMMAttachmentsResult.Text;
+                mmAuditReport.AttachmentsValueOBS = txtOBSAttachmentsResult.Text;
+                mmAuditReport.Email = cboEmailAuditResult.SelectedItem.ToString();
+                mmAuditReport.EmailValueMM = txtMMEmailResult.Text;
+                mmAuditReport.EmailValueOBS = txtOBSEmailResult.Text;
+                mmAuditReport.UserName = cboUsernameResult.SelectedItem.ToString();
+                mmAuditReport.UserNameValueMM = txtMMUsernameResult.Text;
+                mmAuditReport.UserNameValueOBS = txtOBSUsernameResult.Text;
+                mmAuditReport.AuditResults = cboOverallAuditResult.SelectedItem.ToString();
+                mmAuditReport.Auditor = WindowsIdentity.GetCurrent().Name;
+
+                //execute the audit report write
+                MMauditReportController.WriteMMAuditReport(mmAuditReport, MMuser.Server, MMuser.Database, MMuser.UserName, MMuser.Password);
+                MessageBox.Show("Mattermost audit was successfully submitted under Audit ID: " + mmAuditReport.auditID);
+                DialogResult result = MessageBox.Show("Do you want to enter another audit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.Controls.Clear();
+                    this.InitializeComponent();
+                    txtMessageID.Focus();
+                }
+                else
+                {
+                    frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(MMuser);
+                    frmAuditNavigator.Show();
+                    this.Close();
+                }
             }
+            //else the form isn't filled out the right way - what to do next?
+            //allow the user to close out the message box and fill in the form again
             else
             {
-                frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(MMuser);
-                frmAuditNavigator.Show();
-                this.Close();
+                MessageBox.Show("The audit form is not filled out properly. At least one of the fields is blank.");
             }
 
-            //else the form isn't filled out the correct way
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
