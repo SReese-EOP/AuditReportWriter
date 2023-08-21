@@ -103,5 +103,15 @@ namespace AuditReportWriter
                 btnGo.Enabled = true;
             }
         }
+
+        private void bttnChanges_Click(object sender, EventArgs e)
+        {
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
+            {
+                frmMattermostChatCorrections frmMattermostChatCorrections = new frmMattermostChatCorrections();
+                frmMattermostChatCorrections.Show();
+                this.Close();
+            }
+        }
     }
 }

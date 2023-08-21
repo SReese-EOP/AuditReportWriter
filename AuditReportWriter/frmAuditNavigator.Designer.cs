@@ -34,6 +34,8 @@
             lblSourceApp = new Label();
             lblTypeAudit = new Label();
             btnGo = new Button();
+            bttnChanges = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // lblSelectAudit
@@ -88,19 +90,41 @@
             // btnGo
             // 
             btnGo.Enabled = false;
-            btnGo.Location = new Point(428, 101);
+            btnGo.Location = new Point(12, 198);
             btnGo.Name = "btnGo";
-            btnGo.Size = new Size(94, 29);
+            btnGo.Size = new Size(151, 29);
             btnGo.TabIndex = 3;
-            btnGo.Text = "Go";
+            btnGo.Text = "New Audit";
             btnGo.UseVisualStyleBackColor = true;
             btnGo.Click += button1_Click;
+            // 
+            // bttnChanges
+            // 
+            bttnChanges.Enabled = false;
+            bttnChanges.Location = new Point(205, 198);
+            bttnChanges.Name = "bttnChanges";
+            bttnChanges.Size = new Size(151, 29);
+            bttnChanges.TabIndex = 6;
+            bttnChanges.Text = "Edit Existing Record";
+            bttnChanges.UseVisualStyleBackColor = true;
+            bttnChanges.Click += bttnChanges_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(11, 159);
+            label1.Name = "label1";
+            label1.Size = new Size(432, 20);
+            label1.TabIndex = 7;
+            label1.Text = "Would you like to submit a new audit or edit an existing record?";
             // 
             // frmAuditNavigator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(609, 253);
+            ClientSize = new Size(520, 316);
+            Controls.Add(label1);
+            Controls.Add(bttnChanges);
             Controls.Add(btnGo);
             Controls.Add(lblTypeAudit);
             Controls.Add(lblSourceApp);
@@ -122,5 +146,7 @@
         private Label lblSourceApp;
         private Label lblTypeAudit;
         private Button btnGo;
+        private Button bttnChanges;
+        private Label label1;
     }
 }
