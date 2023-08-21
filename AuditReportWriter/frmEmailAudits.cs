@@ -8,6 +8,7 @@ namespace AuditReportWriter
     public partial class frmEmailAuditReport : Form
     {
         private userInfo emailUser;
+        private userInfo user;
 
         public frmEmailAuditReport(userInfo navuser)
         {
@@ -165,23 +166,44 @@ namespace AuditReportWriter
             //execute the audit report write
             auditReportController.WriteEmailAuditReport(emailAuditReport, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
             MessageBox.Show("Email audit was successfully submitted under Audit ID: " + emailAuditReport.AuditId);
-            DialogResult result = MessageBox.Show("");
+            DialogResult result = MessageBox.Show("Do you want to enter another audit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
-                this.Controls.Clear();
-                this.InitializeComponent();
+                txtMessageID.Text = null;
+                txtOBSObject.Text = null;
+                txtJournaledMailbox.Text = null;
+                txtJounalEmailId.Text = null;
+                cboOverallAuditResult.Text = null;
+                cboReceivedTimeResult.Text = null;
+                cbobccAuditResult.Text = null;
+                txtbccExchangeResult.Text = null;
+                txtbccOBSResult.Text = null;
+                cboSenderResult.Text = null;
+                txtExchSenderResult.Text = null;
+                txtOBSSenderResult.Text = null;
+                cboSubjectValueResult.Text = null;
+                txtSubjectExchangeResult.Text = null;
+                txtSubjectOBSResult.Text = null;
+                cboToAuditResult.Text = null;
+                txtExchToResult.Text = null;
+                txtOBSToResult.Text = null;
+                cboBodyValueResult.Text = null;
+                txtBodyExchangeResult.Text = null;
+                txtBodyOBSResult.Text = null;
+                cboCCAuditResult.Text = null;
+                txtCCExchResult.Text = null;
+                cboAttachementAuditResult.Text = null;
+                txtAttachmentExchangeResult.Text = null;
+                txtAttachmentOBSResult.Text = null;
                 txtMessageID.Focus();
             }
             else
             {
                 frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(emailUser);
                 frmAuditNavigator.Show();
-                this.Close();
+                this.Hide();
             }
-
-
-
         }
 
         private void dtAuditDateTime_ValueChanged(object sender, EventArgs e)
@@ -313,13 +335,10 @@ namespace AuditReportWriter
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Try using the commented out lines of code - they will reset the whole form regardless of changes made
-            //plus it is much shorter to reset the form
-            //this.Controls.Clear();
-            //this.InitializeComponent();
             txtMessageID.Text = null;
             txtOBSObject.Text = null;
             txtJournaledMailbox.Text = null;
+            txtJounalEmailId.Text = null;
             cboOverallAuditResult.Text = null;
             cboReceivedTimeResult.Text = null;
             cbobccAuditResult.Text = null;
@@ -350,6 +369,11 @@ namespace AuditReportWriter
         }
 
         private void dtExchMessageRecievedTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtJounalEmailId_TextChanged(object sender, EventArgs e)
         {
 
         }

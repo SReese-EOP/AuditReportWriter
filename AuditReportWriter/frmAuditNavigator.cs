@@ -46,7 +46,7 @@ namespace AuditReportWriter
 
         private void bttnChatAudit_Click(object sender, EventArgs e)
         {
-            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
+            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
             frmMattermostChatsAudits.Show();
             this.Hide();
         }
@@ -61,29 +61,26 @@ namespace AuditReportWriter
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Exchange")
             {
                 cboTypeofAudit.Items.Clear();
-                cboTypeofAudit.Text = string.Empty;
                 cboTypeofAudit.Items.Add("Email Audit");
-                cboTypeofAudit.Enabled = true;
-                //cboTypeofAudit.Items.Add("Calendar Audit");
+                cboTypeofAudit.Items.Add("Calendar Audit");
             }
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Mattermost")
             {
                 cboTypeofAudit.Items.Clear();
-                cboTypeofAudit.Text = string.Empty;
                 cboTypeofAudit.Items.Add("Chat Audit");
-                cboTypeofAudit.Enabled = true;
-                //cboTypeofAudit.Items.Add("Other Audit");
+                cboTypeofAudit.Items.Add("Other Audit");
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cboSourceApplication.Items.Clear();
-            cboTypeofAudit.Items.Clear();
-
+            if (cboTypeofAudit == null)
+            {
+                Enabled = false;
+            }
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
-                frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
+                frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits();
                 frmMattermostChatsAudits.Show();
                 this.Close();
             }
@@ -93,14 +90,6 @@ namespace AuditReportWriter
                 frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
                 frmEmailAuditReport.Show();
                 this.Close();
-            }
-        }
-
-        private void cboTypeofAudit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboTypeofAudit != null)
-            {
-                btnGo.Enabled = true;
             }
         }
     }
