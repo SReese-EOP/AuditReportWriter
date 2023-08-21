@@ -47,17 +47,17 @@ namespace AuditReportWriter
         {
             //if (txtChannelID != null && txtPostID != null && all of the fields need to not be null)
             if (
-                txtMessageID.Text == null &&
-                txtOBSObject.Text == null &&
-                txtChannelID == null &&
-                dtAuditDate.Text == null &&
-                cboOverallAuditResult == null &&
-                cboAttachmentsResult == null &&
-                cboCreatedTimeResult == null &&
-                cboEmailAuditResult == null &&
-                cboMessageTextAuditResult == null &&
-                cboUpdatedTimeResult == null &&
-                cboUsernameResult == null)
+                txtMessageID.Text != null &&
+                txtOBSObject.Text != null &&
+                txtChannelID != null &&
+                dtAuditDate.Text != null &&
+                cboOverallAuditResult != null &&
+                cboAttachmentsResult != null &&
+                cboCreatedTimeResult != null &&
+                cboEmailAuditResult != null &&
+                cboMessageTextAuditResult != null &&
+                cboUpdatedTimeResult != null &&
+                cboUsernameResult != null)
             {
                 //else messagebox = there is a fialuer - and it can be done either at individaul if else statemetns, or do it in one long sting
                 //init a new email audit report object

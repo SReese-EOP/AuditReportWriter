@@ -25,11 +25,16 @@ namespace AuditReportWriter
 
         }
 
-/*        private string txtMessageID_TextChanged(SqlCommand sqlcommand)
+        private void txtEnterAuditID_TextChanged(object sender, EventArgs e)
         {
-            sqlCommand.CommandText = "SELECT postid FROM dbo.MMauditdata WHERE auditID = @AUDITID";
-            string postid = postid;
-            return postid;
-        }*/
+            //AUDITID = txtEnterAuditID.Text;
+        }
+
+        /*        private string txtMessageID_TextChanged(SqlCommand sqlcommand)
+                {
+                    sqlCommand.CommandText = "SELECT postid FROM dbo.MMauditdata WHERE auditID = @AUDITID";
+                    string postid = postid;
+                    return postid;
+                }*/
     }
 }

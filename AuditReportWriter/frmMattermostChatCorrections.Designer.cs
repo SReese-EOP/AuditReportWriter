@@ -87,6 +87,7 @@
             lblEnterAuditID = new Label();
             txtEnterAuditID = new TextBox();
             bttnGo = new Button();
+            bttnDelete = new Button();
             grpAttachments.SuspendLayout();
             grpEmail.SuspendLayout();
             grpMessageText.SuspendLayout();
@@ -108,7 +109,7 @@
             // 
             // bttnReset
             // 
-            bttnReset.Location = new Point(1343, 1083);
+            bttnReset.Location = new Point(1034, 1087);
             bttnReset.Name = "bttnReset";
             bttnReset.Size = new Size(193, 29);
             bttnReset.TabIndex = 35;
@@ -409,7 +410,7 @@
             // 
             // bttnReplace
             // 
-            bttnReplace.Location = new Point(1546, 1083);
+            bttnReplace.Location = new Point(1237, 1087);
             bttnReplace.Name = "bttnReplace";
             bttnReplace.Size = new Size(193, 29);
             bttnReplace.TabIndex = 34;
@@ -433,7 +434,7 @@
             grpOverallAudit.Margin = new Padding(3, 4, 3, 4);
             grpOverallAudit.Name = "grpOverallAudit";
             grpOverallAudit.Padding = new Padding(3, 4, 3, 4);
-            grpOverallAudit.Size = new Size(1729, 195);
+            grpOverallAudit.Size = new Size(1621, 195);
             grpOverallAudit.TabIndex = 27;
             grpOverallAudit.TabStop = false;
             grpOverallAudit.Text = "Audit Information";
@@ -502,12 +503,10 @@
             // 
             // txtMessageID
             // 
-/*            txtMessageID.Location = new Point(114, 29);
-            txtMessageID.Margin = new Padding(3, 4, 3, 4);
+            txtMessageID.Location = new Point(114, 34);
             txtMessageID.Name = "txtMessageID";
             txtMessageID.Size = new Size(369, 27);
-            txtMessageID.TabIndex = 1;
-            txtMessageID.TextChanged += txtMessageID_TextChanged;*/
+            txtMessageID.TabIndex = 16;
             // 
             // dtAuditDate
             // 
@@ -530,7 +529,7 @@
             // 
             // bttnReturntoNav
             // 
-            bttnReturntoNav.Location = new Point(1143, 1083);
+            bttnReturntoNav.Location = new Point(834, 1087);
             bttnReturntoNav.Name = "bttnReturntoNav";
             bttnReturntoNav.Size = new Size(193, 29);
             bttnReturntoNav.TabIndex = 36;
@@ -702,6 +701,7 @@
             txtEnterAuditID.Name = "txtEnterAuditID";
             txtEnterAuditID.Size = new Size(292, 27);
             txtEnterAuditID.TabIndex = 1;
+            txtEnterAuditID.TextChanged += txtEnterAuditID_TextChanged;
             // 
             // bttnGo
             // 
@@ -712,17 +712,29 @@
             bttnGo.Text = "Go";
             bttnGo.UseVisualStyleBackColor = true;
             // 
+            // bttnDelete
+            // 
+            bttnDelete.Location = new Point(1442, 1087);
+            bttnDelete.Name = "bttnDelete";
+            bttnDelete.Size = new Size(193, 29);
+            bttnDelete.TabIndex = 34;
+            bttnDelete.Text = "Delete Record";
+            bttnDelete.UseVisualStyleBackColor = true;
+            bttnDelete.Click += bttnReplace_Click;
+            // 
             // frmMattermostChatCorrections
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1789, 1178);
+            AutoScroll = true;
+            ClientSize = new Size(1687, 1178);
             Controls.Add(bttnGo);
             Controls.Add(bttnReset);
             Controls.Add(grpAttachments);
             Controls.Add(grpEmail);
             Controls.Add(grpMessageText);
             Controls.Add(grpUserName);
+            Controls.Add(bttnDelete);
             Controls.Add(bttnReplace);
             Controls.Add(lblEnterAuditID);
             Controls.Add(txtEnterAuditID);
@@ -731,6 +743,7 @@
             Controls.Add(grpCreatedTime);
             Controls.Add(grpUpdateTime);
             Name = "frmMattermostChatCorrections";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Mattermost Chat Corrections Form";
             grpAttachments.ResumeLayout(false);
             grpAttachments.PerformLayout();
@@ -791,7 +804,6 @@
         private ComboBox cboOverallAuditResult;
         private Label label4;
         private Label lblPostID;
-        private TextBox txtMessageID;
         private Label dtAuditDate;
         private DateTimePicker dtAuditDateTime;
         private Button bttnReturntoNav;
@@ -811,5 +823,7 @@
         private Label lblEnterAuditID;
         private TextBox txtEnterAuditID;
         private Button bttnGo;
+        private TextBox txtMessageID;
+        private Button bttnDelete;
     }
 }
