@@ -45,19 +45,20 @@ namespace AuditReportWriter
 
         private void bttnSubmit_Click(object sender, EventArgs e)
         {
-            //if (txtChannelID != null && txtPostID != null && all of the fields need to not be null)
+            //check that the mandatory fields are not null
             if (
-                txtMessageID.Text == null ||
-                txtOBSObject.Text == null ||
-                txtChannelID.Text == null ||
-                dtAuditDate.Text == null ||
-                cboOverallAuditResult.Text == null ||
-                cboAttachmentsResult.Text == null ||
-                cboCreatedTimeResult.Text == null ||
-                cboEmailAuditResult.Text == null ||
-                cboMessageTextAuditResult.Text  == null ||
-                cboUpdatedTimeResult.Text == null ||
-                cboUsernameResult.Text == null 
+                txtMessageID.Text != null &&
+                txtOBSObject.Text != null &&
+                txtChannelID.Text != null &&
+                //dtAuditDate. != null &&
+                cboOverallAuditResult.SelectedItem.ToString() != null &&
+                cboAttachmentsResult.SelectedItem.ToString() != null &&
+                cboCreatedTimeResult.SelectedItem.ToString() != null &&
+                cboEmailAuditResult.SelectedItem.ToString() != null &&
+                cboMessageTextAuditResult.SelectedItem.ToString() != null &&
+                cboUpdatedTimeResult.SelectedItem.ToString() != null &&
+                cboUsernameResult.SelectedItem.ToString() != null
+
 
                 )
             {
@@ -73,25 +74,25 @@ namespace AuditReportWriter
                 mmAuditReport.AuditDateTime = dtAuditDateTime.Value;
                 mmAuditReport.ChannelID = txtChannelID.Text;
                 mmAuditReport.PostID = txtMessageID.Text;
-                mmAuditReport.CreateTime = cboCreatedTimeResult.Text;
+                mmAuditReport.CreateTime = cboCreatedTimeResult.SelectedItem.ToString();
                 mmAuditReport.CreateTimeValueMM = dtMMCreatedTime.Value;
                 mmAuditReport.CreateTimeValueOBS = dtOBSCreatedTime.Value;
-                mmAuditReport.UpdateTime = cboUpdatedTimeResult.Text;
+                mmAuditReport.UpdateTime = cboUpdatedTimeResult.SelectedItem.ToString();
                 mmAuditReport.UpdateTimeValueMM = dtMMUpdatedTime.Value;
                 mmAuditReport.UpdateTimeValueOBS = dtOBSUpdatedTime.Value;
-                mmAuditReport.MessageText = cboMessageTextAuditResult.Text;
+                mmAuditReport.MessageText = cboMessageTextAuditResult.SelectedItem.ToString();
                 mmAuditReport.MessageTextValueMM = txtMMMessageTextResult.Text;
                 mmAuditReport.MessageTextValueOBS = txtOBSMessageTextResult.Text;
-                mmAuditReport.Attachments = cboAttachmentsResult.Text;
+                mmAuditReport.Attachments = cboAttachmentsResult.SelectedItem.ToString();
                 mmAuditReport.AttachmentsValueMM = txtMMAttachmentsResult.Text;
                 mmAuditReport.AttachmentsValueOBS = txtOBSAttachmentsResult.Text;
-                mmAuditReport.Email = cboEmailAuditResult.Text;
+                mmAuditReport.Email = cboEmailAuditResult.SelectedItem.ToString();
                 mmAuditReport.EmailValueMM = txtMMEmailResult.Text;
                 mmAuditReport.EmailValueOBS = txtOBSEmailResult.Text;
-                mmAuditReport.UserName = cboUsernameResult.Text;
+                mmAuditReport.UserName = cboUsernameResult.SelectedItem.ToString();
                 mmAuditReport.UserNameValueMM = txtMMUsernameResult.Text;
                 mmAuditReport.UserNameValueOBS = txtOBSUsernameResult.Text;
-                mmAuditReport.AuditResults = cboOverallAuditResult.Text;
+                mmAuditReport.AuditResults = cboOverallAuditResult.SelectedItem.ToString();
                 mmAuditReport.Auditor = WindowsIdentity.GetCurrent().Name;
 
                 //execute the audit report write
