@@ -711,6 +711,7 @@
             bttnGo.TabIndex = 37;
             bttnGo.Text = "Go";
             bttnGo.UseVisualStyleBackColor = true;
+            bttnGo.Click += bttnGo_Click;
             // 
             // bttnDelete
             // 
