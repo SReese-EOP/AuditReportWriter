@@ -50,16 +50,21 @@ namespace AuditReportWriter
                 txtMessageID.Text != null &&
                 txtOBSObject.Text != null &&
                 txtChannelID.Text != null &&
-                //dtAuditDate. != null &&
-                cboOverallAuditResult.SelectedItem.ToString() != null &&
-                cboAttachmentsResult.SelectedItem.ToString() != null &&
-                cboCreatedTimeResult.SelectedItem.ToString() != null &&
-                cboEmailAuditResult.SelectedItem.ToString() != null &&
-                cboMessageTextAuditResult.SelectedItem.ToString() != null &&
-                cboUpdatedTimeResult.SelectedItem.ToString() != null &&
-                cboUsernameResult.SelectedItem.ToString() != null
-
-
+                 //dtAuditDate. != null &&
+                cboOverallAuditResult.SelectedIndex == -1 &&
+                cboAttachmentsResult.SelectedIndex == -1 &&
+                cboCreatedTimeResult.SelectedIndex == -1 &&
+                cboEmailAuditResult.SelectedIndex == -1 &&
+                cboMessageTextAuditResult.SelectedIndex == -1 &&
+                cboUpdatedTimeResult.SelectedIndex == -1 &&
+                cboUsernameResult.SelectedIndex == -1
+                /*                cboOverallAuditResult.ValueMember.ToString() != null &&
+                                cboAttachmentsResult.ValueMember.ToString() != null &&
+                                cboCreatedTimeResult.ValueMember.ToString() != null &&
+                                cboEmailAuditResult.ValueMember.ToString() != null &&
+                                cboMessageTextAuditResult.ValueMember.ToString() != null &&
+                                cboUpdatedTimeResult.ValueMember.ToString() != null &&
+                                cboUsernameResult.ValueMember.ToString() != null*/
                 )
             {
                 bttnSubmit.Enabled = true;
@@ -74,6 +79,7 @@ namespace AuditReportWriter
                 mmAuditReport.AuditDateTime = dtAuditDateTime.Value;
                 mmAuditReport.ChannelID = txtChannelID.Text;
                 mmAuditReport.PostID = txtMessageID.Text;
+                mmAuditReport.ProcessID = txtOBSObject.Text;
                 mmAuditReport.CreateTime = cboCreatedTimeResult.SelectedItem.ToString();
                 mmAuditReport.CreateTimeValueMM = dtMMCreatedTime.Value;
                 mmAuditReport.CreateTimeValueOBS = dtOBSCreatedTime.Value;

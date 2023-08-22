@@ -71,6 +71,9 @@ namespace AuditReportWriter
 
         public DateTime AuditDateTime { get; set; }
 
+        public string ProcessID { get; set; }
+
+
         public string ChannelID { get; set; }
 
         public string PostID { get; set; }
@@ -232,19 +235,20 @@ namespace AuditReportWriter
                     using (SqlCommand command = connection.CreateCommand())
                     {
                         command.CommandText = @"INSERT INTO [dbo].[MMauditdata] (
-                        [auditID], [channelid], [postid], [createtime], [createtimevalueMM], [createtimevalueOBS], [updatetime], [updatetimevalueMM],
+                        [auditID], [processID], [channelid], [postid], [createtime], [createtimevalueMM], [createtimevalueOBS], [updatetime], [updatetimevalueMM],
                         [updatetimevalueOBS], [messagetext], [messagetextvalueMM], [messagetextvalueOBS], [attachments], 
                         [attachmentsvalueMM], [attachmentsvalueOBS], [email], [emailvalueMM],
                         [emailvalueOBS], [username], [usernamevalueMM], [usernamevalueOBS],
                         [auditresults], [AuditDateTime], [Auditor])
                     VALUES (
-                        @auditID, @channelid, @postid, @createtime, @createtimevalueMM, @createtimevalueOBS, @updatetime, @updatetimevalueMM,
+                        @auditID, @processID, @channelid, @postid, @createtime, @createtimevalueMM, @createtimevalueOBS, @updatetime, @updatetimevalueMM,
                         @updatetimevalueOBS, @messagetext, @messagetextvalueMM, @messagetextvalueOBS, @attachments, 
                         @attachmentsvalueMM, @attachmentsvalueOBS, @email, @emailvalueMM,
                         @emailvalueOBS, @username, @usernamevalueMM, @usernamevalueOBS,
                         @auditresults, @AuditDateTime, @Auditor)";
 
                         command.Parameters.AddWithValue("@auditID", auditReport.auditID);
+                        command.Parameters.AddWithValue("@processID", auditReport.ProcessID); //testing to add these values 
                         command.Parameters.AddWithValue("@channelid", auditReport.ChannelID);
                         command.Parameters.AddWithValue("@postid", auditReport.PostID);
                         command.Parameters.AddWithValue("@createtime", auditReport.CreateTime);
