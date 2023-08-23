@@ -7,6 +7,9 @@
     <Compile Update="frmAuditNavigator.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmMattermostChatCorrections.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmMattermostChatsAudits.cs">
       <SubType>Form</SubType>
     </Compile>
