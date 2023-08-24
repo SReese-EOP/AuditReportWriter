@@ -50,7 +50,7 @@ namespace AuditReportWriter
                 txtMessageID.Text != null &&
                 txtOBSObject.Text != null &&
                 txtChannelID.Text != null &&
-                 //dtAuditDate. != null &&
+                //dtAuditDate. != null &&
                 cboOverallAuditResult.SelectedIndex == -1 &&
                 cboAttachmentsResult.SelectedIndex == -1 &&
                 cboCreatedTimeResult.SelectedIndex == -1 &&
