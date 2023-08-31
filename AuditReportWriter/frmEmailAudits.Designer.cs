@@ -78,6 +78,8 @@ namespace AuditReportWriter
             cbobccAuditResult = new ComboBox();
             lblAuditResult = new Label();
             grpSubjectResults = new GroupBox();
+            txtSubjectOBSResult = new TextBox();
+            lblSubjectOBSResult = new Label();
             txtSubjectExchangeResult = new TextBox();
             lblSubjectExchangeResult = new Label();
             cboSubjectValueResult = new ComboBox();
@@ -98,8 +100,6 @@ namespace AuditReportWriter
             lblBodyValueAuditResult = new Label();
             btnReset = new Button();
             bttnReturntoNav = new Button();
-            lblSubjectOBSResult = new Label();
-            txtSubjectOBSResult = new TextBox();
             grpSenderResults.SuspendLayout();
             grpReceivedTImeResults.SuspendLayout();
             grpOverallAudit.SuspendLayout();
@@ -407,7 +407,7 @@ namespace AuditReportWriter
             // 
             cboOverallAuditResult.FormattingEnabled = true;
             cboOverallAuditResult.Items.AddRange(new object[] { "PASS", "FAIL" });
-            cboOverallAuditResult.Location = new Point(1339, 179);
+            cboOverallAuditResult.Location = new Point(1341, 159);
             cboOverallAuditResult.Margin = new Padding(4, 5, 4, 5);
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(203, 33);
@@ -417,7 +417,7 @@ namespace AuditReportWriter
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(1219, 186);
+            label4.Location = new Point(1217, 162);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(116, 25);
@@ -678,6 +678,25 @@ namespace AuditReportWriter
             grpSubjectResults.Text = "Subject Value Result";
             grpSubjectResults.UseCompatibleTextRendering = true;
             // 
+            // txtSubjectOBSResult
+            // 
+            txtSubjectOBSResult.Enabled = false;
+            txtSubjectOBSResult.Location = new Point(81, 206);
+            txtSubjectOBSResult.Margin = new Padding(1, 4, 1, 4);
+            txtSubjectOBSResult.Name = "txtSubjectOBSResult";
+            txtSubjectOBSResult.Size = new Size(843, 31);
+            txtSubjectOBSResult.TabIndex = 5;
+            // 
+            // lblSubjectOBSResult
+            // 
+            lblSubjectOBSResult.AutoSize = true;
+            lblSubjectOBSResult.Location = new Point(79, 179);
+            lblSubjectOBSResult.Margin = new Padding(1, 0, 1, 0);
+            lblSubjectOBSResult.Name = "lblSubjectOBSResult";
+            lblSubjectOBSResult.Size = new Size(102, 25);
+            lblSubjectOBSResult.TabIndex = 4;
+            lblSubjectOBSResult.Text = "OBS Result:";
+            // 
             // txtSubjectExchangeResult
             // 
             txtSubjectExchangeResult.Enabled = false;
@@ -896,25 +915,6 @@ namespace AuditReportWriter
             bttnReturntoNav.Text = "Return to Navigation";
             bttnReturntoNav.UseVisualStyleBackColor = true;
             bttnReturntoNav.Click += bttnReturntoNav_Click;
-            // 
-            // lblSubjectOBSResult
-            // 
-            lblSubjectOBSResult.AutoSize = true;
-            lblSubjectOBSResult.Location = new Point(79, 179);
-            lblSubjectOBSResult.Margin = new Padding(1, 0, 1, 0);
-            lblSubjectOBSResult.Name = "lblSubjectOBSResult";
-            lblSubjectOBSResult.Size = new Size(102, 25);
-            lblSubjectOBSResult.TabIndex = 4;
-            lblSubjectOBSResult.Text = "OBS Result:";
-            // 
-            // txtSubjectOBSResult
-            // 
-            txtSubjectOBSResult.Enabled = false;
-            txtSubjectOBSResult.Location = new Point(81, 206);
-            txtSubjectOBSResult.Margin = new Padding(1, 4, 1, 4);
-            txtSubjectOBSResult.Name = "txtSubjectOBSResult";
-            txtSubjectOBSResult.Size = new Size(843, 31);
-            txtSubjectOBSResult.TabIndex = 5;
             // 
             // frmEmailAuditReport
             // 
