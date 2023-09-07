@@ -89,12 +89,14 @@ namespace AuditReportWriter
                 int auditID = Convert.ToInt32(txtEnterAuditID.Text);
                 mmAuditReport = auditReportController.GetMMAuditByID(auditID, MMUser.Server, MMUser.Database, MMUser.UserName, MMUser.Password);
 
+                txtMessageID.Text = mmAuditReport.PostID;
                 txtOBSObject.Text = mmAuditReport.OBSobject;
                 txtChannelID.Text = mmAuditReport.ChannelID;
 
-                cboOverallAuditResult.SelectedItem = mmAuditReport.AuditResults;
 
-                cboCreatedTimeResult.SelectedItem = mmAuditReport.CreateTime;
+                cboOverallAuditResult.Text = mmAuditReport.AuditResults;
+
+                cboCreatedTimeResult.Text = mmAuditReport.CreateTime;
                 //dtMMCreatedTime.Value = mmAuditReport.CreateTimeValueMM;
                 //dtOBSCreatedTime.Value = mmAuditReport.CreateTimeValueOBS;
 
@@ -102,19 +104,19 @@ namespace AuditReportWriter
                                     dtMMUpdatedTime.Value = data[9];
                                     dtOBSUpdatedTime.Value = data[10];*/
 
-                cboMessageTextAuditResult.SelectedItem = mmAuditReport.MessageText;
+                cboMessageTextAuditResult.Text = mmAuditReport.MessageText;
                 txtMMMessageTextResult.Text = mmAuditReport.MessageTextValueMM;
                 txtOBSMessageTextResult.Text = mmAuditReport.MessageTextValueOBS;
 
-                cboAttachmentsResult.SelectedItem = mmAuditReport.Attachments;
+                cboAttachmentsResult.Text = mmAuditReport.Attachments;
                 txtMMAttachmentsResult.Text = mmAuditReport.AttachmentsValueMM;
                 txtOBSAttachmentsResult.Text = mmAuditReport.AttachmentsValueOBS;
 
-                cboEmailAuditResult.SelectedItem = mmAuditReport.Email;
+                cboEmailAuditResult.Text = mmAuditReport.Email;
                 txtMMEmailResult.Text = mmAuditReport.EmailValueMM;
                 txtOBSEmailResult.Text = mmAuditReport.EmailValueOBS;
 
-                cboUsernameResult.SelectedItem = mmAuditReport.UserName;
+                cboUsernameResult.Text = mmAuditReport.UserName;
                 txtMMUsernameResult.Text = mmAuditReport.UserNameValueMM;
                 txtOBSUsernameResult.Text = mmAuditReport.UserNameValueOBS;
             }
