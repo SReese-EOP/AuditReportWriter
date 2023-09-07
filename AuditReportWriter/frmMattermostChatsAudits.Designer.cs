@@ -95,7 +95,7 @@
             // 
             // bttnReturntoNav
             // 
-            bttnReturntoNav.Location = new Point(1142, 1044);
+            bttnReturntoNav.Location = new Point(1142, 939);
             bttnReturntoNav.Name = "bttnReturntoNav";
             bttnReturntoNav.Size = new Size(193, 29);
             bttnReturntoNav.TabIndex = 26;
@@ -228,7 +228,7 @@
             grpCreatedTime.Controls.Add(lblCreatedTime);
             grpCreatedTime.Controls.Add(cboCreatedTimeResult);
             grpCreatedTime.Enabled = false;
-            grpCreatedTime.Location = new Point(11, 241);
+            grpCreatedTime.Location = new Point(11, 216);
             grpCreatedTime.Margin = new Padding(3, 4, 3, 4);
             grpCreatedTime.Name = "grpCreatedTime";
             grpCreatedTime.Padding = new Padding(4, 5, 4, 5);
@@ -310,7 +310,7 @@
             grpUpdateTime.Controls.Add(lblUpdatedTime);
             grpUpdateTime.Controls.Add(cboUpdatedTimeResult);
             grpUpdateTime.Enabled = false;
-            grpUpdateTime.Location = new Point(11, 492);
+            grpUpdateTime.Location = new Point(11, 458);
             grpUpdateTime.Margin = new Padding(3, 4, 3, 4);
             grpUpdateTime.Name = "grpUpdateTime";
             grpUpdateTime.Padding = new Padding(4, 5, 4, 5);
@@ -393,7 +393,7 @@
             grpMessageText.Controls.Add(lblMessageTextAuditResult);
             grpMessageText.Controls.Add(cboMessageTextAuditResult);
             grpMessageText.Enabled = false;
-            grpMessageText.Location = new Point(11, 749);
+            grpMessageText.Location = new Point(11, 704);
             grpMessageText.Margin = new Padding(3, 4, 3, 4);
             grpMessageText.Name = "grpMessageText";
             grpMessageText.Padding = new Padding(4, 5, 4, 5);
@@ -469,8 +469,8 @@
             grpAttachments.Controls.Add(lblAttachmentsAuditResult);
             grpAttachments.Controls.Add(cboAttachmentsResult);
             grpAttachments.Enabled = false;
-            grpAttachments.Location = new Point(1051, 301);
-            grpAttachments.Margin = new Padding(4, 5, 4, 5);
+            grpAttachments.Location = new Point(841, 216);
+            grpAttachments.Margin = new Padding(3, 4, 3, 4);
             grpAttachments.Name = "grpAttachments";
             grpAttachments.Padding = new Padding(4, 5, 4, 5);
             grpAttachments.Size = new Size(989, 285);
@@ -545,8 +545,8 @@
             grpEmail.Controls.Add(lblEmailAuditResult);
             grpEmail.Controls.Add(cboEmailAuditResult);
             grpEmail.Enabled = false;
-            grpEmail.Location = new Point(1051, 615);
-            grpEmail.Margin = new Padding(4, 5, 4, 5);
+            grpEmail.Location = new Point(841, 458);
+            grpEmail.Margin = new Padding(3, 4, 3, 4);
             grpEmail.Name = "grpEmail";
             grpEmail.Padding = new Padding(4, 5, 4, 5);
             grpEmail.Size = new Size(989, 285);
@@ -621,7 +621,7 @@
             grpUserName.Controls.Add(lblUsernameAuditResult);
             grpUserName.Controls.Add(cboUsernameResult);
             grpUserName.Enabled = false;
-            grpUserName.Location = new Point(841, 749);
+            grpUserName.Location = new Point(841, 704);
             grpUserName.Margin = new Padding(3, 4, 3, 4);
             grpUserName.Name = "grpUserName";
             grpUserName.Padding = new Padding(4, 5, 4, 5);
@@ -690,7 +690,7 @@
             // 
             // bttnReset
             // 
-            bttnReset.Location = new Point(1342, 1044);
+            bttnReset.Location = new Point(1342, 939);
             bttnReset.Name = "bttnReset";
             bttnReset.Size = new Size(193, 29);
             bttnReset.TabIndex = 25;
@@ -700,7 +700,7 @@
             // 
             // bttnSubmit
             // 
-            bttnSubmit.Location = new Point(1545, 1044);
+            bttnSubmit.Location = new Point(1545, 939);
             bttnSubmit.Name = "bttnSubmit";
             bttnSubmit.Size = new Size(193, 29);
             bttnSubmit.TabIndex = 24;
@@ -715,7 +715,7 @@
             AutoScroll = true;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1747, 1099);
+            ClientSize = new Size(1768, 1055);
             Controls.Add(bttnSubmit);
             Controls.Add(bttnReset);
             Controls.Add(grpUserName);

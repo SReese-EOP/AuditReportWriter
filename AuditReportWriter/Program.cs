@@ -63,6 +63,63 @@ namespace AuditReportWriter
         public string Auditor { get; set; }
     }
 
+    public class MMAuditReport
+    {
+        public int auditID { get; set; }
+
+        public string Auditor { get; set; }
+
+        public DateTime AuditDateTime { get; set; }
+
+        public string ProcessID { get; set; }
+
+
+        public string ChannelID { get; set; }
+
+        public string PostID { get; set; }
+
+        public string CreateTime { get; set; }
+
+        public DateTime CreateTimeValueMM { get; set; }
+
+        public DateTime CreateTimeValueOBS { get; set; }
+
+        public string UpdateTime { get; set; }
+
+        public DateTime UpdateTimeValueMM { get; set; }
+
+        public DateTime UpdateTimeValueOBS { get; set; }
+
+        public string MessageText { get; set; }
+
+        public string MessageTextValueMM { get; set; }
+
+        public string MessageTextValueOBS { get; set; }
+
+        public string Attachments { get; set; }
+
+        public string AttachmentsValueMM { get; set; }
+
+        public string AttachmentsValueOBS { get; set; }
+
+        public string Email { get; set; }
+
+        public string EmailValueMM { get; set; }
+
+        public string EmailValueOBS { get;set; }
+
+        public string UserName { get; set; }
+
+        public string UserNameValueMM { get; set; }
+
+        public string UserNameValueOBS { get; set ; }
+
+        public string AuditResults { get; set; }
+
+        public string OBSobject { get; set; }
+        
+    }
+
 
     public class AuditReportController
     {
@@ -140,7 +197,9 @@ namespace AuditReportWriter
                         command.Parameters.AddWithValue("@MessageAttachmentsValueOBS", (object)auditReport.MessageAttachmentsValueOBS ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Auditor", (object)auditReport.Auditor ?? DBNull.Value);
                         command.ExecuteNonQuery();
+                        //connection.Close();
                     }
+                    connection.Close();
                 }
             }
             catch (Exception ex)
@@ -148,7 +207,286 @@ namespace AuditReportWriter
                 //write admin logs to show what happened.
             }
         }
+
+
+        private int CreateMMAuditId(SqlCommand sqlCommand)
+        {
+            sqlCommand.CommandText = "SELECT MAX(auditID) FROM dbo.MMauditdata";
+            int auditId = Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1;
+            return auditId;
+        }
+
+        public void WriteMMAuditReport(MMAuditReport auditReport, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+        {
+            string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
+            string userName = WindowsIdentity.GetCurrent().Name;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        int auditId = CreateMMAuditId(command);
+                        auditReport.auditID = auditId;
+                    }
+
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"INSERT INTO [dbo].[MMauditdata] (
+                        [auditID], [processID], [channelid], [postid], [createtime], [createtimevalueMM], [createtimevalueOBS], [updatetime], [updatetimevalueMM],
+                        [updatetimevalueOBS], [messagetext], [messagetextvalueMM], [messagetextvalueOBS], [attachments], 
+                        [attachmentsvalueMM], [attachmentsvalueOBS], [email], [emailvalueMM],
+                        [emailvalueOBS], [username], [usernamevalueMM], [usernamevalueOBS],
+                        [auditresults], [AuditDateTime], [Auditor])
+                    VALUES (
+                        @auditID, @processID, @channelid, @postid, @createtime, @createtimevalueMM, @createtimevalueOBS, @updatetime, @updatetimevalueMM,
+                        @updatetimevalueOBS, @messagetext, @messagetextvalueMM, @messagetextvalueOBS, @attachments, 
+                        @attachmentsvalueMM, @attachmentsvalueOBS, @email, @emailvalueMM,
+                        @emailvalueOBS, @username, @usernamevalueMM, @usernamevalueOBS,
+                        @auditresults, @AuditDateTime, @Auditor)";
+
+                        command.Parameters.AddWithValue("@auditID", auditReport.auditID);
+                        command.Parameters.AddWithValue("@processID", auditReport.ProcessID); //testing to add these values 
+                        command.Parameters.AddWithValue("@channelid", auditReport.ChannelID);
+                        command.Parameters.AddWithValue("@postid", auditReport.PostID);
+                        command.Parameters.AddWithValue("@createtime", auditReport.CreateTime);
+                        command.Parameters.AddWithValue("@updatetime", auditReport.UpdateTime);
+                        command.Parameters.AddWithValue("@messagetext", auditReport.MessageText);
+                        command.Parameters.AddWithValue("@attachments", auditReport.Attachments);
+                        command.Parameters.AddWithValue("@email", auditReport.Email);
+                        command.Parameters.AddWithValue("@username", auditReport.UserName);
+                        command.Parameters.AddWithValue("@auditresults", auditReport.AuditResults);
+                        command.Parameters.AddWithValue("@createtimevalueMM", (object)auditReport.CreateTimeValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@createtimevalueOBS", (object)auditReport.CreateTimeValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@updatetimevalueMM", (object)auditReport.UpdateTimeValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@updatetimevalueOBS", (object)auditReport.UpdateTimeValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@messagetextvalueMM", (object)auditReport.MessageTextValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@messagetextvalueOBS", (object)auditReport.MessageTextValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@attachmentsvalueMM", (object)auditReport.AttachmentsValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@attachmentsvalueOBS", (object)auditReport.AttachmentsValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@emailvalueMM", (object)auditReport.EmailValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@emailvalueOBS", (object)auditReport.EmailValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@usernamevalueMM", (object)auditReport.UserNameValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@usernamevalueOBS", (object)auditReport.UserNameValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@AuditDateTime", (object)auditReport.AuditDateTime ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@Auditor", (object)auditReport.Auditor ?? DBNull.Value);
+                        command.ExecuteNonQuery();
+                        //connection.Close();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //write admin logs to show what happened.
+            }
+        }
+
+        public MMAuditReport GetMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+        {
+            MMAuditReport mmAuditReport = new MMAuditReport();
+            //run the SQL query
+            //add the sql data to the emailAuditReport
+
+            string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"Select * FROM dbo.MMauditdata WHERE auditID = @auditID";
+
+                        command.Parameters.AddWithValue("@auditID", auditID);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                mmAuditReport.ProcessID = reader["processID"].ToString();
+                                mmAuditReport.ChannelID = reader["channelid"].ToString();
+                                mmAuditReport.PostID = reader["postid"].ToString();
+                                mmAuditReport.CreateTime = reader["createtime"].ToString();
+                                // mmAuditReport.UpdateTime = reader["update"].ToString();
+                                mmAuditReport.MessageText = reader["messagetext"].ToString();
+                                mmAuditReport.Attachments = reader["attachments"].ToString();
+                                mmAuditReport.Email = reader["email"].ToString();
+                                mmAuditReport.UserName = reader["username"].ToString();
+                                mmAuditReport.AuditResults = reader["auditresults"].ToString();
+                                //mmAuditReport.CreateTimeValueMM = reader["createtimevalueMM"].ToString();
+                                //mmAuditReport.CreateTimeValueOBS = reader["createtimevalueOBS"].ToString();
+                                //mmAuditReport.UpdateTimeValueMM = reader["postid"].ToString();
+                                //mmAuditReport.UpdateTimeValueOBS = ;
+                                mmAuditReport.MessageTextValueMM = reader["messagetextvalueMM"].ToString();
+                                mmAuditReport.MessageTextValueOBS = reader["messagetextvalueOBS"].ToString();
+                                mmAuditReport.AttachmentsValueMM = reader["attachmentsvalueMM"].ToString();
+                                mmAuditReport.AttachmentsValueOBS = reader["attachmentsvalueOBS"].ToString();
+                                mmAuditReport.EmailValueMM = reader["emailvalueMM"].ToString();
+                                mmAuditReport.EmailValueOBS = reader["emailvalueOBS"].ToString();
+                                mmAuditReport.UserNameValueMM = reader["usernamevalueMM"].ToString();
+                                mmAuditReport.UserNameValueOBS = reader["usernamevalueOBS"].ToString();
+                                //mmAuditReport.AuditDateTime = reader["AuditDateTime"].ToString();
+                                mmAuditReport.Auditor = reader["Auditor"].ToString();
+                                mmAuditReport.OBSobject = reader["OBSobject"].ToString();
+                            }
+                        }
+                        //connection.Close();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //write admin logs to show what happened.
+            }
+
+            return mmAuditReport;
+        }
     }
+
+
+ /*   public class MMAuditReportController
+    {
+        private int CreateMMAuditId(SqlCommand sqlCommand)
+        {
+            sqlCommand.CommandText = "SELECT MAX(auditID) FROM dbo.MMauditdata";
+            int auditId = Convert.ToInt32(sqlCommand.ExecuteScalar()) + 1;
+            return auditId;
+        }
+
+        public void WriteMMAuditReport(MMAuditReport auditReport, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+        {
+            string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
+            string userName = WindowsIdentity.GetCurrent().Name;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        int auditId = CreateMMAuditId(command);
+                        auditReport.auditID = auditId;
+                    }
+
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"INSERT INTO [dbo].[MMauditdata] (
+                        [auditID], [processID], [channelid], [postid], [createtime], [createtimevalueMM], [createtimevalueOBS], [updatetime], [updatetimevalueMM],
+                        [updatetimevalueOBS], [messagetext], [messagetextvalueMM], [messagetextvalueOBS], [attachments], 
+                        [attachmentsvalueMM], [attachmentsvalueOBS], [email], [emailvalueMM],
+                        [emailvalueOBS], [username], [usernamevalueMM], [usernamevalueOBS],
+                        [auditresults], [AuditDateTime], [Auditor])
+                    VALUES (
+                        @auditID, @processID, @channelid, @postid, @createtime, @createtimevalueMM, @createtimevalueOBS, @updatetime, @updatetimevalueMM,
+                        @updatetimevalueOBS, @messagetext, @messagetextvalueMM, @messagetextvalueOBS, @attachments, 
+                        @attachmentsvalueMM, @attachmentsvalueOBS, @email, @emailvalueMM,
+                        @emailvalueOBS, @username, @usernamevalueMM, @usernamevalueOBS,
+                        @auditresults, @AuditDateTime, @Auditor)";
+
+                        command.Parameters.AddWithValue("@auditID", auditReport.auditID);
+                        command.Parameters.AddWithValue("@processID", auditReport.ProcessID); //testing to add these values 
+                        command.Parameters.AddWithValue("@channelid", auditReport.ChannelID);
+                        command.Parameters.AddWithValue("@postid", auditReport.PostID);
+                        command.Parameters.AddWithValue("@createtime", auditReport.CreateTime);
+                        command.Parameters.AddWithValue("@updatetime", auditReport.UpdateTime);
+                        command.Parameters.AddWithValue("@messagetext", auditReport.MessageText);
+                        command.Parameters.AddWithValue("@attachments", auditReport.Attachments);
+                        command.Parameters.AddWithValue("@email", auditReport.Email);
+                        command.Parameters.AddWithValue("@username", auditReport.UserName);
+                        command.Parameters.AddWithValue("@auditresults", auditReport.AuditResults);
+                        command.Parameters.AddWithValue("@createtimevalueMM", (object)auditReport.CreateTimeValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@createtimevalueOBS", (object)auditReport.CreateTimeValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@updatetimevalueMM", (object)auditReport.UpdateTimeValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@updatetimevalueOBS", (object)auditReport.UpdateTimeValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@messagetextvalueMM", (object)auditReport.MessageTextValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@messagetextvalueOBS", (object)auditReport.MessageTextValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@attachmentsvalueMM", (object)auditReport.AttachmentsValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@attachmentsvalueOBS", (object)auditReport.AttachmentsValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@emailvalueMM", (object)auditReport.EmailValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@emailvalueOBS", (object)auditReport.EmailValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@usernamevalueMM", (object)auditReport.UserNameValueMM ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@usernamevalueOBS", (object)auditReport.UserNameValueOBS ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@AuditDateTime", (object)auditReport.AuditDateTime ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@Auditor", (object)auditReport.Auditor ?? DBNull.Value);
+                        command.ExecuteNonQuery();
+                        //connection.Close();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //write admin logs to show what happened.
+            }
+        }
+
+        public MMAuditReport GetMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+        {
+            MMAuditReport mmAuditReport = new MMAuditReport();
+            //run the SQL query
+            //add the sql data to the emailAuditReport
+
+            string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"Select * FROM dbo.MMauditdata WHERE [auditID] VALUES (@auditID)";
+
+                        command.Parameters.AddWithValue("@auditID", auditID);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                mmAuditReport.ProcessID = reader["processID"].ToString();
+                                mmAuditReport.ChannelID = reader["channelid"].ToString();
+                                mmAuditReport.PostID = reader["postid"].ToString() ;
+                                mmAuditReport.CreateTime = reader["createtime"].ToString();
+                               // mmAuditReport.UpdateTime = reader["update"].ToString();
+                                mmAuditReport.MessageText = reader["messagetext"].ToString();
+                                mmAuditReport.Attachments = reader["attachments"].ToString();
+                                mmAuditReport.Email = reader["email"].ToString();
+                                mmAuditReport.UserName = reader["username"].ToString();
+                                mmAuditReport.AuditResults = reader["auditresults"].ToString();
+                                mmAuditReport.CreateTimeValueMM = reader["createtimevalueMM"].ToString();
+                                mmAuditReport.CreateTimeValueOBS = reader["createtimevalueOBS"].ToString();
+                                //mmAuditReport.UpdateTimeValueMM = reader["postid"].ToString();
+                                //mmAuditReport.UpdateTimeValueOBS = ;
+                                mmAuditReport.MessageTextValueMM = reader["messagetextvalueMM"].ToString();
+                                mmAuditReport.MessageTextValueOBS = reader["messagetextvalueOBS"].ToString();
+                                mmAuditReport.AttachmentsValueMM = reader["attachmentsvalueMM"].ToString();
+                                mmAuditReport.AttachmentsValueOBS = reader["attachmentsvalueOBS"].ToString();
+                                mmAuditReport.EmailValueMM = reader["emailvalueMM"].ToString();
+                                mmAuditReport.EmailValueOBS = reader["emailvalueOBS"].ToString();
+                                mmAuditReport.UserNameValueMM = reader["usernamevalueMM"].ToString();
+                                mmAuditReport.UserNameValueOBS = reader["usernamevalueOBS"].ToString();
+                                mmAuditReport.AuditDateTime = reader["AuditDateTime"].ToString();
+                                mmAuditReport.Auditor = reader["Auditor"].ToString();
+                                mmAuditReport.OBSobject = reader["OBSobject"].ToString() ;
+                            }
+                        }
+                       //connection.Close();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //write admin logs to show what happened.
+            }
+
+            return mmAuditReport;
+        }
+    }*/
 
     public class Utilities
         {
