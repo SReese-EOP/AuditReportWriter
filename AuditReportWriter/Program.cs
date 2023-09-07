@@ -331,7 +331,7 @@ namespace AuditReportWriter
                                 mmAuditReport.EmailValueOBS = reader["emailvalueOBS"].ToString();
                                 mmAuditReport.UserNameValueMM = reader["usernamevalueMM"].ToString();
                                 mmAuditReport.UserNameValueOBS = reader["usernamevalueOBS"].ToString();
-                                mmAuditReport.AuditDateTime = reader["AuditDateTime"].Value();
+                                mmAuditReport.AuditDateTime = reader["AuditDateTime"].ToString.Date();
                                 mmAuditReport.Auditor = reader["Auditor"].ToString();
                                 mmAuditReport.OBSobject = reader["OBSobject"].ToString() ;
                             }

@@ -33,13 +33,13 @@ namespace AuditReportWriter
 
         }
 
-        private void bttnGo_Click(MMAuditReport mmAuditReport)
+        private void bttnGo_Click(MMAuditReportController mmAuditReport)
         {
             if (txtEnterAuditID.Text != "")
             {
                 //execute the audit reader?
-                MMAuditReport.GetMMAuditByID(mmAuditReport, navUser.Server, navUser.Database, navUser.UserName, navUser.Password);
-                txtMessageID.Text = mmAuditReport.MessageText;
+                //mmAuditReport.GetMMAuditByID(//, navUser.Server, navUser.Database, navUser.UserName, navUser.Password);
+                //txtMessageID.Text = mmAuditReport.MessageText;
                     txtOBSObject.Text = mmAuditReport.OBSobject;
                     txtChannelID.Text = mmAuditReport.ChannelID;
                     
