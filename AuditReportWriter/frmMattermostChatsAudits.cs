@@ -73,7 +73,7 @@ namespace AuditReportWriter
                 MMAuditReport mmAuditReport = new MMAuditReport();
 
                 //init a new controller to write the audit report
-                MMAuditReportController MMauditReportController = new MMAuditReportController();
+                AuditReportController MMauditReportController = new AuditReportController();
 
                 //add the audit report data
                 mmAuditReport.AuditDateTime = dtAuditDateTime.Value;

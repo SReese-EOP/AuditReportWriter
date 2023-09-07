@@ -118,7 +118,7 @@ namespace AuditReportWriter
         {
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
-                frmMattermostChatCorrections frmMattermostChatCorrections = new frmMattermostChatCorrections();
+                frmMattermostChatCorrections frmMattermostChatCorrections = new frmMattermostChatCorrections(navUser);
                 frmMattermostChatCorrections.Show();
                 this.Close();
             }

@@ -11,16 +11,19 @@ using System.Web;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.Windows.Forms;
+using static AuditReportWriter.AuditReportController;
+
 
 namespace AuditReportWriter
 {
     public partial class frmMattermostChatCorrections : Form
     {
-        private userInfo navUser;
+        private userInfo MMUser;
 
-        public frmMattermostChatCorrections()
+        public frmMattermostChatCorrections(userInfo navuser)
         {
             InitializeComponent();
+            MMUser = navuser;
         }
 
         private void bttnReplace_Click(object sender, EventArgs e)
@@ -33,47 +36,92 @@ namespace AuditReportWriter
 
         }
 
-        private void bttnGo_Click(MMAuditReportController mmAuditReport)
+        private void bttnGo_Click(MMAuditReport mmAuditReport)
         {
             if (txtEnterAuditID.Text != "")
             {
                 //execute the audit reader?
-                //mmAuditReport.GetMMAuditByID(//, navUser.Server, navUser.Database, navUser.UserName, navUser.Password);
+                //mmAuditReport.GetMMAuditByID(auditID, navUser.Server, navUser.Database, navUser.UserName, navUser.Password);
                 //txtMessageID.Text = mmAuditReport.MessageText;
-                    txtOBSObject.Text = mmAuditReport.OBSobject;
-                    txtChannelID.Text = mmAuditReport.ChannelID;
-                    
-                    cboOverallAuditResult.DataSource = mmAuditReport.AuditResults;
-                    
-                    cboCreatedTimeResult.DataSource = mmAuditReport.CreateTime;
-                    dtMMCreatedTime.Value = mmAuditReport.CreateTimeValueMM;
-                    dtOBSCreatedTime.Value = mmAuditReport.CreateTimeValueOBS;
-  
-/*                    cboUpdatedTimeResult.DataSource = mmAuditReport.;
-                    dtMMUpdatedTime.Value = data[9];
-                    dtOBSUpdatedTime.Value = data[10];*/
+                txtOBSObject.Text = mmAuditReport.OBSobject;
+                txtChannelID.Text = mmAuditReport.ChannelID;
 
-                    cboMessageTextAuditResult.DataSource = mmAuditReport.MessageText;
-                    txtMMMessageTextResult.Text = mmAuditReport.MessageTextValueMM;
-                    txtOBSMessageTextResult.Text = mmAuditReport.MessageTextValueOBS;
+                cboOverallAuditResult.DataSource = mmAuditReport.AuditResults;
 
-                    cboAttachmentsResult.DataSource = mmAuditReport.Attachments;
-                    txtMMAttachmentsResult.Text = mmAuditReport.AttachmentsValueMM;
-                    txtOBSAttachmentsResult.Text = mmAuditReport.AttachmentsValueOBS;
+                cboCreatedTimeResult.DataSource = mmAuditReport.CreateTime;
+                dtMMCreatedTime.Value = mmAuditReport.CreateTimeValueMM;
+                dtOBSCreatedTime.Value = mmAuditReport.CreateTimeValueOBS;
 
-                    cboEmailAuditResult.DataSource = mmAuditReport.Email;
-                    txtMMEmailResult.Text = mmAuditReport.EmailValueMM;
-                    txtOBSEmailResult.Text = mmAuditReport.EmailValueOBS;
+                /*                    cboUpdatedTimeResult.DataSource = mmAuditReport.;
+                                    dtMMUpdatedTime.Value = data[9];
+                                    dtOBSUpdatedTime.Value = data[10];*/
 
-                    cboUsernameResult.DataSource = mmAuditReport.UserName;
-                    txtMMUsernameResult.Text = mmAuditReport.UserNameValueMM;
-                    txtOBSUsernameResult.Text = mmAuditReport.UserNameValueOBS;
+                cboMessageTextAuditResult.DataSource = mmAuditReport.MessageText;
+                txtMMMessageTextResult.Text = mmAuditReport.MessageTextValueMM;
+                txtOBSMessageTextResult.Text = mmAuditReport.MessageTextValueOBS;
+
+                cboAttachmentsResult.DataSource = mmAuditReport.Attachments;
+                txtMMAttachmentsResult.Text = mmAuditReport.AttachmentsValueMM;
+                txtOBSAttachmentsResult.Text = mmAuditReport.AttachmentsValueOBS;
+
+                cboEmailAuditResult.DataSource = mmAuditReport.Email;
+                txtMMEmailResult.Text = mmAuditReport.EmailValueMM;
+                txtOBSEmailResult.Text = mmAuditReport.EmailValueOBS;
+
+                cboUsernameResult.DataSource = mmAuditReport.UserName;
+                txtMMUsernameResult.Text = mmAuditReport.UserNameValueMM;
+                txtOBSUsernameResult.Text = mmAuditReport.UserNameValueOBS;
             }
         }
 
         private void txtOBSObject_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bttnGo_Click(object sender, EventArgs e)
+        {
+            if (txtEnterAuditID.Text != "")
+            {
+                MMAuditReport mmAuditReport = new MMAuditReport();
+                AuditReportController auditReportController = new AuditReportController();
+                //execute the audit reader?
+                int auditID = Convert.ToInt32(txtEnterAuditID.Text);
+                mmAuditReport = auditReportController.GetMMAuditByID(auditID, MMUser.Server, MMUser.Database, MMUser.UserName, MMUser.Password);
+
+                txtOBSObject.Text = mmAuditReport.OBSobject;
+                txtChannelID.Text = mmAuditReport.ChannelID;
+
+                cboOverallAuditResult.SelectedItem = mmAuditReport.AuditResults;
+
+                cboCreatedTimeResult.SelectedItem = mmAuditReport.CreateTime;
+                //dtMMCreatedTime.Value = mmAuditReport.CreateTimeValueMM;
+                //dtOBSCreatedTime.Value = mmAuditReport.CreateTimeValueOBS;
+
+                /*                    cboUpdatedTimeResult.DataSource = mmAuditReport.;
+                                    dtMMUpdatedTime.Value = data[9];
+                                    dtOBSUpdatedTime.Value = data[10];*/
+
+                cboMessageTextAuditResult.SelectedItem = mmAuditReport.MessageText;
+                txtMMMessageTextResult.Text = mmAuditReport.MessageTextValueMM;
+                txtOBSMessageTextResult.Text = mmAuditReport.MessageTextValueOBS;
+
+                cboAttachmentsResult.SelectedItem = mmAuditReport.Attachments;
+                txtMMAttachmentsResult.Text = mmAuditReport.AttachmentsValueMM;
+                txtOBSAttachmentsResult.Text = mmAuditReport.AttachmentsValueOBS;
+
+                cboEmailAuditResult.SelectedItem = mmAuditReport.Email;
+                txtMMEmailResult.Text = mmAuditReport.EmailValueMM;
+                txtOBSEmailResult.Text = mmAuditReport.EmailValueOBS;
+
+                cboUsernameResult.SelectedItem = mmAuditReport.UserName;
+                txtMMUsernameResult.Text = mmAuditReport.UserNameValueMM;
+                txtOBSUsernameResult.Text = mmAuditReport.UserNameValueOBS;
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Audit ID.");
+            }
         }
     }
 }
