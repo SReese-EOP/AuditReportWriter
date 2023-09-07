@@ -463,6 +463,7 @@
             txtOBSObject.Name = "txtOBSObject";
             txtOBSObject.Size = new Size(863, 27);
             txtOBSObject.TabIndex = 2;
+            txtOBSObject.TextChanged += txtOBSObject_TextChanged;
             // 
             // label8
             // 
@@ -711,7 +712,6 @@
             bttnGo.TabIndex = 37;
             bttnGo.Text = "Go";
             bttnGo.UseVisualStyleBackColor = true;
-            //bttnGo.Click += bttnGo_Click;
             // 
             // bttnDelete
             // 
@@ -728,7 +728,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1687, 1178);
+            ClientSize = new Size(1708, 1055);
             Controls.Add(bttnGo);
             Controls.Add(bttnReset);
             Controls.Add(grpAttachments);

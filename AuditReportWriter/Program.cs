@@ -115,6 +115,8 @@ namespace AuditReportWriter
         public string UserNameValueOBS { get; set ; }
 
         public string AuditResults { get; set; }
+
+        public string OBSobject { get; set; }
         
     }
 
@@ -282,6 +284,69 @@ namespace AuditReportWriter
             {
                 //write admin logs to show what happened.
             }
+        }
+
+        public MMAuditReport GetMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+        {
+            MMAuditReport mmAuditReport = new MMAuditReport();
+            //run the SQL query
+            //add the sql data to the emailAuditReport
+
+            string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"Select * FROM dbo.MMauditdata WHERE [auditID] VALUES (@auditID)";
+
+                        command.Parameters.AddWithValue("@auditID", auditID);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                mmAuditReport.ProcessID = reader["processID"].ToString();
+                                mmAuditReport.ChannelID = reader["channelid"].ToString();
+                                mmAuditReport.PostID = reader["postid"].ToString() ;
+                                mmAuditReport.CreateTime = reader["createtime"].ToString();
+                               // mmAuditReport.UpdateTime = reader["update"].ToString();
+                                mmAuditReport.MessageText = reader["messagetext"].ToString();
+                                mmAuditReport.Attachments = reader["attachments"].ToString();
+                                mmAuditReport.Email = reader["email"].ToString();
+                                mmAuditReport.UserName = reader["username"].ToString();
+                                mmAuditReport.AuditResults = reader["auditresults"].ToString();
+                                mmAuditReport.CreateTimeValueMM = reader["createtimevalueMM"].Value();
+                                mmAuditReport.CreateTimeValueOBS = reader["createtimevalueOBS"].Value();
+                                //mmAuditReport.UpdateTimeValueMM = reader["postid"].ToString();
+                                //mmAuditReport.UpdateTimeValueOBS = ;
+                                mmAuditReport.MessageTextValueMM = reader["messagetextvalueMM"].ToString();
+                                mmAuditReport.MessageTextValueOBS = reader["messagetextvalueOBS"].ToString();
+                                mmAuditReport.AttachmentsValueMM = reader["attachmentsvalueMM"].ToString();
+                                mmAuditReport.AttachmentsValueOBS = reader["attachmentsvalueOBS"].ToString();
+                                mmAuditReport.EmailValueMM = reader["emailvalueMM"].ToString();
+                                mmAuditReport.EmailValueOBS = reader["emailvalueOBS"].ToString();
+                                mmAuditReport.UserNameValueMM = reader["usernamevalueMM"].ToString();
+                                mmAuditReport.UserNameValueOBS = reader["usernamevalueOBS"].ToString();
+                                mmAuditReport.AuditDateTime = reader["AuditDateTime"].Value();
+                                mmAuditReport.Auditor = reader["Auditor"].ToString();
+                                mmAuditReport.OBSobject = reader["OBSobject"].ToString() ;
+                            }
+                        }
+                       //connection.Close();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //write admin logs to show what happened.
+            }
+
+            return mmAuditReport;
         }
     }
 
