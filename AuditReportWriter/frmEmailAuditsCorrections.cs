@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using static AuditReportWriter.AuditReportController;
 
 namespace AuditReportWriter
 {
@@ -147,107 +151,107 @@ namespace AuditReportWriter
 
         }
 
+        private void bttnGo_Click(EmailAuditReport emailAuditReport, AuditReportController auditReportController)
+        {
+            if (txtEnterAuditID.Text != "")
+            {
+                // execute the audit reader?
+                int auditID = Convert.ToInt32(txtEnterAuditID.Text);
+                emailAuditReport = auditReportController.GetEmailAuditByID(auditID, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
+                txtMessageID.Text = emailAuditReport.MessageId;
+                txtOBSObject.Text = emailAuditReport.ObsObject;
+                txtJournaledMailbox.Text = emailAuditReport.Mailbox;
+                txtJounalEmailId.Text = emailAuditReport.JournalEmailId;
+
+                txtMessageID.Text = emailAuditReport.MessageId;
+                cboOverallAuditResult.DataSource = emailAuditReport.AuditResults;
+
+                cboReceivedTimeResult.DataSource = emailAuditReport.MessageReceivedTime;
+                dtExchMessageRecievedTime.Value = emailAuditReport.MessageReceivedTimeValueExchange;
+                dtOBSMessageReceivedTime.Value = emailAuditReport.MessageReceivedTimeValueOBS;
+
+               
+                cboSenderResult.DataSource = emailAuditReport.MessageSender;
+                txtExchSenderResult.Text = emailAuditReport.MessageSenderValueExchange;
+                txtOBSSenderResult.Text = emailAuditReport.MessageSenderValueOBS;
+
+                cboToAuditResult.DataSource = emailAuditReport.MessageTo;
+                txtExchToResult.Text = emailAuditReport.MessageTOValueExchange;
+                txtOBSSenderResult.Text = emailAuditReport.MessageTOValueOBS;
+
+                cboCCAuditResult.DataSource = emailAuditReport.MessageCC;
+                txtCCExchResult.Text = emailAuditReport.MessageCCValueExchange;
+                txtCCobsresult.Text = emailAuditReport.MessageCCValueOBS;
+
+                cbobccAuditResult.DataSource = emailAuditReport.MessageBCC;
+                txtbccExchangeResult.Text = emailAuditReport.MessageBCCValueExchange;
+                txtbccOBSResult.Text = emailAuditReport.MessageBCCValueOBS;
+
+                cboSubjectValueResult.DataSource = emailAuditReport.MessageSubject;
+                txtSubjectExchangeResult.Text = emailAuditReport.MessageSubjectValueExchange;
+                txtSubjectOBSResult.Text = emailAuditReport.MessageSubjectValueOBS;
+
+                cboBodyValueResult.DataSource = emailAuditReport.MessageBody;
+                txtBodyExchangeResult.Text = emailAuditReport.MessageBodyValueExchange;
+                txtBodyOBSResult.Text = emailAuditReport.MessageBodyValueOBS;
+
+
+                cboAttachementAuditResult.DataSource = emailAuditReport.MessageAttachments;
+                txtAttachmentExchangeResult.Text = emailAuditReport.MessageAttachmentsValueExchange;
+                txtAttachmentOBSResult.Text = emailAuditReport.MessageAttachmentsValueOBS;
+            }
+        }
+
         private void bttnGo_Click(object sender, EventArgs e)
         {
-            if
-               (txtMessageID.Text != null &&
-               txtOBSObject.Text != null &&
-               txtJournaledMailbox.Text != null &&
-               txtJounalEmailId.Text != null &&
-               cboOverallAuditResult.SelectedItem != null &&
-               cboReceivedTimeResult.SelectedItem != null &&
-               cbobccAuditResult.SelectedItem != null &&
-               cboSenderResult.SelectedItem != null &&
-               cboSubjectValueResult.SelectedItem != null &&
-               cboToAuditResult.SelectedItem != null &&
-               cboBodyValueResult.SelectedItem != null &&
-               cboCCAuditResult.SelectedItem != null &&
-               cboAttachementAuditResult.SelectedItem != null)
+            if (txtEnterAuditID.Text != "")
             {
-                //init a new email audit report object
                 EmailAuditReport emailAuditReport = new EmailAuditReport();
+                AuditReportController AuditReportController = new AuditReportController();
+                //execute the audit reader?
+                int auditID = Convert.ToInt32(txtEnterAuditID.Text);
+                emailAuditReport = AuditReportController.GetEmailAuditByID(auditID, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
 
-                //init a new controller to write the audit report
-                AuditReportController auditReportController = new AuditReportController();
+                txtMessageID.Text = emailAuditReport.MessageId;
+                txtOBSObject.Text = emailAuditReport.ObsObject;
+                txtJournaledMailbox.Text = emailAuditReport.Mailbox;
+                cboOverallAuditResult.Text = emailAuditReport.AuditResults;
+                txtJounalEmailId.Text = emailAuditReport.JournalEmailId;
 
-                //add the audit report data
-                emailAuditReport.AuditDateTime = dtAuditDateTime.Value;
-                emailAuditReport.Mailbox = txtJournaledMailbox.Text;
-                emailAuditReport.MessageBody = cboBodyValueResult.SelectedItem.ToString();
-                emailAuditReport.MessageBodyValueExchange = txtBodyExchangeResult.Text;
-                emailAuditReport.MessageBodyValueOBS = txtBodyOBSResult.Text;
-                emailAuditReport.MessageSubject = cboSubjectValueResult.SelectedItem.ToString();
-                emailAuditReport.MessageSubjectValueExchange = txtSubjectExchangeResult.Text;
-                emailAuditReport.MessageSubjectValueOBS = txtSubjectOBSResult.Text;
-                emailAuditReport.MessageTo = cboToAuditResult.SelectedItem.ToString();
-                emailAuditReport.MessageTOValueExchange = txtExchToResult.Text;
-                emailAuditReport.MessageTOValueOBS = txtOBSToResult.Text;
-                emailAuditReport.MessageSender = cboSenderResult.SelectedItem.ToString();
-                emailAuditReport.MessageSenderValueExchange = txtExchSenderResult.Text;
-                emailAuditReport.MessageSenderValueOBS = txtOBSSenderResult.Text;
-                emailAuditReport.MessageReceivedTime = cboReceivedTimeResult.SelectedItem.ToString();
-                emailAuditReport.MessageReceivedTimeValueExchange = dtExchMessageRecievedTime.Value;
-                emailAuditReport.MessageReceivedTimeValueOBS = dtOBSMessageReceivedTime.Value;
-                emailAuditReport.MessageCC = cboCCAuditResult.SelectedItem.ToString();
-                emailAuditReport.MessageCCValueExchange = txtCCExchResult.Text;
-                emailAuditReport.MessageCCValueOBS = txtCCobsresult.Text;
-                emailAuditReport.MessageBCC = cbobccAuditResult.SelectedItem.ToString();
-                emailAuditReport.MessageBCCValueExchange = txtbccExchangeResult.Text;
-                emailAuditReport.MessageBCCValueOBS = txtbccOBSResult.Text;
-                emailAuditReport.MessageAttachments = cboAttachementAuditResult.SelectedItem.ToString();
-                emailAuditReport.MessageAttachmentsValueExchange = txtAttachmentExchangeResult.Text;
-                emailAuditReport.MessageAttachmentsValueOBS = txtAttachmentOBSResult.Text;
-                emailAuditReport.MessageId = txtMessageID.Text;
-                emailAuditReport.JournalEmailId = txtJounalEmailId.Text;
-                emailAuditReport.MessageAuditResult = cboOverallAuditResult.SelectedItem.ToString();
-                emailAuditReport.ObsObject = txtOBSObject.Text;
-                emailAuditReport.Auditor = WindowsIdentity.GetCurrent().Name;
+                cboReceivedTimeResult.Text = emailAuditReport.MessageReceivedTime;
 
-                //execute the audit report write
-                auditReportController.WriteEmailAuditReport(emailAuditReport, emailUser.Server, emailUser.Database, emailUser.UserName, emailUser.Password);
-                MessageBox.Show("Email audit was successfully submitted under Audit ID: " + emailAuditReport.AuditId);
-                DialogResult result = MessageBox.Show("Do you want to enter another audit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                cboSenderResult.Text = emailAuditReport.MessageSender;
+                txtExchSenderResult.Text = emailAuditReport.MessageSenderValueExchange;
+                txtOBSSenderResult.Text = emailAuditReport.MessageSenderValueOBS;
 
-                if (result == DialogResult.Yes)
-                {
-                    txtMessageID.Text = null;
-                    txtOBSObject.Text = null;
-                    txtJournaledMailbox.Text = null;
-                    txtJounalEmailId.Text = null;
-                    cboOverallAuditResult.Text = null;
-                    cboReceivedTimeResult.Text = null;
-                    cbobccAuditResult.Text = null;
-                    txtbccExchangeResult.Text = null;
-                    txtbccOBSResult.Text = null;
-                    cboSenderResult.Text = null;
-                    txtExchSenderResult.Text = null;
-                    txtOBSSenderResult.Text = null;
-                    cboSubjectValueResult.Text = null;
-                    txtSubjectExchangeResult.Text = null;
-                    txtSubjectOBSResult.Text = null;
-                    cboToAuditResult.Text = null;
-                    txtExchToResult.Text = null;
-                    txtOBSToResult.Text = null;
-                    cboBodyValueResult.Text = null;
-                    txtBodyExchangeResult.Text = null;
-                    txtBodyOBSResult.Text = null;
-                    cboCCAuditResult.Text = null;
-                    txtCCExchResult.Text = null;
-                    cboAttachementAuditResult.Text = null;
-                    txtAttachmentExchangeResult.Text = null;
-                    txtAttachmentOBSResult.Text = null;
-                    txtMessageID.Focus();
-                }
-                else
-                {
-                    frmAuditNavigator frmAuditNavigator = new frmAuditNavigator(emailUser);
-                    frmAuditNavigator.Show();
-                    this.Hide();
-                }
+                cboToAuditResult.Text = emailAuditReport.MessageTo;
+                txtExchToResult.Text = emailAuditReport.MessageTOValueExchange;
+                txtOBSSenderResult.Text = emailAuditReport.MessageTOValueOBS;
+
+                cboCCAuditResult.Text = emailAuditReport.MessageCC;
+                txtCCExchResult.Text = emailAuditReport.MessageCCValueExchange;
+                txtCCobsresult.Text = emailAuditReport.MessageCCValueOBS;
+
+                cbobccAuditResult.Text = emailAuditReport.MessageBCC;
+                txtbccExchangeResult.Text = emailAuditReport.MessageBCCValueExchange;
+                txtbccOBSResult.Text = emailAuditReport.MessageBCCValueOBS;
+
+                cboSubjectValueResult.Text = emailAuditReport.MessageSubject;
+                txtSubjectExchangeResult.Text = emailAuditReport.MessageSubjectValueExchange;
+                txtSubjectOBSResult.Text = emailAuditReport.MessageSubjectValueOBS;
+
+                cboBodyValueResult.Text = emailAuditReport.MessageBody;
+                txtBodyExchangeResult.Text = emailAuditReport.MessageBodyValueExchange;
+                txtBodyOBSResult.Text = emailAuditReport.MessageBodyValueOBS;
+
+                cboAttachementAuditResult.Text = emailAuditReport.MessageAttachments;
+                txtAttachmentExchangeResult.Text = emailAuditReport.MessageAttachmentsValueExchange;
+                txtAttachmentOBSResult.Text = emailAuditReport.MessageAttachmentsValueOBS;
+
             }
             else
             {
-                MessageBox.Show("The Audit form is not filled out properly");
+                MessageBox.Show("Please enter a valid Audit ID.");
             }
 
         }

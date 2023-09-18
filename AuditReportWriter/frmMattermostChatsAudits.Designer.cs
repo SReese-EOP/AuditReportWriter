@@ -139,7 +139,7 @@
             txtChannelID.Location = new Point(114, 77);
             txtChannelID.Margin = new Padding(3, 4, 3, 4);
             txtChannelID.Name = "txtChannelID";
-            txtChannelID.Size = new Size(369, 27);
+            txtChannelID.Size = new Size(369, 31);
             txtChannelID.TabIndex = 3;
             // 
             // txtOBSObject
@@ -147,7 +147,7 @@
             txtOBSObject.Location = new Point(661, 29);
             txtOBSObject.Margin = new Padding(3, 4, 3, 4);
             txtOBSObject.Name = "txtOBSObject";
-            txtOBSObject.Size = new Size(863, 27);
+            txtOBSObject.Size = new Size(863, 31);
             txtOBSObject.TabIndex = 2;
             // 
             // label8
@@ -167,7 +167,7 @@
             cboOverallAuditResult.Location = new Point(1338, 179);
             cboOverallAuditResult.Margin = new Padding(4, 5, 4, 5);
             cboOverallAuditResult.Name = "cboOverallAuditResult";
-            cboOverallAuditResult.Size = new Size(162, 28);
+            cboOverallAuditResult.Size = new Size(162, 33);
             cboOverallAuditResult.TabIndex = 5;
             cboOverallAuditResult.SelectedIndexChanged += cboOverallAuditResult_SelectedIndexChanged;
             // 
@@ -215,7 +215,7 @@
             dtAuditDateTime.Location = new Point(158, 133);
             dtAuditDateTime.Margin = new Padding(3, 4, 3, 4);
             dtAuditDateTime.Name = "dtAuditDateTime";
-            dtAuditDateTime.Size = new Size(228, 27);
+            dtAuditDateTime.Size = new Size(228, 31);
             dtAuditDateTime.TabIndex = 4;
             dtAuditDateTime.ValueChanged += dtAuditDateTime_ValueChanged;
             // 
@@ -245,7 +245,7 @@
             dtOBSCreatedTime.Location = new Point(24, 206);
             dtOBSCreatedTime.Margin = new Padding(4, 5, 4, 5);
             dtOBSCreatedTime.Name = "dtOBSCreatedTime";
-            dtOBSCreatedTime.Size = new Size(283, 27);
+            dtOBSCreatedTime.Size = new Size(283, 31);
             dtOBSCreatedTime.TabIndex = 8;
             dtOBSCreatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
@@ -266,7 +266,7 @@
             dtMMCreatedTime.Location = new Point(24, 134);
             dtMMCreatedTime.Margin = new Padding(4, 5, 4, 5);
             dtMMCreatedTime.Name = "dtMMCreatedTime";
-            dtMMCreatedTime.Size = new Size(283, 27);
+            dtMMCreatedTime.Size = new Size(283, 31);
             dtMMCreatedTime.TabIndex = 7;
             dtMMCreatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
@@ -297,7 +297,7 @@
             cboCreatedTimeResult.Location = new Point(151, 40);
             cboCreatedTimeResult.Margin = new Padding(4, 5, 4, 5);
             cboCreatedTimeResult.Name = "cboCreatedTimeResult";
-            cboCreatedTimeResult.Size = new Size(162, 28);
+            cboCreatedTimeResult.Size = new Size(162, 33);
             cboCreatedTimeResult.TabIndex = 6;
             cboCreatedTimeResult.SelectedIndexChanged += cboCreatedTimeResult_SelectedIndexChanged_1;
             // 
@@ -327,7 +327,7 @@
             dtOBSUpdatedTime.Location = new Point(24, 206);
             dtOBSUpdatedTime.Margin = new Padding(4, 5, 4, 5);
             dtOBSUpdatedTime.Name = "dtOBSUpdatedTime";
-            dtOBSUpdatedTime.Size = new Size(283, 27);
+            dtOBSUpdatedTime.Size = new Size(283, 31);
             dtOBSUpdatedTime.TabIndex = 11;
             dtOBSUpdatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             dtOBSUpdatedTime.ValueChanged += dtOBSUpdatedTime_ValueChanged;
@@ -349,7 +349,7 @@
             dtMMUpdatedTime.Location = new Point(24, 134);
             dtMMUpdatedTime.Margin = new Padding(4, 5, 4, 5);
             dtMMUpdatedTime.Name = "dtMMUpdatedTime";
-            dtMMUpdatedTime.Size = new Size(283, 27);
+            dtMMUpdatedTime.Size = new Size(283, 31);
             dtMMUpdatedTime.TabIndex = 10;
             dtMMUpdatedTime.Value = new DateTime(2023, 8, 2, 15, 53, 51, 0);
             // 
@@ -380,7 +380,7 @@
             cboUpdatedTimeResult.Location = new Point(151, 40);
             cboUpdatedTimeResult.Margin = new Padding(4, 5, 4, 5);
             cboUpdatedTimeResult.Name = "cboUpdatedTimeResult";
-            cboUpdatedTimeResult.Size = new Size(162, 28);
+            cboUpdatedTimeResult.Size = new Size(162, 33);
             cboUpdatedTimeResult.TabIndex = 9;
             cboUpdatedTimeResult.SelectedIndexChanged += cboUpdatedTimeResult_SelectedIndexChanged_1;
             // 
@@ -408,7 +408,7 @@
             txtOBSMessageTextResult.Location = new Point(24, 206);
             txtOBSMessageTextResult.Margin = new Padding(4, 5, 4, 5);
             txtOBSMessageTextResult.Name = "txtOBSMessageTextResult";
-            txtOBSMessageTextResult.Size = new Size(754, 27);
+            txtOBSMessageTextResult.Size = new Size(754, 31);
             txtOBSMessageTextResult.TabIndex = 14;
             // 
             // txtMMMessageTextResult
@@ -417,7 +417,7 @@
             txtMMMessageTextResult.Location = new Point(24, 134);
             txtMMMessageTextResult.Margin = new Padding(4, 5, 4, 5);
             txtMMMessageTextResult.Name = "txtMMMessageTextResult";
-            txtMMMessageTextResult.Size = new Size(754, 27);
+            txtMMMessageTextResult.Size = new Size(754, 31);
             txtMMMessageTextResult.TabIndex = 13;
             // 
             // lblMessageTextOBS
@@ -456,7 +456,7 @@
             cboMessageTextAuditResult.Location = new Point(151, 40);
             cboMessageTextAuditResult.Margin = new Padding(4, 5, 4, 5);
             cboMessageTextAuditResult.Name = "cboMessageTextAuditResult";
-            cboMessageTextAuditResult.Size = new Size(162, 28);
+            cboMessageTextAuditResult.Size = new Size(162, 33);
             cboMessageTextAuditResult.TabIndex = 12;
             cboMessageTextAuditResult.SelectedIndexChanged += cboMessageTextAuditResult_SelectedIndexChanged_1;
             // 
@@ -484,7 +484,7 @@
             txtOBSAttachmentsResult.Location = new Point(24, 209);
             txtOBSAttachmentsResult.Margin = new Padding(4, 5, 4, 5);
             txtOBSAttachmentsResult.Name = "txtOBSAttachmentsResult";
-            txtOBSAttachmentsResult.Size = new Size(754, 27);
+            txtOBSAttachmentsResult.Size = new Size(754, 31);
             txtOBSAttachmentsResult.TabIndex = 17;
             // 
             // txtMMAttachmentsResult
@@ -493,7 +493,7 @@
             txtMMAttachmentsResult.Location = new Point(24, 134);
             txtMMAttachmentsResult.Margin = new Padding(4, 5, 4, 5);
             txtMMAttachmentsResult.Name = "txtMMAttachmentsResult";
-            txtMMAttachmentsResult.Size = new Size(754, 27);
+            txtMMAttachmentsResult.Size = new Size(754, 31);
             txtMMAttachmentsResult.TabIndex = 16;
             // 
             // lblAttachmentsOBSResult
@@ -532,7 +532,7 @@
             cboAttachmentsResult.Location = new Point(151, 40);
             cboAttachmentsResult.Margin = new Padding(4, 5, 4, 5);
             cboAttachmentsResult.Name = "cboAttachmentsResult";
-            cboAttachmentsResult.Size = new Size(162, 28);
+            cboAttachmentsResult.Size = new Size(162, 33);
             cboAttachmentsResult.TabIndex = 15;
             cboAttachmentsResult.SelectedIndexChanged += cboAttachmentsResult_SelectedIndexChanged_1;
             // 
@@ -560,7 +560,7 @@
             txtOBSEmailResult.Location = new Point(22, 209);
             txtOBSEmailResult.Margin = new Padding(4, 5, 4, 5);
             txtOBSEmailResult.Name = "txtOBSEmailResult";
-            txtOBSEmailResult.Size = new Size(754, 27);
+            txtOBSEmailResult.Size = new Size(754, 31);
             txtOBSEmailResult.TabIndex = 20;
             // 
             // txtMMEmailResult
@@ -569,7 +569,7 @@
             txtMMEmailResult.Location = new Point(22, 134);
             txtMMEmailResult.Margin = new Padding(4, 5, 4, 5);
             txtMMEmailResult.Name = "txtMMEmailResult";
-            txtMMEmailResult.Size = new Size(754, 27);
+            txtMMEmailResult.Size = new Size(754, 31);
             txtMMEmailResult.TabIndex = 19;
             // 
             // label15
@@ -608,7 +608,7 @@
             cboEmailAuditResult.Location = new Point(151, 40);
             cboEmailAuditResult.Margin = new Padding(4, 5, 4, 5);
             cboEmailAuditResult.Name = "cboEmailAuditResult";
-            cboEmailAuditResult.Size = new Size(162, 28);
+            cboEmailAuditResult.Size = new Size(162, 33);
             cboEmailAuditResult.TabIndex = 18;
             cboEmailAuditResult.SelectedIndexChanged += cboEmailAuditResult_SelectedIndexChanged_1;
             // 
@@ -636,7 +636,7 @@
             txtOBSUsernameResult.Location = new Point(19, 165);
             txtOBSUsernameResult.Margin = new Padding(3, 4, 3, 4);
             txtOBSUsernameResult.Name = "txtOBSUsernameResult";
-            txtOBSUsernameResult.Size = new Size(754, 27);
+            txtOBSUsernameResult.Size = new Size(754, 31);
             txtOBSUsernameResult.TabIndex = 23;
             // 
             // txtMMUsernameResult
@@ -645,7 +645,7 @@
             txtMMUsernameResult.Location = new Point(22, 134);
             txtMMUsernameResult.Margin = new Padding(4, 5, 4, 5);
             txtMMUsernameResult.Name = "txtMMUsernameResult";
-            txtMMUsernameResult.Size = new Size(754, 27);
+            txtMMUsernameResult.Size = new Size(754, 31);
             txtMMUsernameResult.TabIndex = 22;
             // 
             // lblOBSUsernameResult
@@ -684,7 +684,7 @@
             cboUsernameResult.Location = new Point(151, 46);
             cboUsernameResult.Margin = new Padding(4, 5, 4, 5);
             cboUsernameResult.Name = "cboUsernameResult";
-            cboUsernameResult.Size = new Size(162, 28);
+            cboUsernameResult.Size = new Size(162, 33);
             cboUsernameResult.TabIndex = 21;
             cboUsernameResult.SelectedIndexChanged += cboUsernameResult_SelectedIndexChanged_1;
             // 
@@ -715,7 +715,7 @@
             AutoScroll = true;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1768, 1055);
+            ClientSize = new Size(1810, 1055);
             Controls.Add(bttnSubmit);
             Controls.Add(bttnReset);
             Controls.Add(grpUserName);
@@ -726,7 +726,7 @@
             Controls.Add(grpCreatedTime);
             Controls.Add(grpOverallAudit);
             Controls.Add(bttnReturntoNav);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "frmMattermostChatsAudits";
             RightToLeft = RightToLeft.No;
             StartPosition = FormStartPosition.CenterScreen;

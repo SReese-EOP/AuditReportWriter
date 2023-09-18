@@ -29,6 +29,7 @@ namespace AuditReportWriter
         public int AuditId { get; set; }
         public DateTime AuditDateTime { get; set; }
         public string MessageId { get; set; }
+        public string AuditResults { get; set; }
         public string MessageReceivedTime { get; set; }
         public string MessageSender { get; set; }
         public string MessageTo { get; set; }
@@ -148,7 +149,7 @@ namespace AuditReportWriter
                     using (SqlCommand command = connection.CreateCommand())
                     {
                         command.CommandText = @"INSERT INTO [dbo].[emailauditdata] (
-                        [AuditID], [AuditDateTime], [MessageID], [MessageReceivedTime], [MessageSender], [MessageTO], [MessageCC], [MessageBCC],
+                        [AuditID], [AuditDateTime], [MessageID],[AuditResults], [MessageReceivedTime], [MessageSender], [MessageTO], [MessageCC], [MessageBCC],
                         [MessageSubject], [MessageBody], [MessageAttachments], [MessageAuditResult], [Mailbox], 
                         [JournalEmailID], [OBSobject], [MessageReceivedTimeValueExchange], [MessageReceivedTimeValueOBS],
                         [MessageSenderValueExchange], [MessageSenderValueOBS], [MessageTOValueExchange], [MessageTOValueOBS],
@@ -156,7 +157,7 @@ namespace AuditReportWriter
                         [MessageSubjectValueExchange], [MessageSubjectValueOBS], [MessageBodyValueExchange], [MessageBodyValueOBS],
                         [MessageAttachmentsValueExchange], [MessageAttachmentsValueOBS], [Auditor])
                     VALUES (
-                        @AuditID, @AuditDateTime, @MessageID, @MessageReceivedTime, @MessageSender, @MessageTO, @MessageCC, @MessageBCC,
+                        @AuditID, @AuditDateTime, @MessageID, @AuditResults, @MessageReceivedTime, @MessageSender, @MessageTO, @MessageCC, @MessageBCC,
                         @MessageSubject, @MessageBody, @MessageAttachments, @MessageAuditResult, @Mailbox, 
                         @JournalEmailID, @OBSobject, @MessageReceivedTimeValueExchange, @MessageReceivedTimeValueOBS,
                         @MessageSenderValueExchange, @MessageSenderValueOBS, @MessageTOValueExchange, @MessageTOValueOBS,
@@ -167,6 +168,7 @@ namespace AuditReportWriter
                         command.Parameters.AddWithValue("@AuditID", auditReport.AuditId);
                         command.Parameters.AddWithValue("@AuditDateTime", auditReport.AuditDateTime);
                         command.Parameters.AddWithValue("@MessageID", auditReport.MessageId);
+                        command.Parameters.AddWithValue("@Auditresults", auditReport.AuditResults);
                         command.Parameters.AddWithValue("@MessageReceivedTime", auditReport.MessageReceivedTime);
                         command.Parameters.AddWithValue("@MessageSender", auditReport.MessageSender);
                         command.Parameters.AddWithValue("@MessageTO", auditReport.MessageTo);
@@ -282,7 +284,67 @@ namespace AuditReportWriter
                 //write admin logs to show what happened.
             }
         }
+        public EmailAuditReport GetEmailAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+        {
+            EmailAuditReport emailAuditReport = new EmailAuditReport();
+            // run SQL query and add data to report
+            string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"Select * FROM dbo.Emailauditdata WHERE auditID = @auditID";
+
+                        command.Parameters.AddWithValue("@auditID", auditID);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                emailAuditReport.MessageId = reader["messageID"].ToString();
+                                emailAuditReport.ObsObject = reader["ObsObjectid"].ToString();
+                                emailAuditReport.Mailbox = reader["mailbox"].ToString();
+                                emailAuditReport.JournalEmailId = reader["journalemailId"].ToString();
+                                emailAuditReport.AuditResults = reader["auditresults"].ToString();
+                                emailAuditReport.MessageReceivedTime = reader["messagereceivedTime"].ToString();
+                                emailAuditReport.MessageSender = reader["messagesender"].ToString();
+                                emailAuditReport.MessageSenderValueExchange = reader["messagesendervalueexchange"].ToString();
+                                emailAuditReport.MessageSenderValueOBS = reader["messagesenderValueobs"].ToString();
+                                emailAuditReport.MessageTo = reader["messageto"].ToString();
+                                emailAuditReport.MessageTOValueExchange = reader["messagetovalueexchange"].ToString();
+                                emailAuditReport.MessageTOValueOBS = reader["MessageTOValueobs"].ToString();
+                                emailAuditReport.MessageCC = reader["messagecc"].ToString();
+                                emailAuditReport.MessageCCValueExchange = reader["Messageccvalueexchange"].ToString();
+                                emailAuditReport.MessageCCValueOBS = reader["messageccvalueobs"].ToString();
+                                emailAuditReport.MessageBCC = reader["messagebcc"].ToString();
+                                emailAuditReport.MessageBCCValueExchange = reader["messagebccvalueexchange"].ToString();
+                                emailAuditReport.MessageBCCValueOBS = reader["messagebccvalueobs"].ToString();
+                                emailAuditReport.MessageSubject = reader["messagesubject"].ToString();
+                                emailAuditReport.MessageSubjectValueExchange = reader["messagesubjectvalueexchange"].ToString();
+                                emailAuditReport.MessageSubjectValueOBS = reader["messagesubjectvalueobs"].ToString();
+                                emailAuditReport.MessageBody = reader["messagebody"].ToString();
+                                emailAuditReport.MessageBodyValueExchange = reader["messagebodyvalueexchange"].ToString();
+                                emailAuditReport.Auditor = reader["Auditor"].ToString();
+                                emailAuditReport.MessageBodyValueOBS = reader["messagebodyvalueobs"].ToString();
+                                emailAuditReport.MessageAttachments = reader["messageattachments"].ToString();
+                                emailAuditReport.MessageAttachmentsValueExchange = reader["messageattachmentsvalueexchange"].ToString();
+                                emailAuditReport.MessageAttachmentsValueOBS = reader["messageattachmentsvalueobs"].ToString();
+                            }
+                        }
+                        //connection.Close();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            { 
+                // admin log
+            }
+            return emailAuditReport;
+        }
         public MMAuditReport GetMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
         {
             MMAuditReport mmAuditReport = new MMAuditReport();

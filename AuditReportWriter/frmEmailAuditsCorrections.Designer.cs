@@ -99,7 +99,6 @@
             grpOverallAudit = new GroupBox();
             bttnGo = new Button();
             lblEnterAuditID = new Label();
-            txtEnterAuditID = new TextBox();
             bttnReset = new Button();
             bttnDelete = new Button();
             bttnReplace = new Button();
@@ -107,6 +106,7 @@
             label5 = new Label();
             cboEmailSearchResult = new ComboBox();
             label6 = new Label();
+            txtEnterAuditID = new TextBox();
             grpBCCResults.SuspendLayout();
             grpBodyResults.SuspendLayout();
             grpAttachementResult.SuspendLayout();
@@ -546,7 +546,7 @@
             // 
             // txtMessageID
             // 
-            txtMessageID.Location = new Point(141, 36);
+            txtMessageID.Location = new Point(141, 52);
             txtMessageID.Margin = new Padding(4, 5, 4, 5);
             txtMessageID.Name = "txtMessageID";
             txtMessageID.Size = new Size(460, 31);
@@ -789,7 +789,7 @@
             // 
             // txtJounalEmailId
             // 
-            txtJounalEmailId.Location = new Point(811, 86);
+            txtJounalEmailId.Location = new Point(811, 102);
             txtJounalEmailId.Margin = new Padding(4, 5, 4, 5);
             txtJounalEmailId.Name = "txtJounalEmailId";
             txtJounalEmailId.Size = new Size(460, 31);
@@ -801,13 +801,13 @@
             label9.Location = new Point(25, 111);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(154, 25);
+            label9.Size = new Size(140, 25);
             label9.TabIndex = 0;
-            label9.Text = "Jounaled Mailbox:";
+            label9.Text = "Journal Mailbox:";
             // 
             // txtJournaledMailbox
             // 
-            txtJournaledMailbox.Location = new Point(171, 95);
+            txtJournaledMailbox.Location = new Point(184, 108);
             txtJournaledMailbox.Margin = new Padding(4, 5, 4, 5);
             txtJournaledMailbox.Name = "txtJournaledMailbox";
             txtJournaledMailbox.Size = new Size(460, 31);
@@ -815,7 +815,7 @@
             // 
             // txtOBSObject
             // 
-            txtOBSObject.Location = new Point(886, 26);
+            txtOBSObject.Location = new Point(893, 39);
             txtOBSObject.Margin = new Padding(4, 5, 4, 5);
             txtOBSObject.Name = "txtOBSObject";
             txtOBSObject.Size = new Size(1078, 31);
@@ -899,15 +899,6 @@
             lblEnterAuditID.Text = "Enter Audit ID:";
             lblEnterAuditID.Click += lblEnterAuditID_Click;
             // 
-            // txtEnterAuditID
-            // 
-            txtEnterAuditID.Location = new Point(281, 51);
-            txtEnterAuditID.Margin = new Padding(4, 5, 4, 5);
-            txtEnterAuditID.Name = "txtEnterAuditID";
-            txtEnterAuditID.Size = new Size(364, 31);
-            txtEnterAuditID.TabIndex = 41;
-            txtEnterAuditID.TextChanged += txtEnterAuditID_TextChanged;
-            // 
             // bttnReset
             // 
             bttnReset.Location = new Point(1512, 1537);
@@ -980,6 +971,15 @@
             label6.TabIndex = 47;
             label6.Text = "Email Search Result: ";
             label6.Click += label6_Click;
+            // 
+            // txtEnterAuditID
+            // 
+            txtEnterAuditID.Location = new Point(281, 51);
+            txtEnterAuditID.Margin = new Padding(4, 5, 4, 5);
+            txtEnterAuditID.Name = "txtEnterAuditID";
+            txtEnterAuditID.Size = new Size(364, 31);
+            txtEnterAuditID.TabIndex = 41;
+            txtEnterAuditID.TextChanged += txtEnterAuditID_TextChanged;
             // 
             // frmEmailAuditsCorrections
             // 
@@ -1102,7 +1102,6 @@
         private GroupBox grpOverallAudit;
         private Button bttnGo;
         private Label lblEnterAuditID;
-        private TextBox txtEnterAuditID;
         private Button bttnReset;
         private Button bttnDelete;
         private Button bttnReplace;
@@ -1110,5 +1109,6 @@
         private Label label5;
         private ComboBox cboEmailSearchResult;
         private Label label6;
+        private TextBox txtEnterAuditID;
     }
 }
