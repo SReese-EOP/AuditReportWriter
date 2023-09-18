@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0YeoWiygEDhugrfUja6KW0t9zl7Qkyh+FSREzz9Vv1NKN/49kqxSECq1Y3iYRDX4tPhbM69rwovhHIHKCpMRCQ==",
+  "dgSpecHash": "NPTZt8x9i7AG2G6KZKUlY3FQHTQ9V8KiDC/1o6327k1ZvWUQwaj+L4qR7HjnJuoSewOOS2coY/2LOzrsbrIZNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Temitope\\source\\repos\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
   "expectedPackageFiles": [
@@ -14,5 +14,12 @@
     "C:\\Users\\Temitope\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\Temitope\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Temitope\\source\\repos\\AuditReportWriter\\AuditReportWriter\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

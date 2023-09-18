@@ -78,8 +78,8 @@ namespace AuditReportWriter
 
         private void button1_Click(object sender, EventArgs e)
         {
-/*            cboSourceApplication.Items.Clear();
-            cboTypeofAudit.Items.Clear();*/
+            /*            cboSourceApplication.Items.Clear();
+                        cboTypeofAudit.Items.Clear();*/
 
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
@@ -122,7 +122,43 @@ namespace AuditReportWriter
                 frmMattermostChatCorrections.Show();
                 this.Close();
             }
+            else
+            {
+
+            }
+
+
+            if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Email Audit")
+            {
+                frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
+                frmEmailAuditReport.Show();
+                this.Close();
+
+            }
+        }
+        private void lblSelectAudit_Click(object sender, EventArgs e)
+        {
+
         }
 
+        private void cboSourceApplication_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboTypeofAudit_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttnChanges_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
