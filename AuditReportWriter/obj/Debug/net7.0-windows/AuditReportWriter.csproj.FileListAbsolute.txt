@@ -93,7 +93,6 @@ C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\bin\Debug\net
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.csproj.AssemblyReference.cache
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmEmailAuditReport.resources
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmAuditNavigator.resources
-C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatAudit.resources
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatsAudits.resources
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmLogin.resources
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.Properties.Resources.resources
@@ -108,4 +107,3 @@ C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.pdb
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.genruntimeconfig.cache
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\ref\AuditReportWriter.dll
-C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatCorrections.resources
