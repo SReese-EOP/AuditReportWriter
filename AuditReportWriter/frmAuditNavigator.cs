@@ -64,6 +64,7 @@ namespace AuditReportWriter
 
         private void btnGo_Click(object sender, EventArgs e)
         {
+            //This button will take the user to the selected audit page to enter and submit a new audit
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
                 frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
@@ -89,6 +90,8 @@ namespace AuditReportWriter
 
         private void bttnChanges_Click_1(object sender, EventArgs e)
         {
+            //Depending on what audit was selected this button will take the user the the audit corrections page for that audit
+           
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
                 frmMattermostChatCorrections frmMattermostChatCorrections = new frmMattermostChatCorrections(navUser);
@@ -98,8 +101,8 @@ namespace AuditReportWriter
 
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Email Audit")
             {
-                frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
-                frmEmailAuditReport.Show();
+                frmEmailAuditsCorrections frmEmailAuditsCorrections = new frmEmailAuditsCorrections(navUser);
+                frmEmailAuditsCorrections.Show();
                 this.Close();
 
             }
