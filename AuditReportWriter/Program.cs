@@ -345,7 +345,7 @@ namespace AuditReportWriter
             }
             return emailAuditReport;
         }
-
+/*
         public MMAuditReport DeleteMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
         {
             MMAuditReport mmAuditReportDelete = new MMAuditReport();
@@ -371,7 +371,7 @@ namespace AuditReportWriter
                 //write admin logs to show what happened.
             }
 
-        }
+        }*/
 
     public MMAuditReport GetMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
         {

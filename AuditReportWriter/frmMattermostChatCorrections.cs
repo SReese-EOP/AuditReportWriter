@@ -28,7 +28,35 @@ namespace AuditReportWriter
 
         private void bttnReplace_Click(object sender, EventArgs e)
         {
-            if (txtEnterAuditID.Text != '')
+            if (txtEnterAuditID.Text != "")
+            {
+                int auditID = Convert.ToInt32(txtEnterAuditID.Text);
+
+                string connectionString = $"Server=tcp:{MMUser.Server},1433;Database={MMUser.Database};User ID={MMUser.UserName};Password={MMUser.Password};Encrypt=false;";
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        using (SqlCommand command = connection.CreateCommand())
+                        {
+                            command.CommandText = @"DELETE FROM dbo.MMauditdata WHERE auditID =" + auditID;
+
+                        }
+                        connection.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The record was not delted due to error.");
+                    //write admin logs to show what happened.
+                }
+
+            }
+        }
+/*            if (txtEnterAuditID.Text != "")
             {
                 MMAuditReport mmAuditReportDelete = new MMAuditReport();
                 AuditReportController auditReportController = new AuditReportController();
@@ -39,7 +67,8 @@ namespace AuditReportWriter
             else
             {
                 MessageBox.Show("Please enter a valid Audit ID.");
-            }
+            }*/
+
 
         }
 
