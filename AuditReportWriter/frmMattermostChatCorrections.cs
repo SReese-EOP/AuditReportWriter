@@ -28,6 +28,18 @@ namespace AuditReportWriter
 
         private void bttnReplace_Click(object sender, EventArgs e)
         {
+            if (txtEnterAuditID.Text != '')
+            {
+                MMAuditReport mmAuditReportDelete = new MMAuditReport();
+                AuditReportController auditReportController = new AuditReportController();
+                //execute the audit reader
+                int auditID = Convert.ToInt32(txtEnterAuditID.Text);
+                mmAuditReportDelete = auditReportController.DeleteMMAuditByID(auditID, MMUser.Server, MMUser.Database, MMUser.UserName, MMUser.Password);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Audit ID.");
+            }
 
         }
 
@@ -85,7 +97,7 @@ namespace AuditReportWriter
             {
                 MMAuditReport mmAuditReport = new MMAuditReport();
                 AuditReportController auditReportController = new AuditReportController();
-                //execute the audit reader?
+                //execute the audit reader
                 int auditID = Convert.ToInt32(txtEnterAuditID.Text);
                 mmAuditReport = auditReportController.GetMMAuditByID(auditID, MMUser.Server, MMUser.Database, MMUser.UserName, MMUser.Password);
 
@@ -97,8 +109,8 @@ namespace AuditReportWriter
                 cboOverallAuditResult.Text = mmAuditReport.AuditResults;
 
                 cboCreatedTimeResult.Text = mmAuditReport.CreateTime;
-                //dtMMCreatedTime.Value = mmAuditReport.CreateTimeValueMM;
-                //dtOBSCreatedTime.Value = mmAuditReport.CreateTimeValueOBS;
+                dtMMCreatedTime.Text = mmAuditReport.CreateTimeValueMM;
+                dtOBSCreatedTime.Text = mmAuditReport.CreateTimeValueOBS;
 
                 /*                    cboUpdatedTimeResult.DataSource = mmAuditReport.;
                                     dtMMUpdatedTime.Value = data[9];
@@ -124,6 +136,11 @@ namespace AuditReportWriter
             {
                 MessageBox.Show("Please enter a valid Audit ID.");
             }
+        }
+
+        private void frmMattermostChatCorrections_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

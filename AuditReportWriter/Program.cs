@@ -345,7 +345,35 @@ namespace AuditReportWriter
             }
             return emailAuditReport;
         }
-        public MMAuditReport GetMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+
+        public MMAuditReport DeleteMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
+        {
+            MMAuditReport mmAuditReportDelete = new MMAuditReport();
+
+            string connectionString = $"Server=tcp:{sqlServer},1433;Database={sqlDatabase};User ID={sqlUsername};Password={sqlPassword};Encrypt=false;";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"DELETE FROM dbo.MMauditdata WHERE auditID = @auditID";
+
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //write admin logs to show what happened.
+            }
+
+        }
+
+    public MMAuditReport GetMMAuditByID(int auditID, string sqlServer, string sqlDatabase, string sqlUsername, string sqlPassword)
         {
             MMAuditReport mmAuditReport = new MMAuditReport();
             //run the SQL query
