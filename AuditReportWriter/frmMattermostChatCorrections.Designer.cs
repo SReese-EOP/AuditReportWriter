@@ -713,7 +713,7 @@
             bttnGo.TabIndex = 37;
             bttnGo.Text = "Go";
             bttnGo.UseVisualStyleBackColor = true;
-            bttnGo.Click += bttnGo_Click;
+            //bttnGo.Click += bttnGo_Click;
             // 
             // bttnDelete
             // 
@@ -748,7 +748,7 @@
             Name = "frmMattermostChatCorrections";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Mattermost Chat Corrections Form";
-            Load += frmMattermostChatCorrections_Load;
+            //Load += frmMattermostChatCorrections_Load;
             grpAttachments.ResumeLayout(false);
             grpAttachments.PerformLayout();
             grpEmail.ResumeLayout(false);
