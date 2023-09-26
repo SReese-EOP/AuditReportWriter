@@ -87,8 +87,9 @@
             lblEnterAuditID = new Label();
             txtEnterAuditID = new TextBox();
             bttnGo = new Button();
-            bttnDelete = new Button();
             pageSetupDialog1 = new PageSetupDialog();
+            bttnDeleteRecord = new Button();
+            bttnExit = new Button();
             grpAttachments.SuspendLayout();
             grpEmail.SuspendLayout();
             grpMessageText.SuspendLayout();
@@ -116,6 +117,7 @@
             bttnReset.TabIndex = 35;
             bttnReset.Text = "&Reset";
             bttnReset.UseVisualStyleBackColor = true;
+            bttnReset.Click += bttnReset_Click;
             // 
             // grpAttachments
             // 
@@ -152,6 +154,7 @@
             txtMMAttachmentsResult.Name = "txtMMAttachmentsResult";
             txtMMAttachmentsResult.Size = new Size(755, 27);
             txtMMAttachmentsResult.TabIndex = 16;
+            txtMMAttachmentsResult.TextChanged += txtMMAttachmentsResult_TextChanged;
             // 
             // lblAttachmentsOBSResult
             // 
@@ -189,6 +192,7 @@
             cboAttachmentsResult.Name = "cboAttachmentsResult";
             cboAttachmentsResult.Size = new Size(163, 28);
             cboAttachmentsResult.TabIndex = 15;
+            cboAttachmentsResult.SelectedIndexChanged += cboAttachmentsResult_SelectedIndexChanged;
             // 
             // grpEmail
             // 
@@ -484,6 +488,7 @@
             cboOverallAuditResult.Name = "cboOverallAuditResult";
             cboOverallAuditResult.Size = new Size(163, 28);
             cboOverallAuditResult.TabIndex = 5;
+            cboOverallAuditResult.SelectedIndexChanged += cboOverallAuditResult_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -537,6 +542,7 @@
             bttnReturntoNav.TabIndex = 36;
             bttnReturntoNav.Text = "Return to Navigation";
             bttnReturntoNav.UseVisualStyleBackColor = true;
+            bttnReturntoNav.Click += bttnReturntoNav_Click;
             // 
             // grpCreatedTime
             // 
@@ -616,6 +622,7 @@
             cboCreatedTimeResult.Name = "cboCreatedTimeResult";
             cboCreatedTimeResult.Size = new Size(163, 28);
             cboCreatedTimeResult.TabIndex = 6;
+            cboCreatedTimeResult.SelectedIndexChanged += cboCreatedTimeResult_SelectedIndexChanged;
             // 
             // grpUpdateTime
             // 
@@ -713,17 +720,27 @@
             bttnGo.TabIndex = 37;
             bttnGo.Text = "Go";
             bttnGo.UseVisualStyleBackColor = true;
-            //bttnGo.Click += bttnGo_Click;
+            bttnGo.Click += bttnGo_Click_1;
             // 
-            // bttnDelete
+            // bttnDeleteRecord
             // 
-            bttnDelete.Location = new Point(1441, 1087);
-            bttnDelete.Name = "bttnDelete";
-            bttnDelete.Size = new Size(193, 29);
-            bttnDelete.TabIndex = 34;
-            bttnDelete.Text = "Delete Record";
-            bttnDelete.UseVisualStyleBackColor = true;
-            bttnDelete.Click += bttnReplace_Click;
+            bttnDeleteRecord.Location = new Point(1439, 1087);
+            bttnDeleteRecord.Name = "bttnDeleteRecord";
+            bttnDeleteRecord.Size = new Size(193, 29);
+            bttnDeleteRecord.TabIndex = 38;
+            bttnDeleteRecord.Text = "Delete Record";
+            bttnDeleteRecord.UseVisualStyleBackColor = true;
+            bttnDeleteRecord.Click += bttnDeleteRecord_Click;
+            // 
+            // bttnExit
+            // 
+            bttnExit.Location = new Point(624, 1087);
+            bttnExit.Name = "bttnExit";
+            bttnExit.Size = new Size(193, 29);
+            bttnExit.TabIndex = 39;
+            bttnExit.Text = "Exit";
+            bttnExit.UseVisualStyleBackColor = true;
+            bttnExit.Click += bttnExit_Click;
             // 
             // frmMattermostChatCorrections
             // 
@@ -731,13 +748,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1580, 730);
+            Controls.Add(bttnExit);
+            Controls.Add(bttnDeleteRecord);
             Controls.Add(bttnGo);
             Controls.Add(bttnReset);
             Controls.Add(grpAttachments);
             Controls.Add(grpEmail);
             Controls.Add(grpMessageText);
             Controls.Add(grpUserName);
-            Controls.Add(bttnDelete);
             Controls.Add(bttnReplace);
             Controls.Add(lblEnterAuditID);
             Controls.Add(txtEnterAuditID);
@@ -748,7 +766,6 @@
             Name = "frmMattermostChatCorrections";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Mattermost Chat Corrections Form";
-            //Load += frmMattermostChatCorrections_Load;
             grpAttachments.ResumeLayout(false);
             grpAttachments.PerformLayout();
             grpEmail.ResumeLayout(false);
@@ -828,7 +845,8 @@
         private TextBox txtEnterAuditID;
         private Button bttnGo;
         private TextBox txtMessageID;
-        private Button bttnDelete;
         private PageSetupDialog pageSetupDialog1;
+        private Button bttnDeleteRecord;
+        private Button bttnExit;
     }
 }
