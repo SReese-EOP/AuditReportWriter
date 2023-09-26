@@ -41,19 +41,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 183);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(26, 146);
             label1.Name = "label1";
-            label1.Size = new Size(518, 25);
+            label1.Size = new Size(432, 20);
             label1.TabIndex = 15;
             label1.Text = "Would you like to submit a new audit or edit an existing record?";
             // 
             // bttnChanges
             // 
-            bttnChanges.Location = new Point(346, 223);
-            bttnChanges.Margin = new Padding(4);
+            bttnChanges.Location = new Point(277, 178);
             bttnChanges.Name = "bttnChanges";
-            bttnChanges.Size = new Size(189, 36);
+            bttnChanges.Size = new Size(151, 29);
             bttnChanges.TabIndex = 14;
             bttnChanges.Text = "Edit Existing Record";
             bttnChanges.UseVisualStyleBackColor = true;
@@ -61,10 +59,9 @@
             // 
             // btnGo
             // 
-            btnGo.Location = new Point(34, 223);
-            btnGo.Margin = new Padding(4);
+            btnGo.Location = new Point(27, 178);
             btnGo.Name = "btnGo";
-            btnGo.Size = new Size(189, 36);
+            btnGo.Size = new Size(151, 29);
             btnGo.TabIndex = 11;
             btnGo.Text = "New Audit";
             btnGo.UseVisualStyleBackColor = true;
@@ -73,20 +70,18 @@
             // lblTypeAudit
             // 
             lblTypeAudit.AutoSize = true;
-            lblTypeAudit.Location = new Point(346, 72);
-            lblTypeAudit.Margin = new Padding(4, 0, 4, 0);
+            lblTypeAudit.Location = new Point(277, 58);
             lblTypeAudit.Name = "lblTypeAudit";
-            lblTypeAudit.Size = new Size(123, 25);
+            lblTypeAudit.Size = new Size(101, 20);
             lblTypeAudit.TabIndex = 12;
             lblTypeAudit.Text = "Type of Audit:";
             // 
             // lblSourceApp
             // 
             lblSourceApp.AutoSize = true;
-            lblSourceApp.Location = new Point(33, 72);
-            lblSourceApp.Margin = new Padding(4, 0, 4, 0);
+            lblSourceApp.Location = new Point(26, 58);
             lblSourceApp.Name = "lblSourceApp";
-            lblSourceApp.Size = new Size(165, 25);
+            lblSourceApp.Size = new Size(138, 20);
             lblSourceApp.TabIndex = 13;
             lblSourceApp.Text = "Source Application:";
             // 
@@ -94,11 +89,9 @@
             // 
             cboTypeofAudit.DropDownStyle = ComboBoxStyle.DropDownList;
             cboTypeofAudit.FormattingEnabled = true;
-            cboTypeofAudit.Items.AddRange(new object[] { "Email", "Chat" });
-            cboTypeofAudit.Location = new Point(346, 101);
-            cboTypeofAudit.Margin = new Padding(4);
+            cboTypeofAudit.Location = new Point(277, 81);
             cboTypeofAudit.Name = "cboTypeofAudit";
-            cboTypeofAudit.Size = new Size(188, 33);
+            cboTypeofAudit.Size = new Size(151, 28);
             cboTypeofAudit.TabIndex = 9;
             cboTypeofAudit.SelectedIndexChanged += cboTypeofAudit_SelectedIndexChanged_1;
             // 
@@ -106,29 +99,27 @@
             // 
             cboSourceApplication.FormattingEnabled = true;
             cboSourceApplication.Items.AddRange(new object[] { "Exchange", "Mattermost" });
-            cboSourceApplication.Location = new Point(33, 101);
-            cboSourceApplication.Margin = new Padding(4);
+            cboSourceApplication.Location = new Point(26, 81);
             cboSourceApplication.Name = "cboSourceApplication";
-            cboSourceApplication.Size = new Size(188, 33);
+            cboSourceApplication.Size = new Size(151, 28);
             cboSourceApplication.TabIndex = 8;
             cboSourceApplication.SelectedIndexChanged += cboSourceApplication_SelectedIndexChanged_1;
             // 
             // lblSelectAudit
             // 
             lblSelectAudit.AutoSize = true;
-            lblSelectAudit.Location = new Point(33, 26);
-            lblSelectAudit.Margin = new Padding(4, 0, 4, 0);
+            lblSelectAudit.Location = new Point(26, 21);
             lblSelectAudit.Name = "lblSelectAudit";
-            lblSelectAudit.Size = new Size(436, 25);
+            lblSelectAudit.Size = new Size(363, 20);
             lblSelectAudit.TabIndex = 10;
             lblSelectAudit.Text = "Select which type of audit you would like to perform. ";
             lblSelectAudit.Click += lblSelectAudit_Click;
             // 
             // frmAuditNavigator
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(761, 316);
+            ClientSize = new Size(609, 253);
             Controls.Add(label1);
             Controls.Add(bttnChanges);
             Controls.Add(btnGo);
@@ -137,7 +128,6 @@
             Controls.Add(cboTypeofAudit);
             Controls.Add(cboSourceApplication);
             Controls.Add(lblSelectAudit);
-            Margin = new Padding(4);
             Name = "frmAuditNavigator";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Audit Navigation";

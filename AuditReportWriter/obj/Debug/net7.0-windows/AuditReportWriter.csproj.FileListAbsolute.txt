@@ -109,3 +109,5 @@ C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net
 C:\Users\Temitope\Source\Repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\ref\AuditReportWriter.dll
 C:\Users\Temitope\source\repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmEmailAuditsCorrections.resources
 C:\Users\Temitope\source\repos\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatCorrections.resources
+C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmEmailAuditsCorrections.resources
+C:\Users\kmhar\Documents\GCyber\GitHub\AuditReportWriter\AuditReportWriter\obj\Debug\net7.0-windows\AuditReportWriter.frmMattermostChatCorrections.resources

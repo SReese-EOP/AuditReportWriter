@@ -51,13 +51,13 @@ namespace AuditReportWriter
                 txtOBSObject.Text != null &&
                 txtChannelID.Text != null &&
                 //dtAuditDate. != null &&
-                cboOverallAuditResult.SelectedIndex == -1 &&
-                cboAttachmentsResult.SelectedIndex == -1 &&
-                cboCreatedTimeResult.SelectedIndex == -1 &&
-                cboEmailAuditResult.SelectedIndex == -1 &&
-                cboMessageTextAuditResult.SelectedIndex == -1 &&
-                cboUpdatedTimeResult.SelectedIndex == -1 &&
-                cboUsernameResult.SelectedIndex == -1
+                cboOverallAuditResult.SelectedItem != null &&
+                cboAttachmentsResult.SelectedItem != null &&
+                cboCreatedTimeResult.SelectedItem != null &&
+                cboEmailAuditResult.SelectedItem != null &&
+                cboMessageTextAuditResult.SelectedItem != null &&
+                cboUpdatedTimeResult.SelectedItem != null &&
+                cboUsernameResult.SelectedItem != null
                 /*                cboOverallAuditResult.ValueMember.ToString() != null &&
                                 cboAttachmentsResult.ValueMember.ToString() != null &&
                                 cboCreatedTimeResult.ValueMember.ToString() != null &&
@@ -261,6 +261,16 @@ namespace AuditReportWriter
         private void dtOBSUpdatedTime_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblOBSUsernameResult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

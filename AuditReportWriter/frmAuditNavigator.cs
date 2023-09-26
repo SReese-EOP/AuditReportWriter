@@ -22,41 +22,18 @@ namespace AuditReportWriter
             navUser = user;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void frmAuditNavigator_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void bttnEmailAudit_Click_1(object sender, EventArgs e)
-        {
-            frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
-            frmEmailAuditReport.Show();
-            this.Hide();
-        }
-
-        private void bttnChatAudit_Click(object sender, EventArgs e)
-        {
-            frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
-            frmMattermostChatsAudits.Show();
-            this.Hide();
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
+        private void lblSelectAudit_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void cboSourceApplication_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboSourceApplication_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboSourceApplication.SelectedItem.ToString() != null && cboSourceApplication.SelectedItem.ToString() == "Exchange")
             {
@@ -76,11 +53,18 @@ namespace AuditReportWriter
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cboTypeofAudit_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            /*            cboSourceApplication.Items.Clear();
-                        cboTypeofAudit.Items.Clear();*/
+            if (cboTypeofAudit != null)
+            {
+                btnGo.Enabled = true;
+                bttnChanges.Enabled = true;
+            }
+        }
 
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            //This button will take the user to the selected audit page to enter and submit a new audit
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
                 frmMattermostChatsAudits frmMattermostChatsAudits = new frmMattermostChatsAudits(navUser);
@@ -102,63 +86,26 @@ namespace AuditReportWriter
             {
                 //nothing
             }
-
         }
 
-        private void cboTypeofAudit_SelectedIndexChanged(object sender, EventArgs e)
+        private void bttnChanges_Click_1(object sender, EventArgs e)
         {
-            if (cboTypeofAudit != null)
-            {
-                btnGo.Enabled = true;
-                bttnChanges.Enabled = true;
-            }
-        }
-
-        private void bttnChanges_Click(object sender, EventArgs e)
-        {
+            //Depending on what audit was selected this button will take the user the the audit corrections page for that audit
+           
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Chat Audit")
             {
                 frmMattermostChatCorrections frmMattermostChatCorrections = new frmMattermostChatCorrections(navUser);
                 frmMattermostChatCorrections.Show();
                 this.Close();
             }
-            else
-            {
-
-            }
-
 
             if (cboTypeofAudit.SelectedItem.ToString() != null && cboTypeofAudit.SelectedItem.ToString() == "Email Audit")
             {
-                frmEmailAuditReport frmEmailAuditReport = new frmEmailAuditReport(navUser);
-                frmEmailAuditReport.Show();
+                frmEmailAuditsCorrections frmEmailAuditsCorrections = new frmEmailAuditsCorrections(navUser);
+                frmEmailAuditsCorrections.Show();
                 this.Close();
 
             }
-        }
-        private void lblSelectAudit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboSourceApplication_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboTypeofAudit_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttnChanges_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

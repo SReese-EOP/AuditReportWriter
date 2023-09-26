@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Temitope\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Temitope\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\kmhar\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\kmhar\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
