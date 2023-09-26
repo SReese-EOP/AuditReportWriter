@@ -170,7 +170,7 @@ namespace AuditReportWriter
                 dtExchMessageRecievedTime.Value = emailAuditReport.MessageReceivedTimeValueExchange;
                 dtOBSMessageReceivedTime.Value = emailAuditReport.MessageReceivedTimeValueOBS;
 
-               
+
                 cboSenderResult.DataSource = emailAuditReport.MessageSender;
                 txtExchSenderResult.Text = emailAuditReport.MessageSenderValueExchange;
                 txtOBSSenderResult.Text = emailAuditReport.MessageSenderValueOBS;
