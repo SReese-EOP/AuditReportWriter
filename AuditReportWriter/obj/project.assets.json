@@ -470,19 +470,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kmhar\\.nuget\\packages\\": {}
+    "C:\\Users\\Temitope\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "projectUniqueName": "C:\\Users\\Temitope\\source\\repos\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
       "projectName": "AuditReportWriter",
-      "projectPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
-      "packagesPath": "C:\\Users\\kmhar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kmhar\\Documents\\GCyber\\GitHub\\AuditReportWriter\\AuditReportWriter\\obj\\",
+      "projectPath": "C:\\Users\\Temitope\\source\\repos\\AuditReportWriter\\AuditReportWriter\\AuditReportWriter.csproj",
+      "packagesPath": "C:\\Users\\Temitope\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Temitope\\source\\repos\\AuditReportWriter\\AuditReportWriter\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\kmhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Temitope\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -532,7 +537,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

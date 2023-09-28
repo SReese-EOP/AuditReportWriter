@@ -107,6 +107,7 @@
             cboEmailSearchResult = new ComboBox();
             label6 = new Label();
             txtEnterAuditID = new TextBox();
+            bttnExit = new Button();
             grpBCCResults.SuspendLayout();
             grpBodyResults.SuspendLayout();
             grpAttachementResult.SuspendLayout();
@@ -932,11 +933,23 @@
             txtEnterAuditID.TabIndex = 41;
             txtEnterAuditID.TextChanged += txtEnterAuditID_TextChanged;
             // 
+            // bttnExit
+            // 
+            bttnExit.Location = new Point(693, 922);
+            bttnExit.Margin = new Padding(2);
+            bttnExit.Name = "bttnExit";
+            bttnExit.Size = new Size(157, 22);
+            bttnExit.TabIndex = 49;
+            bttnExit.Text = "Exit";
+            bttnExit.UseVisualStyleBackColor = true;
+            bttnExit.Click += bttnExit_Click;
+            // 
             // frmEmailAuditsCorrections
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1772, 1054);
+            ClientSize = new Size(1614, 959);
+            Controls.Add(bttnExit);
             Controls.Add(cboEmailSearchResult);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -956,7 +969,7 @@
             Controls.Add(grpCCresults);
             Controls.Add(grpTOResults);
             Controls.Add(grpOverallAudit);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "frmEmailAuditsCorrections";
             Text = "frmEmailAuditsCorrections";
             grpBCCResults.ResumeLayout(false);
@@ -1062,5 +1075,6 @@
         private ComboBox cboEmailSearchResult;
         private Label label6;
         private TextBox txtEnterAuditID;
+        private Button bttnExit;
     }
 }

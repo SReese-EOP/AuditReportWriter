@@ -365,5 +365,12 @@ namespace AuditReportWriter
         {
 
         }
+
+        private void bttnExit_Click(object sender, EventArgs e)
+        {
+            {
+                Application.Exit();
+            }
+        }
     }
 }
