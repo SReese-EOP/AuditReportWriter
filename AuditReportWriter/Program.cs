@@ -149,7 +149,7 @@ namespace AuditReportWriter
                     using (SqlCommand command = connection.CreateCommand())
                     {
                         command.CommandText = @"INSERT INTO [dbo].[emailauditdata] (
-                        [AuditID], [AuditDateTime], [MessageID],[AuditResults], [MessageReceivedTime], [MessageSender], [MessageTO], [MessageCC], [MessageBCC],
+                        [AuditID], [AuditDateTime], [MessageID], [MessageReceivedTime], [MessageSender], [MessageTO], [MessageCC], [MessageBCC],
                         [MessageSubject], [MessageBody], [MessageAttachments], [MessageAuditResult], [Mailbox], 
                         [JournalEmailID], [OBSobject], [MessageReceivedTimeValueExchange], [MessageReceivedTimeValueOBS],
                         [MessageSenderValueExchange], [MessageSenderValueOBS], [MessageTOValueExchange], [MessageTOValueOBS],
@@ -157,7 +157,7 @@ namespace AuditReportWriter
                         [MessageSubjectValueExchange], [MessageSubjectValueOBS], [MessageBodyValueExchange], [MessageBodyValueOBS],
                         [MessageAttachmentsValueExchange], [MessageAttachmentsValueOBS], [Auditor])
                     VALUES (
-                        @AuditID, @AuditDateTime, @MessageID, @AuditResults, @MessageReceivedTime, @MessageSender, @MessageTO, @MessageCC, @MessageBCC,
+                        @AuditID, @AuditDateTime, @MessageID, @MessageReceivedTime, @MessageSender, @MessageTO, @MessageCC, @MessageBCC,
                         @MessageSubject, @MessageBody, @MessageAttachments, @MessageAuditResult, @Mailbox, 
                         @JournalEmailID, @OBSobject, @MessageReceivedTimeValueExchange, @MessageReceivedTimeValueOBS,
                         @MessageSenderValueExchange, @MessageSenderValueOBS, @MessageTOValueExchange, @MessageTOValueOBS,
@@ -168,7 +168,6 @@ namespace AuditReportWriter
                         command.Parameters.AddWithValue("@AuditID", auditReport.AuditId);
                         command.Parameters.AddWithValue("@AuditDateTime", auditReport.AuditDateTime);
                         command.Parameters.AddWithValue("@MessageID", auditReport.MessageId);
-                        command.Parameters.AddWithValue("@Auditresults", auditReport.AuditResults);
                         command.Parameters.AddWithValue("@MessageReceivedTime", auditReport.MessageReceivedTime);
                         command.Parameters.AddWithValue("@MessageSender", auditReport.MessageSender);
                         command.Parameters.AddWithValue("@MessageTO", auditReport.MessageTo);
